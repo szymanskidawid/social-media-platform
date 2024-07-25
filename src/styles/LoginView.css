@@ -1,6 +1,22 @@
 .login-view-container {
+    font-size: 30px;
     margin: 0;
-    width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: lime;
+}
+
+.login-view-content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-view-logo {
+    background-color: purple;
+}
+.login-view-form {
+    text-align: center;
+    background-color: brown;
 }

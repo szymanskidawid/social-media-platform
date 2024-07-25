@@ -1,7 +1,10 @@
+import Header from "../small/Header"
+
 const MainView = () => {
   return (
     <div className="main-view-container">
-      <>Main view</>
+      <Header />
+      <p>MainView</p>
     </div>
   )
 }

@@ -1,18 +1,30 @@
-import Logo from "../small/Logo"
+import { useContext } from "react";
+import Logo from "../small/Logo";
+import { ViewContext } from "../../contexts/ViewContext";
 
 const LoginView = () => {
+  const { setView } = useContext(ViewContext);
+
   return (
     <div className="login-view-container">
-      <Logo />
-      <form method="POST">
-        <div>
-            <label for="login">Login</label>
-            <input type="text" placeholder="Enter username" name="login" required></input>
-            <label for="password">Password</label>
-            <input type="text" placeholder="Enter password" name="password" required></input>
-            <button type="submit">Login</button>
+      <div className="login-view-content-container">
+        <div className="login-view-logo">
+          <Logo />
         </div>
-      </form>
+        <div className="login-view-form">
+          <form method="POST">
+            <div className="login-view-input-container">
+                <label htmlFor="login">Login</label>
+                <input type="text" placeholder="Enter username" name="login" required></input>
+            </div>
+            <div className="login-view-input-container">
+              <label htmlFor="password">Password</label>
+              <input type="text" placeholder="Enter password" name="password" required></input>
+            </div>
+            <button type="submit" onClick={() => setView("main")}>Login</button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
