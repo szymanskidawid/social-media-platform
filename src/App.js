@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import LoginView from './components/views/LoginView';
+import MainView from './components/views/MainView';
 
 function App() {
+  const [view, setView] = useState("login");
+
+  let selectedView = (view) => {
+    if (view === "login") {
+      return <LoginView />
+    } else if (view === "main") {
+      return <MainView />
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {selectedView(view)}
     </div>
   );
 }
