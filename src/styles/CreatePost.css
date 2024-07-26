@@ -1,0 +1,18 @@
+.create-post-container {
+    padding: 10px;
+    margin-bottom: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: powderblue;
+}
+
+.create-post-text {
+    height: 160px;
+    background-color: yellow;
+}
+
+.create-post-send {
+    height: 20px;
+    background-color: purple;
+}

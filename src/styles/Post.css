@@ -1,22 +1,54 @@
 .post-container {
+    padding: 10px;
     margin-bottom: 20px;
-    width: 95%;
-    display: grid;
-    grid-template-rows: 3fr 6fr 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-top-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: yellow;
 }
 
-.post-middle-section {
-    height: 200px;
+.post-top-user-info {
+    margin: 20px;
+    height: 50px;
+    width: 150px;
+    background-color: blue;
+}
+
+.post-top-time-posted {
+    font-size: 16px;
+    background-color: azure;
+}
+
+.post-top-description {
+    margin: 10px;
+    min-height: 100px;
+    background-color: pink;
+}
+
+.post-image {
+    height: 300px;
     background-color: orange;
 }
 
 .post-bot-section {
     height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: blueviolet;
+}
+
+.post-bot-like {
+
+}
+
+.post-bot-comment {
+
 }
 
 .post-comments-section {
