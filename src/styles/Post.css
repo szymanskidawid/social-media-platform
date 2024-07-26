@@ -1,0 +1,25 @@
+.post-container {
+    margin-bottom: 20px;
+    width: 95%;
+    display: grid;
+    grid-template-rows: 3fr 6fr 1fr;
+}
+
+.post-top-section {
+    background-color: yellow;
+}
+
+.post-middle-section {
+    height: 200px;
+    background-color: orange;
+}
+
+.post-bot-section {
+    height: 50px;
+    background-color: blueviolet;
+}
+
+.post-comments-section {
+    height: 200px;
+    background-color: bisque;
+}

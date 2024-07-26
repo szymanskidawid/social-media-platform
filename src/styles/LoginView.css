@@ -16,7 +16,7 @@
 .login-view-logo {
     background-color: purple;
 }
-.login-view-form {
-    text-align: center;
+.login-view-form-container {
+    text-align: end;
     background-color: brown;
 }

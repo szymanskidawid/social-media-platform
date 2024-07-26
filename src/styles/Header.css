@@ -1,23 +1,26 @@
 .header-container {
-    max-height: 100px;
-    background-color: red;
+    height: 60px;
+    width: 100vw;
+    background-color: lime;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    top: 0;
+    position: fixed;
 }
 
-.header-logo-container {
-    flex: 1;
-    background-color: orange;
+.header-search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .header-navbar-container {
-    flex: 2;
-    height: 90px;
-    background-color: pink;
-}
-
-.header-navbar-buttons {
+    padding: 0 20px 0 20px;
     display: flex;
     flex-direction: row;
+    gap: 15px;
+    align-items: center;
     justify-content: end;
+    background-color: pink;
 }
