@@ -1,0 +1,13 @@
+.user-info-container {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-info-picture {
+    margin-right: 5px;
+}
+
+.user-info-name {
+    
+}

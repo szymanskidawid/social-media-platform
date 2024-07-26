@@ -12,6 +12,10 @@ import './styles/Post.css';
 import './styles/Sidebar.css';
 import './styles/RightSideWindow.css';
 import './styles/CreatePost.css';
+import './styles/UserInfo.css';
+import './styles/Chat.css';
+import './styles/ChatSelectionWindow.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

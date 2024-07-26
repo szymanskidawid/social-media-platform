@@ -1,0 +1,16 @@
+.chat-window-container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.chat-history-container {
+    height: 200px;
+}
+
+.chat-bottom-section {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+}
