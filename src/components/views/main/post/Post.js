@@ -1,9 +1,11 @@
+import UserInfo from "../../../small/UserInfo"
+
 const Post = () => {
   return (
     <div className="post-container">
         <div className="post-top-section">
             <div className="post-top-user-info">
-                User Info
+                <UserInfo />
             </div>
             <div className="post-top-time-posted">
                 Posted 12 hours ago

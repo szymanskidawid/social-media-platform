@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ChatSelectionWindow from "./ChatSelectionWindow";
+import ChatSelectionWindow from "./chat/ChatSelectionWindow";
 import NotificationsWindow from "./NotificationsWindow";
 import OptionsWindow from "./OptionsWindow";
 import { ContainerViewContext } from "../../../../contexts/ContainerViewContext";
