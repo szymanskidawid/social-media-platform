@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import Logo from "../small/Logo";
-import { ViewContext } from "../../contexts/ViewContext";
+import Logo from "../../small/Logo";
+import { ViewContext } from "../../../contexts/ViewContext";
 
 const LoginView = () => {
   const { setView } = useContext(ViewContext);
@@ -11,7 +11,7 @@ const LoginView = () => {
         <div className="login-view-logo">
           <Logo />
         </div>
-        <div className="login-view-form">
+        <div className="login-view-form-container">
           <form method="POST">
             <div className="login-view-input-container">
                 <label htmlFor="login">Login</label>
@@ -22,6 +22,8 @@ const LoginView = () => {
               <input type="text" placeholder="Enter password" name="password" required></input>
             </div>
             <button type="submit" onClick={() => setView("main")}>Login</button>
+            <p>Forgot password?</p>
+            <p>Don't have an account? Time to register!</p>
           </form>
         </div>
       </div>
