@@ -7,6 +7,11 @@ import './styles/LoginView.css';
 import './styles/MainView.css';
 import './styles/Header.css';
 import './styles/Logo.css';
+import './styles/Feed.css';
+import './styles/Post.css';
+import './styles/Sidebar.css';
+import './styles/RightSideWindow.css';
+import './styles/CreatePost.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
