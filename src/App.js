@@ -7,6 +7,7 @@ import ContextProviders  from './contexts/ContextProviders';
 function App() {
   const [view, setView] = useState("login");
   const [containerView, setContainerView] = useState("");
+  const [openChatWindow, setOpenChatWindow] = useState(false);
 
   const selectedView = (selection) => {
     if (selection === "login") {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <ContextProviders {...{ view, setView, containerView, setContainerView }}>
+      <ContextProviders {...{ view, setView, containerView, setContainerView, openChatWindow, setOpenChatWindow }}>
         {selectedView(view)}
       </ContextProviders>
     </div>
