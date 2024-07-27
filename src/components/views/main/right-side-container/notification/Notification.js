@@ -1,9 +1,5 @@
 const Notification = () => {
-  return (
-    <div className="notification-container">
-      Notification
-    </div>
-  )
-}
+  return <div className="notification-container">Notification</div>;
+};
 
-export default Notification
+export default Notification;

@@ -1,4 +1,4 @@
-import Notification from "./Notification";
+import Notification from './Notification';
 
 const NotificationsWindow = () => {
   return (
@@ -8,7 +8,7 @@ const NotificationsWindow = () => {
       <Notification />
       <Notification />
     </div>
-  )
-}
+  );
+};
 
-export default NotificationsWindow
+export default NotificationsWindow;

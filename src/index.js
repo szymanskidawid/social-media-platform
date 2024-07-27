@@ -21,7 +21,6 @@ import './styles/Option.css';
 import './styles/OptionsWindow.css';
 import './styles/InputField.css';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

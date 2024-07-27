@@ -1,9 +1,5 @@
 const Option = () => {
-  return (
-    <div className="option-container">
-      Option
-    </div>
-  )
-}
+  return <div className="option-container">Option</div>;
+};
 
-export default Option
+export default Option;

@@ -1,4 +1,4 @@
-import Option from "./Option";
+import Option from './Option';
 
 const OptionsWindow = () => {
   return (
@@ -8,7 +8,7 @@ const OptionsWindow = () => {
       <Option />
       <Option />
     </div>
-  )
-}
+  );
+};
 
-export default OptionsWindow
+export default OptionsWindow;

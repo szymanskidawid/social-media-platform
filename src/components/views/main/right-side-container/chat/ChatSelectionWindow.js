@@ -1,15 +1,19 @@
-import { useContext } from "react"
-import UserInfo from "../../../../small-components/UserInfo"
-import Chat from "./Chat"
-import { OpenChatWindowContext } from "../../../../../contexts/OpenChatWindowContext";
+import { useContext } from 'react';
+import UserInfo from '../../../../small-components/UserInfo';
+import Chat from './Chat';
+import { OpenChatWindowContext } from '../../../../../contexts/OpenChatWindowContext';
 
 const ChatSelectionWindow = () => {
-  const { openChatWindow, setOpenChatWindow } = useContext(OpenChatWindowContext);
+  const { openChatWindow, setOpenChatWindow } = useContext(
+    OpenChatWindowContext
+  );
 
   return (
     <div className="chat-section-container">
       <div className="chat-selection-available-friends-container">
-        <UserInfo onClick={() => setOpenChatWindow(!openChatWindow)} />
+        <UserInfo
+          onClick={() => setOpenChatWindow(!openChatWindow)}
+        />
         <UserInfo />
         <UserInfo />
         <UserInfo />
@@ -18,7 +22,7 @@ const ChatSelectionWindow = () => {
         {openChatWindow && <Chat />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ChatSelectionWindow
+export default ChatSelectionWindow;

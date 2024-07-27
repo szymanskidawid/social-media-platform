@@ -1,5 +1,5 @@
-import CreatePost from "./post/CreatePost"
-import Post from "./post/Post"
+import CreatePost from './post/CreatePost';
+import Post from './post/Post';
 
 const Feed = () => {
   return (
@@ -11,7 +11,7 @@ const Feed = () => {
       <Post />
       <Post />
     </div>
-  )
-}
+  );
+};
 
-export default Feed
+export default Feed;
