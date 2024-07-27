@@ -15,6 +15,10 @@ import './styles/CreatePost.css';
 import './styles/UserInfo.css';
 import './styles/Chat.css';
 import './styles/ChatSelectionWindow.css';
+import './styles/Notification.css';
+import './styles/NotificationsWindow.css';
+import './styles/Option.css';
+import './styles/OptionsWindow.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

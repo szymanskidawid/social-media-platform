@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import ChatSelectionWindow from "./chat/ChatSelectionWindow";
-import NotificationsWindow from "./NotificationsWindow";
-import OptionsWindow from "./OptionsWindow";
+import NotificationsWindow from "./notification/NotificationsWindow";
+import OptionsWindow from "./options/OptionsWindow";
 import { ContainerViewContext } from "../../../../contexts/ContainerViewContext";
 
 const RightSideContainer = () => {
