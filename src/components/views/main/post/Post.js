@@ -1,4 +1,4 @@
-import UserInfo from "../../../small/UserInfo"
+import UserInfo from "../../../small-components/UserInfo"
 
 const Post = () => {
   return (

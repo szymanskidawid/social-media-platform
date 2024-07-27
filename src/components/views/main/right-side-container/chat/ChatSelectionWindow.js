@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import UserInfo from "../../../../small/UserInfo"
+import UserInfo from "../../../../small-components/UserInfo"
 import Chat from "./Chat"
 import { OpenChatWindowContext } from "../../../../../contexts/OpenChatWindowContext";
 

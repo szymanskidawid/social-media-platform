@@ -1,4 +1,4 @@
-.login-view-container {
+.login-page-container {
     font-size: 30px;
     margin: 0;
     height: 100vh;
@@ -8,15 +8,15 @@
     background-color: lime;
 }
 
-.login-view-content-container {
+.login-page-content-container {
     display: flex;
     flex-direction: row;
 }
 
-.login-view-logo {
+.login-page-logo {
     background-color: purple;
 }
-.login-view-form-container {
+.login-page-form-container {
     text-align: end;
     background-color: brown;
 }

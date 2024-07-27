@@ -1,6 +1,6 @@
 const Sidebar = () => {
   return (
-    <nav className="main-view-sidebar-container">
+    <nav className="main-page-sidebar-container">
       Sidebar
     </nav>
   )
