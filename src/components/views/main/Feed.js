@@ -1,5 +1,5 @@
-import CreatePost from './post/CreatePost';
-import Post from './post/Post';
+import CreatePost from "./post/CreatePost";
+import Post from "./post/Post";
 
 const Feed = () => {
   return (

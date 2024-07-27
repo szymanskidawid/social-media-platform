@@ -1,4 +1,4 @@
-import UserInfo from '../../../small-components/UserInfo';
+import UserInfo from "../../../small-components/UserInfo";
 
 const Post = () => {
   return (
@@ -7,9 +7,7 @@ const Post = () => {
         <div className="post-top-user-info">
           <UserInfo />
         </div>
-        <div className="post-top-time-posted">
-          Posted 12 hours ago
-        </div>
+        <div className="post-top-time-posted">Posted 12 hours ago</div>
       </div>
       <div className="post-top-description">Description</div>
       <div className="post-image">Image</div>

@@ -1,7 +1,7 @@
-import { PageContext } from './PageContext';
-import { LoginViewContext } from './LoginViewContext';
-import { ContainerViewContext } from './ContainerViewContext';
-import { OpenChatWindowContext } from './OpenChatWindowContext';
+import { PageContext } from "./PageContext";
+import { LoginViewContext } from "./LoginViewContext";
+import { ContainerViewContext } from "./ContainerViewContext";
+import { OpenChatWindowContext } from "./OpenChatWindowContext";
 
 const ContextProviders = ({
   children,
@@ -16,9 +16,7 @@ const ContextProviders = ({
 }) => {
   return (
     <PageContext.Provider value={{ page, setPage }}>
-      <LoginViewContext.Provider
-        value={{ loginPageView, setLoginPageView }}
-      >
+      <LoginViewContext.Provider value={{ loginPageView, setLoginPageView }}>
         <ContainerViewContext.Provider
           value={{ containerView, setContainerView }}
         >

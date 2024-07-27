@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import './App.css';
-import LoginPage from './components/views/login/LoginPage';
-import MainPage from './components/views/main/MainPage';
-import ContextProviders from './contexts/ContextProviders';
+import { useState } from "react";
+import "./App.css";
+import LoginPage from "./components/views/login/LoginPage";
+import MainPage from "./components/views/main/MainPage";
+import ContextProviders from "./contexts/ContextProviders";
 
 function App() {
-  const [page, setPage] = useState('login');
-  const [loginPageView, setLoginPageView] = useState('loginView');
-  const [containerView, setContainerView] = useState('');
+  const [page, setPage] = useState("login");
+  const [loginPageView, setLoginPageView] = useState("loginView");
+  const [containerView, setContainerView] = useState("");
   const [openChatWindow, setOpenChatWindow] = useState(false);
 
   const selectedView = (selection) => {
-    if (selection === 'login') {
+    if (selection === "login") {
       return <LoginPage />;
-    } else if (selection === 'main') {
+    } else if (selection === "main") {
       return <MainPage />;
     }
   };

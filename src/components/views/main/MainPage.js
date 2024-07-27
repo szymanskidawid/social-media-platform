@@ -1,7 +1,7 @@
-import Feed from './Feed';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import RightSideWindow from './right-side-container/RightSideWindow';
+import Feed from "./Feed";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import RightSideWindow from "./right-side-container/RightSideWindow";
 
 const MainPage = () => {
   return (
