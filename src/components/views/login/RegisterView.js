@@ -2,28 +2,15 @@ import { useContext, useState } from "react";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
 
+// TODO: Prevent default submission
+
 const RegisterView = () => {
   const { setLoginPageView } = useContext(LoginViewContext);
 
   const [registerSuccessful, setRegisterSuccessful] = useState(false);
 
   const selectedRegisterView = (selection) => {
-    if (selection) {
-      return (
-        <div className="">
-          <p>Go to your email to validate account..</p>
-          <button
-            type="submit"
-            onClick={() => {
-              setLoginPageView("loginView");
-              setRegisterSuccessful(!selection);
-            }}
-          >
-            Back
-          </button>
-        </div>
-      );
-    } else {
+    if (!selection) {
       return (
         <form method="POST">
           <div className="login-page-input-container">
@@ -60,6 +47,21 @@ const RegisterView = () => {
             Register
           </button>
         </form>
+      );
+    } else {
+      return (
+        <div className="">
+          <p>Go to your email to validate account..</p>
+          <button
+            type="submit"
+            onClick={() => {
+              setLoginPageView("loginView");
+              setRegisterSuccessful(!selection);
+            }}
+          >
+            Back
+          </button>
+        </div>
       );
     }
   };

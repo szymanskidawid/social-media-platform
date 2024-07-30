@@ -6,11 +6,13 @@ import InputField from "../../small-components/InputField";
 import RegisterView from "./RegisterView";
 import ForgotPasswordView from "./ForgotPasswordView";
 
+// TODO: Prevent default submission
+
 const LoginPage = () => {
   const { setPage } = useContext(PageContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
 
-  const selectedLoginView = (selection) => {
+  const selectedLoginPageView = (selection) => {
     if (selection === "loginView") {
       return (
         <form method="POST">
@@ -57,7 +59,7 @@ const LoginPage = () => {
           <Logo />
         </div>
         <div className="login-page-form-container">
-          {selectedLoginView(loginPageView)}
+          {selectedLoginPageView(loginPageView)}
         </div>
       </div>
     </div>
