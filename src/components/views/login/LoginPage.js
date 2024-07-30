@@ -1,15 +1,14 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Logo from "../../small-components/Logo";
 import { PageContext } from "../../../contexts/PageContext";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
+import RegisterView from "./RegisterView";
+import ForgotPasswordView from "./ForgotPasswordView";
 
 const LoginPage = () => {
   const { setPage } = useContext(PageContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
-
-  const [emailValidation, setEmailValidation] = useState(false);
-  const [registerSuccessful, setRegisterSuccessful] = useState(false);
 
   const selectedLoginView = (selection) => {
     if (selection === "loginView") {
@@ -45,100 +44,9 @@ const LoginPage = () => {
         </form>
       );
     } else if (selection === "forgotPasswordView") {
-      if (emailValidation) {
-        return (
-          <div className="">
-            <p>
-              If email exists, you will receive confirmation and a link to reset
-              your password.
-            </p>
-            <button
-              type="submit"
-              onClick={() => {
-                setLoginPageView("loginView");
-                setEmailValidation(!emailValidation);
-              }}
-            >
-              Back
-            </button>
-          </div>
-        );
-      } else {
-        return (
-          <>
-            <div className="login-page-input-container">
-              <label htmlFor="email">Email</label>
-              <InputField
-                style={{ height: "30px", width: "200px" }}
-                placeholder={"Enter email"}
-                name={"email"}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              onClick={() => setEmailValidation(!emailValidation)}
-            >
-              Send
-            </button>
-          </>
-        );
-      }
+      return <ForgotPasswordView />;
     } else if (selection === "registerView") {
-      if (registerSuccessful) {
-        return (
-          <div className="">
-            <p>Go to your email to validate account..</p>
-            <button
-              type="submit"
-              onClick={() => {
-                setLoginPageView("loginView");
-                setRegisterSuccessful(!registerSuccessful);
-              }}
-            >
-              Back
-            </button>
-          </div>
-        );
-      } else {
-        return (
-          <form method="POST">
-            <div className="login-page-input-container">
-              <label htmlFor="login">Email</label>
-              <InputField
-                style={{ height: "30px", width: "200px" }}
-                placeholder={"Enter email"}
-                name={"login"}
-                required
-              />
-            </div>
-            <div className="login-page-input-container">
-              <label htmlFor="password">Password</label>
-              <InputField
-                style={{ height: "30px", width: "200px" }}
-                placeholder={"Enter password"}
-                name={"password"}
-                required
-              />
-            </div>
-            <div className="login-page-input-container">
-              <label htmlFor="repeatPassword">Repeat Password</label>
-              <InputField
-                style={{ height: "30px", width: "200px" }}
-                placeholder={"Enter password"}
-                name={"repeatPassword"}
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              onClick={() => setRegisterSuccessful(!registerSuccessful)}
-            >
-              Register
-            </button>
-          </form>
-        );
-      }
+      return <RegisterView />;
     }
   };
 
