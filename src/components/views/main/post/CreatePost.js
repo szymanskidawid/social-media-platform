@@ -1,12 +1,19 @@
+import InputField from "../../../small-components/InputField";
+import MainSectionButton from "../MainPageButton";
+
 const CreatePost = () => {
   return (
     <div className="create-post-container">
-      <input
-        className="create-post-text"
-        type="text"
-        placeholder="What is on your mind right now?"
+      <InputField
+        style={{ width: "max(100% - 18px)", height: "100%" }}
+        placeholder={"Write a comment..."}
       />
-      <div className="create-post-send">Send</div>
+      <div className="create-post-bottom">
+        <div className="create-post-icons">
+          <i class="icon fa-solid fa-image fa-xl"></i>
+        </div>
+        <MainSectionButton text={"Send"} />
+      </div>
     </div>
   );
 };

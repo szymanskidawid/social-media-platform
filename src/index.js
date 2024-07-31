@@ -9,15 +9,11 @@ import "./styles/Header.css";
 import "./styles/Logo.css";
 import "./styles/Feed.css";
 import "./styles/Post.css";
-import "./styles/Sidebar.css";
-import "./styles/RightSideWindow.css";
 import "./styles/CreatePost.css";
 import "./styles/UserInfo.css";
 import "./styles/Chat.css";
 import "./styles/ChatSelectionWindow.css";
 import "./styles/Notification.css";
-import "./styles/NotificationsWindow.css";
-import "./styles/OptionsWindow.css";
 import "./styles/InputField.css";
 import "./styles/variables.css";
 

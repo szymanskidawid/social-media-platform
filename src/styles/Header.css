@@ -16,6 +16,7 @@
 }
 
 .header-navbar-container {
+  margin-right: 20px;
   padding: 0 20px 0 20px;
   display: flex;
   flex-direction: row;

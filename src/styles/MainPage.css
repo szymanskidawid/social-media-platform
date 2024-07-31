@@ -1,7 +1,9 @@
 .main-page-container {
   margin-top: 70px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
 }
 
 /* MainPageButton.js */
@@ -16,4 +18,36 @@
 
 .main-page-button:hover {
   background-color: white;
+}
+
+/* Sidebar.js */
+
+.main-page-sidebar-container {
+  padding: 10px;
+  width: 200px;
+  height: 400px;
+  background-color: var(--green3);
+  position: fixed;
+  left: 0;
+}
+
+/* RightSideWindow.js */
+
+.right-side-window-container {
+  padding: 10px;
+  width: 200px;
+  height: 400px;
+  background-color: var(--green3);
+  position: fixed;
+  right: 0;
+}
+
+/* Footer.js */
+
+.footer-container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green1);
 }

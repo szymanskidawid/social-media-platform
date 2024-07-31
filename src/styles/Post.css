@@ -1,40 +1,45 @@
 .post-container {
-  padding: 10px;
+  font-size: 20px;
   margin: 10px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  background-color: var(--green3);
+  background-color: var(--green2);
 }
 
 .post-top-section {
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: yellow;
+  background-color: var(--green3);
 }
 
 .post-top-user-info {
-  margin: 20px;
+  margin: 10px;
   height: 50px;
   width: auto;
-  background-color: blue;
 }
 
 .post-top-time-posted {
   font-size: 16px;
-  background-color: azure;
 }
 
 .post-top-description {
+  padding: 5px;
   margin: 10px;
-  min-height: 100px;
-  background-color: var(--green1);
+  min-height: 60px;
 }
 
 .post-image {
   height: 300px;
-  background-color: orange;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.post-image img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .post-bot-section {
@@ -42,16 +47,42 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: blueviolet;
 }
 
-.post-bot-like {
-}
-
+.post-bot-like,
 .post-bot-comment {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
-.post-comments-section {
+.post-bot-like-counter,
+.post-bot-comment-text {
+  padding: 7px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.post-comments-container {
+  height: 0px;
+  background-color: var(--green1);
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-comments-container.open {
   height: 200px;
-  background-color: bisque;
+}
+
+.post-comments {
+  height: 90%;
+}
+
+.post-comments-bot {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,18 +1,19 @@
 .create-post-container {
-    padding: 10px;
-    margin-bottom: 20px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    background-color: powderblue;
+  margin: 10px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green2);
 }
 
-.create-post-text {
-    height: 160px;
-    background-color: yellow;
+.create-post-bottom {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.create-post-send {
-    height: 20px;
-    background-color: purple;
+.create-post-icons {
+  margin: 5px;
 }

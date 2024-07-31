@@ -1,7 +1,6 @@
 .input {
   margin: 5px;
-  background-color: rgb(215, 253, 177);
-  border-color: rgb(215, 253, 177);
+  border-color: black;
   border-width: 1;
   border-radius: 5px;
 }
