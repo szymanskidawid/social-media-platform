@@ -1,12 +1,14 @@
-import Option from "./Option";
+import { useContext } from "react";
+import MainPageButton from "../../MainPageButton";
+import { PageContext } from "../../../../../contexts/PageContext";
 
 const OptionsWindow = () => {
+  const { setPage } = useContext(PageContext);
   return (
     <div className="options-window-container">
-      <Option />
-      <Option />
-      <Option />
-      <Option />
+      <MainPageButton text={"Dark Mode"} />
+      <MainPageButton text={"Settings"} />
+      <MainPageButton text={"Log Out"} onClick={() => setPage("login")} />
     </div>
   );
 };
