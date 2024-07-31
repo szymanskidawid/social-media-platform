@@ -1,8 +1,8 @@
-const LoginPageButton = ({ text, onClick }) => {
+const LoginPageButton = ({ style, onClick, text }) => {
   return (
-    <button className="login-page-button" onClick={onClick}>
+    <div className="login-page-button" style={style} onClick={onClick}>
       {text}
-    </button>
+    </div>
   );
 };
 

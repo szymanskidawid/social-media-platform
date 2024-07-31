@@ -13,39 +13,33 @@ const ForgotPasswordView = () => {
   const selectedForgotPasswordView = (selection) => {
     if (!selection) {
       return (
-        <>
-          <div className="login-page-input-container">
-            <label className="login-page-label" htmlFor="email">
-              Email
-            </label>
-            <InputField
-              style={{ height: "30px", width: "200px" }}
-              placeholder={"Enter email"}
-              name={"email"}
-              required
-            />
-          </div>
-          <LoginPageButton
-            text={"Send"}
-            onClick={() => setEmailValidation(!selection)}
+        <form className="login-page-form">
+          <InputField
+            style={{ height: "30px", width: "200px" }}
+            placeholder={"Enter email"}
+            name={"email"}
+            required
           />
-        </>
+          <LoginPageButton
+            style={{ margin: "15px" }}
+            onClick={() => setEmailValidation(!selection)}
+            text={"Send"}
+          />
+        </form>
       );
     } else {
       return (
-        <div className="">
-          <p>
-            If email exists, you will receive confirmation and a link to reset
-            your password.
-          </p>
+        <>
+          <p>If email exists, you will receive a link.</p>
           <LoginPageButton
-            text={"Back"}
+            style={{ margin: "15px" }}
             onClick={() => {
               setLoginPageView("loginView");
               setEmailValidation(!selection);
             }}
+            text={"Back"}
           />
-        </div>
+        </>
       );
     }
   };

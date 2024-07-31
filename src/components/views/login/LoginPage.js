@@ -16,30 +16,26 @@ const LoginPage = () => {
   const selectedLoginPageView = (selection) => {
     if (selection === "loginView") {
       return (
-        <form method="POST">
-          <div className="login-page-input-container">
-            <label className="login-page-label" htmlFor="login">
-              Login
-            </label>
+        <>
+          <form className="login-page-form" method="POST">
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter email"}
               name={"login"}
               required
             />
-          </div>
-          <div className="login-page-input-container">
-            <label className="login-page-label" htmlFor="password">
-              Password
-            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter password"}
               name={"password"}
               required
             />
-          </div>
-          <LoginPageButton text={"Log In"} onClick={() => setPage("main")} />
+            <LoginPageButton
+              style={{ margin: "15px" }}
+              onClick={() => setPage("main")}
+              text={"Log In"}
+            />
+          </form>
           <div
             className="login-page-underline-buttons"
             onClick={() => setLoginPageView("forgotPasswordView")}
@@ -52,7 +48,7 @@ const LoginPage = () => {
           >
             Don't have an account? Time to register!
           </div>
-        </form>
+        </>
       );
     } else if (selection === "forgotPasswordView") {
       return <ForgotPasswordView />;
@@ -64,10 +60,10 @@ const LoginPage = () => {
   return (
     <div className="login-page-container">
       <div className="login-page-content-container">
-        <div>
+        <div className="login-page-logo">
           <Logo />
         </div>
-        <div className="login-page-form-container">
+        <div className="login-page-right-container">
           {selectedLoginPageView(loginPageView)}
         </div>
       </div>
