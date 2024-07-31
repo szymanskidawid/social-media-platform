@@ -17,7 +17,6 @@ import "./styles/Chat.css";
 import "./styles/ChatSelectionWindow.css";
 import "./styles/Notification.css";
 import "./styles/NotificationsWindow.css";
-import "./styles/Option.css";
 import "./styles/OptionsWindow.css";
 import "./styles/InputField.css";
 import "./styles/variables.css";

@@ -1,6 +1,7 @@
 .input {
-    background-color: rgb(215, 253, 177);
-    border-color: rgb(215, 253, 177);
-    border-width: 1;
-    border-radius: 5px;
+  margin: 5px;
+  background-color: rgb(215, 253, 177);
+  border-color: rgb(215, 253, 177);
+  border-width: 1;
+  border-radius: 5px;
 }
