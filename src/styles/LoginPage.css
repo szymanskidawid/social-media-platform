@@ -1,22 +1,51 @@
 .login-page-container {
-    font-size: 30px;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: lime;
+  font-size: 20px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-page-content-container {
-    display: flex;
-    flex-direction: row;
+  width: 800px;
+  display: flex;
+  flex-direction: row;
 }
 
-.login-page-logo {
-    background-color: purple;
-}
 .login-page-form-container {
-    text-align: end;
-    background-color: brown;
+  flex: 1;
+  padding: 10px;
+  text-align: end;
+  background-color: var(--green1);
+}
+
+.login-page-input-container {
+  margin-bottom: 10px;
+}
+
+.login-page-label {
+  margin-right: 10px;
+}
+
+.login-page-underline-buttons {
+  margin: 10px;
+  font-size: 15px;
+  text-decoration: underline;
+  color: blue;
+}
+
+/* LoginPageButton.js */
+
+.login-page-button {
+  padding: 5px 20px 5px 20px;
+  border-width: 3px;
+  border-radius: 6px;
+  border-color: var(--green3);
+  background-color: var(--green3);
+  font-size: 20px;
+}
+
+.login-page-button:hover {
+  background-color: white;
 }

@@ -1,13 +1,17 @@
 .user-info-container {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .user-info-picture {
-    margin-right: 5px;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 4px;
+  background-color: yellow;
 }
 
 .user-info-name {
-    
 }

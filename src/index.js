@@ -20,6 +20,7 @@ import "./styles/NotificationsWindow.css";
 import "./styles/Option.css";
 import "./styles/OptionsWindow.css";
 import "./styles/InputField.css";
+import "./styles/variables.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
+import LoginPageButton from "./LoginPageButton";
 
 // TODO: Prevent default submission
 
@@ -14,7 +15,9 @@ const RegisterView = () => {
       return (
         <form method="POST">
           <div className="login-page-input-container">
-            <label htmlFor="login">Email</label>
+            <label className="login-page-label" htmlFor="login">
+              Email
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter email"}
@@ -23,7 +26,9 @@ const RegisterView = () => {
             />
           </div>
           <div className="login-page-input-container">
-            <label htmlFor="password">Password</label>
+            <label className="login-page-label" htmlFor="password">
+              Password
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter password"}
@@ -32,7 +37,9 @@ const RegisterView = () => {
             />
           </div>
           <div className="login-page-input-container">
-            <label htmlFor="repeatPassword">Repeat Password</label>
+            <label className="login-page-label" htmlFor="repeatPassword">
+              Repeat Password
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter password"}
@@ -40,27 +47,23 @@ const RegisterView = () => {
               required
             />
           </div>
-          <button
-            type="submit"
+          <LoginPageButton
+            text={"Register"}
             onClick={() => setRegisterSuccessful(!selection)}
-          >
-            Register
-          </button>
+          />
         </form>
       );
     } else {
       return (
         <div className="">
           <p>Go to your email to validate account..</p>
-          <button
-            type="submit"
+          <LoginPageButton
+            text={"Back"}
             onClick={() => {
               setLoginPageView("loginView");
               setRegisterSuccessful(!selection);
             }}
-          >
-            Back
-          </button>
+          />
         </div>
       );
     }

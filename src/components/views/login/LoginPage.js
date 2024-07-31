@@ -5,6 +5,7 @@ import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
 import RegisterView from "./RegisterView";
 import ForgotPasswordView from "./ForgotPasswordView";
+import LoginPageButton from "./LoginPageButton";
 
 // TODO: Prevent default submission
 
@@ -17,7 +18,9 @@ const LoginPage = () => {
       return (
         <form method="POST">
           <div className="login-page-input-container">
-            <label htmlFor="login">Login</label>
+            <label className="login-page-label" htmlFor="login">
+              Login
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter email"}
@@ -26,7 +29,9 @@ const LoginPage = () => {
             />
           </div>
           <div className="login-page-input-container">
-            <label htmlFor="password">Password</label>
+            <label className="login-page-label" htmlFor="password">
+              Password
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter password"}
@@ -34,15 +39,19 @@ const LoginPage = () => {
               required
             />
           </div>
-          <button type="submit" onClick={() => setPage("main")}>
-            Log In
-          </button>
-          <p onClick={() => setLoginPageView("forgotPasswordView")}>
+          <LoginPageButton text={"Log In"} onClick={() => setPage("main")} />
+          <div
+            className="login-page-underline-buttons"
+            onClick={() => setLoginPageView("forgotPasswordView")}
+          >
             Forgot password?
-          </p>
-          <p onClick={() => setLoginPageView("registerView")}>
+          </div>
+          <div
+            className="login-page-underline-buttons"
+            onClick={() => setLoginPageView("registerView")}
+          >
             Don't have an account? Time to register!
-          </p>
+          </div>
         </form>
       );
     } else if (selection === "forgotPasswordView") {
@@ -55,7 +64,7 @@ const LoginPage = () => {
   return (
     <div className="login-page-container">
       <div className="login-page-content-container">
-        <div className="login-page-logo">
+        <div>
           <Logo />
         </div>
         <div className="login-page-form-container">

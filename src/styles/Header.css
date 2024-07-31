@@ -1,26 +1,29 @@
 .header-container {
-    height: 60px;
-    width: 100vw;
-    background-color: lime;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    top: 0;
-    position: fixed;
+  height: 60px;
+  width: 100vw;
+  background-color: var(--green3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  top: 0;
+  position: fixed;
 }
 
 .header-search-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .header-navbar-container {
-    padding: 0 20px 0 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-    justify-content: end;
-    background-color: pink;
+  padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: end;
+}
+
+.header-icons:hover {
+  color: white;
 }

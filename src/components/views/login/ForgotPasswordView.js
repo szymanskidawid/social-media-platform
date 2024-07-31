@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
+import LoginPageButton from "./LoginPageButton";
 
 // TODO: Prevent default submission
 
@@ -14,7 +15,9 @@ const ForgotPasswordView = () => {
       return (
         <>
           <div className="login-page-input-container">
-            <label htmlFor="email">Email</label>
+            <label className="login-page-label" htmlFor="email">
+              Email
+            </label>
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter email"}
@@ -22,9 +25,10 @@ const ForgotPasswordView = () => {
               required
             />
           </div>
-          <button type="submit" onClick={() => setEmailValidation(!selection)}>
-            Send
-          </button>
+          <LoginPageButton
+            text={"Send"}
+            onClick={() => setEmailValidation(!selection)}
+          />
         </>
       );
     } else {
@@ -34,15 +38,13 @@ const ForgotPasswordView = () => {
             If email exists, you will receive confirmation and a link to reset
             your password.
           </p>
-          <button
-            type="submit"
+          <LoginPageButton
+            text={"Back"}
             onClick={() => {
               setLoginPageView("loginView");
               setEmailValidation(!selection);
             }}
-          >
-            Back
-          </button>
+          />
         </div>
       );
     }
