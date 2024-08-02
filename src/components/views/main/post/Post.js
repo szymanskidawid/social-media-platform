@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { MainViewContext } from "../../../../contexts/MainViewContext";
 import UserInfo from "../../../small-components/UserInfo";
 import InputField from "../../../small-components/InputField";
 import MainSectionButton from "../MainPageButton";
 
 const Post = () => {
   const [commentsOpen, setCommentsOpen] = useState(false);
+  const { setMainView } = useContext(MainViewContext);
 
   return (
     <div className="post-container">
       <div className="post-top-section">
         <div className="post-top-user-info">
-          <UserInfo />
+          <UserInfo onClick={() => setMainView("profile")} />
         </div>
         <div className="post-top-time-posted">Posted 12 hours ago</div>
       </div>

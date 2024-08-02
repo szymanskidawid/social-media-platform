@@ -7,6 +7,7 @@ import ContextProviders from "./contexts/ContextProviders";
 function App() {
   const [page, setPage] = useState("login");
   const [loginPageView, setLoginPageView] = useState("loginView");
+  const [mainView, setMainView] = useState("mainFeed");
   const [containerView, setContainerView] = useState("");
   const [openChatWindow, setOpenChatWindow] = useState(false);
 
@@ -26,6 +27,8 @@ function App() {
           setPage,
           loginPageView,
           setLoginPageView,
+          mainView,
+          setMainView,
           containerView,
           setContainerView,
           openChatWindow,

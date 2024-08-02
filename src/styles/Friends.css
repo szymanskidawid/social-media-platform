@@ -1,0 +1,18 @@
+.friends-container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.friends-top {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+
+.friends-all {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
