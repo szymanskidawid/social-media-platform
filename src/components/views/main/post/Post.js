@@ -12,7 +12,10 @@ const Post = () => {
     <div className="post-container">
       <div className="post-top-section">
         <div className="post-top-user-info">
-          <UserInfo onClick={() => setMainView("profile")} />
+          <UserInfo
+            type={"horizontal"}
+            onClick={() => setMainView("profile")}
+          />
         </div>
         <div className="post-top-time-posted">Posted 12 hours ago</div>
       </div>

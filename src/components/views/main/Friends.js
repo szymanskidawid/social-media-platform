@@ -8,25 +8,26 @@ const Friends = () => {
         <div className="friends-text">5</div>
       </div>
       <div className="friends-all">
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
-        <UserInfo />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
+        <UserInfo type={"vertical"} />
       </div>
       <div className="friends-find-new">
         <div className="friends-find-new-text">Find new friends!</div>
         <div className="friends-find-all">
-          <UserInfo />
-          <UserInfo />
-          <UserInfo />
-          <UserInfo />
-          <UserInfo />
+          <UserInfo type={"vertical"} />
+          <UserInfo type={"vertical"} />
+          <UserInfo type={"vertical"} />
+          <UserInfo type={"vertical"} />
+          <UserInfo type={"vertical"} />
+          <UserInfo type={"vertical"} />
         </div>
       </div>
     </div>

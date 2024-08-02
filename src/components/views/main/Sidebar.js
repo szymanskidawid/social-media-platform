@@ -7,7 +7,7 @@ const Sidebar = () => {
   const { setMainView } = useContext(MainViewContext);
   return (
     <nav className="main-page-sidebar-container">
-      <UserInfo onClick={() => setMainView("profile")} />
+      <UserInfo type={"horizontal"} onClick={() => setMainView("profile")} />
       <MainPageButton text={"Friends"} onClick={() => setMainView("friends")} />
       <MainPageButton text={"Temp"} />
     </nav>

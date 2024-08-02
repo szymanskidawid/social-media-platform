@@ -22,11 +22,11 @@ const Profile = () => {
             <div className="profile-friends-text">5</div>
           </div>
           <div className="profile-friends">
-            <UserInfo />
-            <UserInfo />
-            <UserInfo />
-            <UserInfo />
-            <UserInfo />
+            <UserInfo type={"vertical"} />
+            <UserInfo type={"vertical"} />
+            <UserInfo type={"vertical"} />
+            <UserInfo type={"vertical"} />
+            <UserInfo type={"vertical"} />
           </div>
           <div className="profile-friends-view-more-button">
             View more friends
