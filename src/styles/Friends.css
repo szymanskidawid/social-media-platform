@@ -1,5 +1,6 @@
 .friends-container {
   width: 800px;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
 }
@@ -11,8 +12,12 @@
   background-color: red;
 }
 
-.friends-all {
+.friends-all,
+.friends-find-all {
   display: flex;
   flex-direction: row;
+}
+
+.friends-all {
   flex-wrap: wrap;
 }
