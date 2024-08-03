@@ -14,12 +14,16 @@
   flex-direction: column;
 }
 
+.user-info-container-horizontal:hover,
+.user-info-container-vertical:hover {
+  background-color: white;
+}
+
 .user-info-picture {
   width: 40px;
   height: 40px;
   margin: 5px;
   border-radius: 4px;
-  background-color: yellow;
 }
 
 .user-info-name {

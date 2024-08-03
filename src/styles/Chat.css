@@ -1,16 +1,29 @@
 .chat-window-container {
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
+  padding: 10px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green2);
+}
+
+.chat-window-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-window-close:hover {
+  background-color: white;
 }
 
 .chat-history-container {
-    height: 200px;
+  height: 200px;
+  background-color: var(--gray1);
 }
 
 .chat-bottom-section {
-    height: 50px;
-    display: flex;
-    flex-direction: row;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
 }

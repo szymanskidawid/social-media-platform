@@ -1,7 +1,16 @@
 .chat-section-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: magenta;
+  width: 500px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.chat-selection-available-friends-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green2);
+}
+
+.chat-selection-chat-container {
+  flex: 3;
 }

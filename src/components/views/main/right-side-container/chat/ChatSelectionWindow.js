@@ -15,9 +15,18 @@ const ChatSelectionWindow = () => {
           type={"horizontal"}
           onClick={() => setOpenChatWindow(!openChatWindow)}
         />
-        <UserInfo type={"horizontal"} />
-        <UserInfo type={"horizontal"} />
-        <UserInfo type={"horizontal"} />
+        <UserInfo
+          type={"horizontal"}
+          onClick={() => setOpenChatWindow(!openChatWindow)}
+        />
+        <UserInfo
+          type={"horizontal"}
+          onClick={() => setOpenChatWindow(!openChatWindow)}
+        />
+        <UserInfo
+          type={"horizontal"}
+          onClick={() => setOpenChatWindow(!openChatWindow)}
+        />
       </div>
       <div className="chat-selection-chat-container">
         {openChatWindow && <Chat />}

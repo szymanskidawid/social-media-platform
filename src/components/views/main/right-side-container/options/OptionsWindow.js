@@ -7,7 +7,7 @@ const OptionsWindow = () => {
   return (
     <div className="options-window-container">
       <MainPageButton text={"Dark Mode"} />
-      <MainPageButton text={"Settings"} />
+      <MainPageButton text={"Edit Profile"} />
       <MainPageButton text={"Log Out"} onClick={() => setPage("login")} />
     </div>
   );

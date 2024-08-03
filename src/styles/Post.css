@@ -11,7 +11,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  background-color: var(--green3);
+  justify-content: space-between;
+  background-color: var(--green2);
+  border-bottom: 1px solid;
 }
 
 .post-top-user-info {
@@ -21,7 +23,7 @@
 }
 
 .post-top-time-posted {
-  font-size: 16px;
+  margin-right: 10px;
 }
 
 .post-top-description {
@@ -52,10 +54,12 @@
 .post-bot-like,
 .post-bot-comment {
   margin: 10px;
+  padding: 3px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: var(--green1);
 }
 
 .post-bot-like-counter,
@@ -67,7 +71,7 @@
 
 .post-comments-container {
   height: 0px;
-  background-color: var(--green1);
+  background-color: var(--gray1);
   overflow: hidden;
   transition: height 0.2s ease-in-out;
   display: flex;
