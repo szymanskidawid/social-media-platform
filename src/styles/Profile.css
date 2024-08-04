@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: aqua;
+  background-color: white;
   position: relative;
 }
 
@@ -32,7 +32,6 @@
   position: absolute;
   bottom: -100px;
   z-index: 2;
-  background-color: pink;
 }
 
 .profile-pic-container img {
@@ -45,16 +44,45 @@
   z-index: 3;
 }
 
-.profile-friends-container {
-  height: 100px;
+.profile-info-container {
+  font-size: 18px;
   width: 100%;
-  background-color: yellow;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--green3);
+}
+
+.profile-info {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-info-icon {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+
+.profile-info-text {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.profile-friends-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green1);
 }
 
 .profile-friends-top {
-  margin: 10px;
+  margin: 5px;
   font-size: 20px;
   display: flex;
   flex-direction: row;
@@ -67,4 +95,15 @@
 .profile-friends {
   display: flex;
   flex-direction: row;
+}
+
+.profile-friends-view-more-button {
+  margin: 5px;
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.profile-friends-view-more-button:hover {
+  color: white;
 }

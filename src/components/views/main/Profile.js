@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import UserInfo from "../../small-components/UserInfo";
 import Feed from "./Feed";
+import { MainViewContext } from "../../../contexts/MainViewContext";
 
 const Profile = () => {
+  const { setMainView } = useContext(MainViewContext);
   return (
     <>
       <div className="profile-container">
@@ -15,7 +18,26 @@ const Profile = () => {
           </div>
         </div>
         <p className="profile-name">Great Dog</p>
-        <div className="profile-info-container"></div>
+        <div className="profile-info-container">
+          <div className="profile-info">
+            <div className="profile-info-icon">
+              <i class="fa-solid fa-city fa-xl"></i>
+            </div>
+            <div className="profile-info-text">Town</div>
+          </div>
+          <div className="profile-info">
+            <div className="profile-info-icon">
+              <i class="fa-solid fa-school fa-xl"></i>
+            </div>
+            <div className="profile-info-text">School</div>
+          </div>
+          <div className="profile-info">
+            <div className="profile-info-icon">
+              <i class="fa-solid fa-briefcase fa-xl"></i>
+            </div>
+            <div className="profile-info-text">Work</div>
+          </div>
+        </div>
         <div className="profile-friends-container">
           <div className="profile-friends-top">
             <div className="profile-friends-text">Friends: </div>
@@ -28,7 +50,10 @@ const Profile = () => {
             <UserInfo type={"vertical"} />
             <UserInfo type={"vertical"} />
           </div>
-          <div className="profile-friends-view-more-button">
+          <div
+            className="profile-friends-view-more-button"
+            onClick={() => setMainView("friends")}
+          >
             View more friends
           </div>
         </div>
