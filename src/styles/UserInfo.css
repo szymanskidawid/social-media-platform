@@ -8,6 +8,7 @@
 
 .user-info-container-horizontal {
   flex-direction: row;
+  padding-right: 10px;
 }
 
 .user-info-container-vertical {

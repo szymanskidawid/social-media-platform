@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import { OpenChatWindowContext } from "../../../../../contexts/OpenChatWindowContext";
+import InputField from "../../../../small-components/InputField";
+import MainPageButton from "../../MainPageButton";
 
 const Chat = () => {
   const { setOpenChatWindow } = useContext(OpenChatWindowContext);
@@ -12,14 +14,14 @@ const Chat = () => {
           className="chat-window-close"
           onClick={() => setOpenChatWindow(false)}
         >
-          X
+          <i class="icon fa-solid fa-xmark fa-xl"></i>
         </div>
       </div>
 
       <div className="chat-history-container">Chat History</div>
       <div className="chat-bottom-section">
-        <input type="text" placeholder="Write something..." />
-        <div className="chat-send-button">Send</div>
+        <InputField placeholder={"Chat with your friend :)"} />
+        <MainPageButton text={"Send"} />
       </div>
     </div>
   );
