@@ -3,6 +3,7 @@ import { MainViewContext } from "../../../../contexts/MainViewContext";
 import UserInfo from "../../../small-components/UserInfo";
 import InputField from "../../../small-components/InputField";
 import MainSectionButton from "../MainPageButton";
+import Picture from "../../../small-components/Picture";
 
 const Post = () => {
   const [commentsOpen, setCommentsOpen] = useState(false);
@@ -21,7 +22,7 @@ const Post = () => {
       </div>
       <div className="post-top-description">Look at my new picture!</div>
       <div className="post-image">
-        <img src="https://picsum.photos/id/237/1000/800" />
+        <Picture src={"https://picsum.photos/id/237/400/400"} />
       </div>
       <div className="post-bot-section">
         <div className="post-bot-like">

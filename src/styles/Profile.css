@@ -22,7 +22,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  z-index: 1;
 }
 
 .profile-pic-container {
@@ -31,17 +30,13 @@
   border-radius: 200px;
   position: absolute;
   bottom: -100px;
-  z-index: 2;
-}
-
-.profile-pic-container img {
-  border-radius: inherit;
+  z-index: 100;
 }
 
 .profile-name {
   margin-top: 100px;
   font-size: 40px;
-  z-index: 3;
+  z-index: 1;
 }
 
 .profile-info-container {

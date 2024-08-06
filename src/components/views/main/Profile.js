@@ -2,6 +2,7 @@ import { useContext } from "react";
 import UserInfo from "../../small-components/UserInfo";
 import Feed from "./Feed";
 import { MainViewContext } from "../../../contexts/MainViewContext";
+import Picture from "../../small-components/Picture";
 
 const Profile = () => {
   const { setMainView } = useContext(MainViewContext);
@@ -10,11 +11,14 @@ const Profile = () => {
       <div className="profile-container">
         <div className="profile-top-container">
           <div className="profile-background-pic-container">
-            <img src="https://picsum.photos/id/237/400/400" />
+            <Picture src={"https://picsum.photos/id/236/400/400"} />
           </div>
 
           <div className="profile-pic-container">
-            <img src="https://picsum.photos/id/237/200/200" />
+            <Picture
+              style={{ borderRadius: "100%" }}
+              src={"https://picsum.photos/id/237/400/400"}
+            />
           </div>
         </div>
         <p className="profile-name">Great Dog</p>

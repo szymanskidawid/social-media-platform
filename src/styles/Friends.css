@@ -1,23 +1,36 @@
 .friends-container {
+  font-size: 20px;
   width: 800px;
   min-height: 75vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--green1);
 }
 
 .friends-top {
-  height: 50px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
-  background-color: red;
+  align-items: center;
+  background-color: var(--green2);
+}
+
+.friends-text {
+  margin-right: 10px;
+}
+
+.friends-find-new-text {
+  padding: 20px;
+  background-color: var(--green2);
 }
 
 .friends-all,
 .friends-find-all {
+  max-height: 300px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
-}
-
-.friends-all {
   flex-wrap: wrap;
+  gap: 10px;
+  overflow: auto;
 }
