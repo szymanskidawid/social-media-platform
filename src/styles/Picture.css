@@ -1,0 +1,32 @@
+.picture-container {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.picture-normal img {
+  width: 100%;
+  height: auto;
+}
+
+.picture-zoom {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.5);
+  z-index: 1000;
+}
+
+.picture-zoom img {
+  z-index: inherit;
+}

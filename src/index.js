@@ -17,6 +17,7 @@ import "./styles/Notification.css";
 import "./styles/InputField.css";
 import "./styles/Profile.css";
 import "./styles/Friends.css";
+import "./styles/Picture.css";
 import "./styles/variables.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
