@@ -8,13 +8,13 @@ const EditProfile = () => {
       <div className="edit-profile-top">Edit Profile</div>
       <form className="edit-profile-content-container">
         <div className="edit-profile-change-photo-container">
-          <label>Change Profile Picture</label>
+          <label>Change Background Picture</label>
           <div className="edit-profile-photo">
             <Picture src={"https://picsum.photos/id/236/400/400"} />
           </div>
         </div>
         <div className="edit-profile-change-photo-container">
-          <label>Change Background Picture</label>
+          <label>Change Profile Picture</label>
           <div className="edit-profile-photo">
             <Picture src={"https://picsum.photos/id/237/400/400"} />
           </div>
