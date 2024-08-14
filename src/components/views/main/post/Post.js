@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { MainViewContext } from "../../../../contexts/MainViewContext";
 import UserInfo from "../../../small-components/UserInfo";
-import InputField from "../../../small-components/InputField";
-import MainSectionButton from "../MainPageButton";
 import Picture from "../../../small-components/Picture";
+import CommentsWindow from "../../../small-components/CommentsWindow";
+import LikesWindow from "../../../small-components/LikesWindow";
 
 const Post = () => {
-  const [commentsOpen, setCommentsOpen] = useState(false);
+  const [showLikes, setShowLikes] = useState(false);
+  const [showComments, setShowComments] = useState(false);
   const { setMainView } = useContext(MainViewContext);
 
   return (
@@ -26,26 +27,39 @@ const Post = () => {
       </div>
       <div className="post-bot-section">
         <div className="post-bot-like">
-          <div className="post-bot-like-counter">0</div>
+          <div
+            className="post-bot-like-counter"
+            onClick={() => setShowLikes(!showLikes)}
+          >
+            0
+          </div>
           <i class="icon fa-solid fa-thumbs-up fa-xl"></i>
         </div>
         <div className="post-bot-comment">
           <div className="post-bot-comment-text">Comment</div>
           <i
             class="icon fa-solid fa-comment fa-xl"
-            onClick={() => setCommentsOpen(!commentsOpen)}
+            onClick={() => {
+              setShowComments(!showComments);
+            }}
           ></i>
         </div>
       </div>
-      <div className={`post-comments-container ${commentsOpen ? "open" : ""}`}>
-        <div className="post-comments">Comments</div>
-        <div className="post-comments-bot">
-          <InputField
-            style={{ width: "100%" }}
-            placeholder={"Write a comment..."}
-          />
-          <MainSectionButton text={"Send"} />
+      {showLikes ? (
+        <div
+          className="post-likes-container"
+          onClick={() => {
+            setShowLikes(!showLikes);
+          }}
+        >
+          <LikesWindow />
         </div>
+      ) : (
+        ""
+      )}
+
+      <div className={`post-hidden-container ${showComments ? "open" : ""}`}>
+        <CommentsWindow />
       </div>
     </div>
   );

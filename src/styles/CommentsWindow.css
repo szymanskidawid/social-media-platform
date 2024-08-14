@@ -1,0 +1,21 @@
+.comments-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.comments-window-empty,
+.comments-window {
+  height: auto;
+}
+
+.comments-window-empty {
+  text-align: center;
+}
+
+.comments-bot-section {
+  display: flex;
+  flex-direction: row;
+}

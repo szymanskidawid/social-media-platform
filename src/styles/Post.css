@@ -69,7 +69,29 @@
   font-weight: 700;
 }
 
-.post-comments-container {
+.post-bot-like-counter {
+  cursor: pointer;
+}
+
+.post-bot-like-counter:hover {
+  color: white;
+}
+
+.post-likes-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.5);
+  z-index: 1000;
+}
+
+.post-hidden-container {
   height: 0px;
   background-color: var(--gray1);
   overflow: hidden;
@@ -78,15 +100,6 @@
   flex-direction: column;
 }
 
-.post-comments-container.open {
+.post-hidden-container.open {
   height: 200px;
-}
-
-.post-comments {
-  height: 90%;
-}
-
-.post-comments-bot {
-  display: flex;
-  flex-direction: row;
 }

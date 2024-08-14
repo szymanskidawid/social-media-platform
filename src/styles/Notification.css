@@ -1,5 +1,15 @@
 .notification-container {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--green2);
+}
+
+.notification-text {
+  padding-bottom: 5px;
+}
+
+.notification-actions {
+  display: flex;
+  flex-direction: row;
 }

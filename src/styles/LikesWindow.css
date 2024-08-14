@@ -1,0 +1,13 @@
+.likes-container {
+  font-size: 12px;
+  width: 200px;
+  height: 300px;
+  background-color: var(--green2);
+  overflow: auto;
+}
+
+.likes-container-top {
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
