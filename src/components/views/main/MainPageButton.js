@@ -1,6 +1,6 @@
-const MainPageButton = ({ onClick, text }) => {
+const MainPageButton = ({ className, onClick, text }) => {
   return (
-    <div className="main-page-button" onClick={onClick}>
+    <div className={`main-page-button ${className}`} onClick={onClick}>
       {text}
     </div>
   );

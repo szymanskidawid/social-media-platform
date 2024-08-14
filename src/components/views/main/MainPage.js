@@ -7,16 +7,20 @@ import RightSideWindow from "./right-side-container/RightSideWindow";
 import { MainViewContext } from "../../../contexts/MainViewContext";
 import Profile from "./Profile";
 import Friends from "./Friends";
+import EditProfile from "./EditProfile";
 
 const MainPage = () => {
   const { mainView } = useContext(MainViewContext);
   const selectedMainView = (selection) => {
-    if (selection === "mainFeed") {
-      return <Feed />;
-    } else if (selection === "profile") {
-      return <Profile />;
-    } else if (selection === "friends") {
-      return <Friends />;
+    switch (selection) {
+      case "mainFeed":
+        return <Feed />;
+      case "profile":
+        return <Profile />;
+      case "editProfile":
+        return <EditProfile />;
+      case "friends":
+        return <Friends />;
     }
   };
   return (
