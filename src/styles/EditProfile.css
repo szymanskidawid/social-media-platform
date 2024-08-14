@@ -1,0 +1,14 @@
+.edit-profile-container {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: var(--green2);
+}
+
+.edit-profile-top {
+  font-size: 30px;
+}

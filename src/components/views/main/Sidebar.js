@@ -8,7 +8,10 @@ const Sidebar = () => {
   return (
     <nav className="main-page-sidebar-container">
       <UserInfo type={"horizontal"} onClick={() => setMainView("profile")} />
-      <MainPageButton text={"Edit Profile"} />
+      <MainPageButton
+        text={"Edit Profile"}
+        onClick={() => setMainView("editProfile")}
+      />
       <MainPageButton text={"Friends"} onClick={() => setMainView("friends")} />
     </nav>
   );
