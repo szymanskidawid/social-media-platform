@@ -1,35 +1,46 @@
 import InputField from "../../small-components/InputField";
+import Picture from "../../small-components/Picture";
 import MainPageButton from "./MainPageButton";
 
 const EditProfile = () => {
   return (
     <div className="edit-profile-container">
       <div className="edit-profile-top">Edit Profile</div>
-      <div className="edit-profile-content-container">
-        <div className="edit-profile-content">
+      <form className="edit-profile-content-container">
+        <div className="edit-profile-change-photo-container">
+          <label>Change Profile Picture</label>
+          <div className="edit-profile-photo">
+            <Picture src={"https://picsum.photos/id/236/400/400"} />
+          </div>
+        </div>
+        <div className="edit-profile-change-photo-container">
+          <label>Change Background Picture</label>
+          <div className="edit-profile-photo">
+            <Picture src={"https://picsum.photos/id/237/400/400"} />
+          </div>
+        </div>
+        <div className="edit-profile-fields">
           <label>Name</label>
           <InputField name={"Name"} />
         </div>
-        <div className="edit=profile-content">
+        <div className="edit-profile-fields">
           <label>Surname</label>
           <InputField name={"Surname"} />
         </div>
-        <div className="edit=profile-content">
+        <div className="edit-profile-fields">
           <label>Town</label>
           <InputField name={"Town"} />
         </div>
-        <div className="edit=profile-content">
+        <div className="edit-profile-fields">
           <label>School</label>
           <InputField name={"School"} />
         </div>
-        <div className="edit=profile-content">
+        <div className="edit-profile-fields">
           <label>Work</label>
           <InputField name={"Work"} />
         </div>
-      </div>
-      <div className="edit-profile-bottom">
         <MainPageButton text={"Save changes"} />
-      </div>
+      </form>
     </div>
   );
 };

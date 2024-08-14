@@ -5,10 +5,39 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
   background-color: var(--green2);
 }
 
 .edit-profile-top {
   font-size: 30px;
+  border-bottom: 1px solid black;
+}
+
+.edit-profile-content-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-profile-change-photo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-profile-photo {
+  margin: 10px;
+  width: 100px;
+  height: 60px;
+}
+
+.edit-profile-photo img {
+  width: auto;
+  height: auto;
+}
+
+.edit-profile-fields {
+  display: flex;
+  justify-content: flex-end;
 }
