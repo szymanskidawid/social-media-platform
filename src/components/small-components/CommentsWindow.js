@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MainPageButton from "../views/main/MainPageButton";
+import MainButton from "../views/main/MainButton";
 import InputField from "./InputField";
 
 const CommentsWindow = () => {
@@ -16,7 +16,7 @@ const CommentsWindow = () => {
           style={{ width: "100%" }}
           placeholder={"Write a comment..."}
         />
-        <MainPageButton text={"Send"} />
+        <MainButton text={"Send"} />
       </div>
     </div>
   );

@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import InputField from "../../small-components/InputField";
 import Picture from "../../small-components/Picture";
-import MainPageButton from "./MainPageButton";
+import MainButton from "./MainButton";
+import { LightModeContext } from "../../../contexts/LightModeContext";
 
 const EditProfile = () => {
+  const { isLightMode } = useContext(LightModeContext);
   return (
-    <div className="edit-profile-container">
+    <div
+      className={`edit-profile-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+    >
       <div className="edit-profile-top">Edit Profile</div>
       <form className="edit-profile-content-container">
         <div className="edit-profile-change-photo-container">
@@ -39,7 +44,7 @@ const EditProfile = () => {
           <label>Work</label>
           <InputField name={"Work"} />
         </div>
-        <MainPageButton text={"Save changes"} />
+        <MainButton text={"Save changes"} />
       </form>
     </div>
   );

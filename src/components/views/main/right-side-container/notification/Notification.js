@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
-import MainPageButton from "../../MainPageButton";
+import MainButton from "../../MainButton";
+import { LightModeContext } from "../../../../../contexts/LightModeContext";
 
 const Notification = () => {
+  const { isLightMode } = useContext(LightModeContext);
   return (
-    <div className="notification-container">
+    <div
+      className={`notification-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+    >
       <UserInfo type={"horizontal"} />
       <div className="notification-text">Has sent you a friend request.</div>
       <div className="notification-actions">
-        <MainPageButton text={"Accept"} />
-        <MainPageButton className={"red"} text={"Decline"} />
+        <MainButton text={"Accept"} />
+        <MainButton className={"red"} text={"Decline"} />
       </div>
     </div>
   );

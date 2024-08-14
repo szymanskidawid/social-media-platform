@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
-import LoginPageButton from "./LoginPageButton";
+import MainButton from "../main/MainButton";
 
 // TODO: Prevent default submission
 
@@ -20,8 +20,7 @@ const ForgotPasswordView = () => {
             name={"email"}
             required
           />
-          <LoginPageButton
-            style={{ margin: "15px" }}
+          <MainButton
             onClick={() => setEmailValidation(!selection)}
             text={"Send"}
           />
@@ -31,8 +30,7 @@ const ForgotPasswordView = () => {
       return (
         <>
           <p>If email exists, you will receive a link.</p>
-          <LoginPageButton
-            style={{ margin: "15px" }}
+          <MainButton
             onClick={() => {
               setLoginPageView("loginView");
               setEmailValidation(!selection);

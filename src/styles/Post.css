@@ -4,7 +4,6 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  background-color: var(--green2);
 }
 
 .post-top-section {
@@ -12,7 +11,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--green2);
   border-bottom: 1px solid;
 }
 
@@ -59,7 +57,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: var(--green1);
 }
 
 .post-bot-like-counter,

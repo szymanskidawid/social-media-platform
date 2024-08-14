@@ -29,7 +29,6 @@
 
 .login-page-right-container {
   padding: 10px;
-  background-color: var(--green1);
   border-radius: 10px;
 }
 
@@ -47,21 +46,4 @@
 
 .login-page-underline-buttons:hover {
   color: white;
-}
-
-/* LoginPageButton.js */
-
-.login-page-button {
-  font-size: 20px;
-  width: 100px;
-  padding: 5px 20px 5px 20px;
-  border: 3px var(--green4) solid;
-  border-radius: 6px;
-  background-color: var(--green2);
-  text-align: center;
-  cursor: pointer;
-}
-
-.login-page-button:hover {
-  background-color: white;
 }

@@ -2,7 +2,6 @@
   margin-bottom: 50px;
   padding: 10px;
   width: 800px;
-  background-color: var(--green2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +44,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--green3);
 }
 
 .profile-info {
@@ -73,7 +71,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: var(--green1);
 }
 
 .profile-friends-top {

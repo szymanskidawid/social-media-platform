@@ -5,11 +5,13 @@ import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
 import RegisterView from "./RegisterView";
 import ForgotPasswordView from "./ForgotPasswordView";
-import LoginPageButton from "./LoginPageButton";
+import MainButton from "../main/MainButton";
+import { LightModeContext } from "../../../contexts/LightModeContext";
 
 // TODO: Prevent default submission
 
 const LoginPage = () => {
+  const { isLightMode, setIsLightMode } = useContext(LightModeContext);
   const { setPage } = useContext(PageContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
 
@@ -30,11 +32,7 @@ const LoginPage = () => {
               name={"password"}
               required
             />
-            <LoginPageButton
-              style={{ margin: "15px" }}
-              onClick={() => setPage("main")}
-              text={"Log In"}
-            />
+            <MainButton onClick={() => setPage("main")} text={"Log In"} />
           </form>
           <div
             className="login-page-underline-buttons"
@@ -63,7 +61,9 @@ const LoginPage = () => {
         <div className="login-page-logo">
           <Logo />
         </div>
-        <div className="login-page-right-container">
+        <div
+          className={`login-page-right-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+        >
           {selectedLoginPageView(loginPageView)}
         </div>
       </div>

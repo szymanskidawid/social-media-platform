@@ -4,7 +4,53 @@ body {
   font-family: "Roboto";
 }
 
-.icon:hover {
-  color: white;
+.light-mode-1 {
+  background-color: var(--green1);
+}
+
+.light-mode-2 {
+  background-color: var(--green2);
+}
+
+.light-mode-3 {
+  background-color: var(--green3);
+}
+
+.light-mode-4 {
+  background-color: var(--green4);
+}
+
+.dark-mode-1,
+.dark-mode-2,
+.dark-mode-3,
+.dark-mode-4 {
+}
+
+.dark-mode-1 {
+  background-color: var(--gray1);
+}
+
+.dark-mode-2 {
+  background-color: var(--gray2);
+}
+
+.dark-mode-3 {
+  background-color: var(--gray3);
+}
+
+.dark-mode-4 {
+  background-color: var(--gray4);
+}
+
+.icon-light-mode,
+.icon-dark-mode {
   cursor: pointer;
+}
+
+.icon-light-mode:hover {
+  color: white;
+}
+
+.icon-dark-mode:hover {
+  color: var(--green1);
 }

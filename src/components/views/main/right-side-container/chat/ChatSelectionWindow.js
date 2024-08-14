@@ -2,15 +2,19 @@ import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import Chat from "./Chat";
 import { OpenChatWindowContext } from "../../../../../contexts/OpenChatWindowContext";
+import { LightModeContext } from "../../../../../contexts/LightModeContext";
 
 const ChatSelectionWindow = () => {
+  const { isLightMode } = useContext(LightModeContext);
   const { openChatWindow, setOpenChatWindow } = useContext(
     OpenChatWindowContext
   );
 
   return (
     <div className="chat-section-container">
-      <div className="chat-selection-available-friends-container">
+      <div
+        className={`chat-selection-available-friends-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+      >
         <UserInfo
           type={"horizontal"}
           onClick={() => setOpenChatWindow(!openChatWindow)}

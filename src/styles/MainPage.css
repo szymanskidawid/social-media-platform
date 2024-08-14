@@ -6,26 +6,25 @@
   position: relative;
 }
 
-/* MainPageButton.js */
+/* MainButton.js */
 
-.main-page-button {
+.main-button {
   font-size: 20px;
   padding: 5px 20px 5px 20px;
-  background-color: var(--green1);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.main-page-button:hover {
+.main-button:hover {
   background-color: white;
 }
-.main-page-button.red {
+.main-button.red {
   background-color: red;
 }
 
-.main-page-button.red:hover {
+.main-button.red:hover {
   background-color: white;
 }
 /* Sidebar.js */
@@ -34,7 +33,6 @@
   padding: 10px;
   width: 200px;
   height: auto;
-  background-color: var(--green2);
   position: fixed;
   left: 0;
 }
@@ -57,5 +55,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--green3);
 }

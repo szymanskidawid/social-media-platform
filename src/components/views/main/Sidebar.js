@@ -1,18 +1,22 @@
 import { useContext } from "react";
 import UserInfo from "../../small-components/UserInfo";
-import MainPageButton from "./MainPageButton";
+import MainButton from "./MainButton";
 import { MainViewContext } from "../../../contexts/MainViewContext";
+import { LightModeContext } from "../../../contexts/LightModeContext";
 
 const Sidebar = () => {
+  const { isLightMode } = useContext(LightModeContext);
   const { setMainView } = useContext(MainViewContext);
   return (
-    <nav className="main-page-sidebar-container">
+    <nav
+      className={`main-page-sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+    >
       <UserInfo type={"horizontal"} onClick={() => setMainView("profile")} />
-      <MainPageButton
+      <MainButton
         text={"Edit Profile"}
         onClick={() => setMainView("editProfile")}
       />
-      <MainPageButton text={"Friends"} onClick={() => setMainView("friends")} />
+      <MainButton text={"Friends"} onClick={() => setMainView("friends")} />
     </nav>
   );
 };

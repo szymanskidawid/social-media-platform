@@ -1,3 +1,4 @@
+import { LightModeContext } from "./LightModeContext";
 import { PageContext } from "./PageContext";
 import { LoginViewContext } from "./LoginViewContext";
 import { ContainerViewContext } from "./ContainerViewContext";
@@ -6,6 +7,8 @@ import { MainViewContext } from "./MainViewContext";
 
 const ContextProviders = ({
   children,
+  isLightMode,
+  setIsLightMode,
   page,
   setPage,
   loginPageView,
@@ -18,21 +21,23 @@ const ContextProviders = ({
   setOpenChatWindow,
 }) => {
   return (
-    <PageContext.Provider value={{ page, setPage }}>
-      <LoginViewContext.Provider value={{ loginPageView, setLoginPageView }}>
-        <MainViewContext.Provider value={{ mainView, setMainView }}>
-          <ContainerViewContext.Provider
-            value={{ containerView, setContainerView }}
-          >
-            <OpenChatWindowContext.Provider
-              value={{ openChatWindow, setOpenChatWindow }}
+    <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
+      <PageContext.Provider value={{ page, setPage }}>
+        <LoginViewContext.Provider value={{ loginPageView, setLoginPageView }}>
+          <MainViewContext.Provider value={{ mainView, setMainView }}>
+            <ContainerViewContext.Provider
+              value={{ containerView, setContainerView }}
             >
-              {children}
-            </OpenChatWindowContext.Provider>
-          </ContainerViewContext.Provider>
-        </MainViewContext.Provider>
-      </LoginViewContext.Provider>
-    </PageContext.Provider>
+              <OpenChatWindowContext.Provider
+                value={{ openChatWindow, setOpenChatWindow }}
+              >
+                {children}
+              </OpenChatWindowContext.Provider>
+            </ContainerViewContext.Provider>
+          </MainViewContext.Provider>
+        </LoginViewContext.Provider>
+      </PageContext.Provider>
+    </LightModeContext.Provider>
   );
 };
 
