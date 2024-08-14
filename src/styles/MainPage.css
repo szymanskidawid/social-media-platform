@@ -21,7 +21,13 @@
 .main-page-button:hover {
   background-color: white;
 }
+.main-page-button.red {
+  background-color: red;
+}
 
+.main-page-button.red:hover {
+  background-color: white;
+}
 /* Sidebar.js */
 
 .main-page-sidebar-container {
