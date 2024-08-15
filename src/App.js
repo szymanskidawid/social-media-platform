@@ -1,24 +1,15 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import LoginPage from "./components/views/login/LoginPage";
-import MainPage from "./components/views/main/MainPage";
 import ContextProviders from "./contexts/ContextProviders";
+import Router from "./components/helpers/Router";
 
 function App() {
   const [isLightMode, setIsLightMode] = useState(true);
-  const [page, setPage] = useState("login");
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginPageView, setLoginPageView] = useState("loginView");
   const [mainView, setMainView] = useState("mainFeed");
   const [containerView, setContainerView] = useState("");
   const [openChatWindow, setOpenChatWindow] = useState(false);
-
-  const selectedView = (selection) => {
-    if (selection === "login") {
-      return <LoginPage />;
-    } else if (selection === "main") {
-      return <MainPage />;
-    }
-  };
 
   useEffect(() => {
     if (!isLightMode) {
@@ -34,8 +25,8 @@ function App() {
         {...{
           isLightMode,
           setIsLightMode,
-          page,
-          setPage,
+          isLoggedIn,
+          setIsLoggedIn,
           loginPageView,
           setLoginPageView,
           mainView,
@@ -46,7 +37,7 @@ function App() {
           setOpenChatWindow,
         }}
       >
-        {selectedView(page)}
+        <Router />
       </ContextProviders>
     </div>
   );

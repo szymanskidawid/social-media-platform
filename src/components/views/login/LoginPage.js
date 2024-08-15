@@ -1,19 +1,26 @@
 import { useContext } from "react";
 import Logo from "../../small-components/Logo";
-import { PageContext } from "../../../contexts/PageContext";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
 import RegisterView from "./RegisterView";
 import ForgotPasswordView from "./ForgotPasswordView";
 import MainButton from "../main/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
+import { useNavigate } from "react-router-dom";
+import { LoginStateContext } from "../../../contexts/LoginStateContext";
 
 // TODO: Prevent default submission
 
 const LoginPage = () => {
-  const { isLightMode, setIsLightMode } = useContext(LightModeContext);
-  const { setPage } = useContext(PageContext);
+  const { isLightMode } = useContext(LightModeContext);
+  const { isLoggedIn, setIsLoggedIn } = useContext(LoginStateContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    setIsLoggedIn(!isLoggedIn);
+    navigate("/home");
+  };
 
   const selectedLoginPageView = (selection) => {
     if (selection === "loginView") {
@@ -32,7 +39,7 @@ const LoginPage = () => {
               name={"password"}
               required
             />
-            <MainButton onClick={() => setPage("main")} text={"Log In"} />
+            <MainButton onClick={handleLogin} text={"Log In"} />
           </form>
           <div
             className="login-page-underline-buttons"
