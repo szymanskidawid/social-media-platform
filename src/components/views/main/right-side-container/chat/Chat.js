@@ -2,7 +2,7 @@ import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import { OpenChatWindowContext } from "../../../../../contexts/OpenChatWindowContext";
 import InputField from "../../../../small-components/InputField";
-import MainButton from "../../MainButton";
+import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 
 const Chat = () => {

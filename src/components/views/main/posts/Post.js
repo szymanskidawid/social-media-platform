@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { MainViewContext } from "../../../../contexts/MainViewContext";
 import UserInfo from "../../../small-components/UserInfo";
 import Picture from "../../../small-components/Picture";
-import CommentsWindow from "../../../small-components/CommentsWindow";
-import LikesWindow from "../../../small-components/LikesWindow";
+import CommentsWindow from "./CommentsWindow";
+import LikesWindow from "./LikesWindow";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const Post = () => {

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
-import MainButton from "../main/MainButton";
+import MainButton from "../../small-components/MainButton";
 
 // TODO: Prevent default submission
 

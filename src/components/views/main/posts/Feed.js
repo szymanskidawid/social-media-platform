@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import CreatePost from "./post/CreatePost";
-import Post from "./post/Post";
-import { MainViewContext } from "../../../contexts/MainViewContext";
-import { LightModeContext } from "../../../contexts/LightModeContext";
+import CreatePost from "./CreatePost";
+import Post from "./Post";
+import { MainViewContext } from "../../../../contexts/MainViewContext";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const Feed = () => {
   const { isLightMode } = useContext(LightModeContext);

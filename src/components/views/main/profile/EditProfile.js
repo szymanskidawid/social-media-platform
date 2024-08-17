@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import InputField from "../../small-components/InputField";
-import Picture from "../../small-components/Picture";
-import MainButton from "./MainButton";
-import { LightModeContext } from "../../../contexts/LightModeContext";
+import InputField from "../../../small-components/InputField";
+import Picture from "../../../small-components/Picture";
+import MainButton from "../../../small-components/MainButton";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const EditProfile = () => {
   const { isLightMode } = useContext(LightModeContext);

@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import UserInfo from "../../small-components/UserInfo";
-import Feed from "./Feed";
-import { MainViewContext } from "../../../contexts/MainViewContext";
-import Picture from "../../small-components/Picture";
-import { LightModeContext } from "../../../contexts/LightModeContext";
+import UserInfo from "../../../small-components/UserInfo";
+import Feed from "../posts/Feed";
+import { MainViewContext } from "../../../../contexts/MainViewContext";
+import Picture from "../../../small-components/Picture";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const Profile = () => {
   const { isLightMode } = useContext(LightModeContext);

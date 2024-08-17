@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import UserInfo from "./UserInfo";
-import { LightModeContext } from "../../contexts/LightModeContext";
+import UserInfo from "../../../small-components/UserInfo";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const LikesWindow = () => {
   const { isLightMode } = useContext(LightModeContext);

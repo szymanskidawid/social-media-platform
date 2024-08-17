@@ -4,7 +4,7 @@ import { LoginViewContext } from "../../../contexts/LoginViewContext";
 import InputField from "../../small-components/InputField";
 import RegisterView from "./RegisterView";
 import ForgotPasswordView from "./ForgotPasswordView";
-import MainButton from "../main/MainButton";
+import MainButton from "../../small-components/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";

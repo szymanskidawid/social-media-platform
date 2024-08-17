@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
-import MainButton from "../../MainButton";
+import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 
 const Notification = () => {

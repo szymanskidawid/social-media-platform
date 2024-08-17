@@ -1,0 +1,7 @@
+.main-page-sidebar-container {
+  padding: 10px;
+  width: 200px;
+  height: auto;
+  position: fixed;
+  left: 0;
+}

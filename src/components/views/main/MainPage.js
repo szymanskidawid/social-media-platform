@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import Feed from "./Feed";
+import Feed from "./posts/Feed";
 import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import RightSideWindow from "./right-side-container/RightSideWindow";
 import { MainViewContext } from "../../../contexts/MainViewContext";
-import Profile from "./Profile";
-import Friends from "./Friends";
-import EditProfile from "./EditProfile";
+import Profile from "./profile/Profile";
+import Friends from "./profile/Friends";
+import EditProfile from "./profile/EditProfile";
 
 const MainPage = () => {
   const { mainView } = useContext(MainViewContext);

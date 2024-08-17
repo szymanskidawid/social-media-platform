@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import InputField from "../../../small-components/InputField";
-import MainSectionButton from "../MainButton";
+import MainButton from "../../../small-components/MainButton";
 
 const CreatePost = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -17,7 +17,7 @@ const CreatePost = () => {
         <div className="create-post-icons">
           <i class="icon-light-mode fa-solid fa-image fa-xl"></i>
         </div>
-        <MainSectionButton text={"Send"} />
+        <MainButton text={"Send"} />
       </div>
     </div>
   );

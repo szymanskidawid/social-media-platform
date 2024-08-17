@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import MainButton from "../../MainButton";
+import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../../../contexts/LoginStateContext";

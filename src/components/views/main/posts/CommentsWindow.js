@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MainButton from "../views/main/MainButton";
-import InputField from "./InputField";
+import MainButton from "../../../small-components/MainButton";
+import InputField from "../../../small-components/InputField";
 
 const CommentsWindow = () => {
   const [commentsEmpty, setCommentsEmpty] = useState(true);
