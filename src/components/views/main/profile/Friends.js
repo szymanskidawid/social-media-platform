@@ -9,7 +9,7 @@ const Friends = () => {
       className={`friends-container ${isLightMode ? "light-mode-1" : "dark-mode-1"}`}
     >
       <div
-        className={`friends-top ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+        className={`friends-top-section ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
       >
         <div className="friends-text">All Friends:</div>
         <div className="friends-text">5</div>

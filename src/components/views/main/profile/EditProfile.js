@@ -10,8 +10,8 @@ const EditProfile = () => {
     <div
       className={`edit-profile-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
     >
-      <div className="edit-profile-top">Edit Profile</div>
-      <form className="edit-profile-content-container">
+      <div className="edit-profile-top-section">Edit Profile</div>
+      <form className="edit-profile-form">
         <div className="edit-profile-change-photo-container">
           <label>Change Background Picture</label>
           <div className="edit-profile-photo">

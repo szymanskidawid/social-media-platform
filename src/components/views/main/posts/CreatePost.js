@@ -13,7 +13,7 @@ const CreatePost = () => {
         style={{ width: "max(100% - 18px)", height: "100%" }}
         placeholder={"Write a comment..."}
       />
-      <div className="create-post-bottom">
+      <div className="create-post-bottom-section">
         <div className="create-post-icons">
           <i class="icon-light-mode fa-solid fa-image fa-xl"></i>
         </div>

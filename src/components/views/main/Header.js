@@ -15,7 +15,9 @@ const Header = () => {
         <Logo />
       </div>
       <div className="header-search-container">
-        <i className="icon-light-mode fa-solid fa-magnifying-glass fa-2xl"></i>
+        <i
+          className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-magnifying-glass fa-2xl`}
+        ></i>
         <InputField
           style={{ height: "40px", width: "300px" }}
           placeholder={"Search for something..."}
@@ -23,15 +25,15 @@ const Header = () => {
       </div>
       <nav className="header-navbar-container">
         <i
-          className="icon-light-mode fa-solid fa-comment-dots fa-2xl"
+          className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-comment-dots fa-2xl`}
           onClick={() => setContainerView("chats")}
         />
         <i
-          className="icon-light-mode fa-solid fa-circle-exclamation fa-2xl"
+          className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-circle-exclamation fa-2xl`}
           onClick={() => setContainerView("notifications")}
         />
         <i
-          className="icon-light-mode fa-solid fa-gear fa-2xl"
+          className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-gear fa-2xl`}
           onClick={() => setContainerView("options")}
         />
       </nav>

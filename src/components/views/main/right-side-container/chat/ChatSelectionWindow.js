@@ -11,9 +11,9 @@ const ChatSelectionWindow = () => {
   );
 
   return (
-    <div className="chat-section-container">
+    <div className="chat-selection-container">
       <div
-        className={`chat-selection-available-friends-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+        className={`chat-selection-available-friends ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
       >
         <UserInfo
           type={"horizontal"}

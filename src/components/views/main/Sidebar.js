@@ -9,7 +9,7 @@ const Sidebar = () => {
   const { setMainView } = useContext(MainViewContext);
   return (
     <nav
-      className={`main-page-sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+      className={`sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
     >
       <UserInfo type={"horizontal"} onClick={() => setMainView("profile")} />
       <MainButton

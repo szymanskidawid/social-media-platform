@@ -51,7 +51,7 @@ const Profile = () => {
         <div
           className={`profile-friends-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
         >
-          <div className="profile-friends-top">
+          <div className="profile-friends-top-section">
             <div className="profile-friends-text">Friends: </div>
             <div className="profile-friends-text">5</div>
           </div>

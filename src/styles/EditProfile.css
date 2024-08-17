@@ -7,12 +7,12 @@
   justify-content: space-between;
 }
 
-.edit-profile-top {
+.edit-profile-top-section {
   font-size: 30px;
   border-bottom: 1px solid black;
 }
 
-.edit-profile-content-container {
+.edit-profile-form {
   margin-top: 10px;
   display: flex;
   flex-direction: column;

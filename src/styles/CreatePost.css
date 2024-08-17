@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.create-post-bottom {
+.create-post-bottom-section {
   height: 40px;
   display: flex;
   flex-direction: row;

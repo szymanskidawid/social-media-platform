@@ -5,14 +5,14 @@
   flex-direction: column;
 }
 
-.chat-window-top {
+.chat-window-top-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.chat-window-close {
+.chat-window-close-btn {
   height: 20px;
   width: 20px;
   display: flex;
@@ -20,12 +20,12 @@
   justify-content: center;
 }
 
-.chat-history-container {
+.chat-window-history {
   height: 200px;
   background-color: var(--gray1);
 }
 
-.chat-bottom-section {
+.chat-window-bottom-section {
   padding-top: 10px;
   height: 50px;
   display: flex;
