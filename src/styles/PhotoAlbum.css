@@ -1,0 +1,31 @@
+.photo-album-container {
+  font-size: 20px;
+  width: 800px;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-album-top-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.photo-album-content {
+  max-height: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  overflow: auto;
+}
+
+.photo-album-photo-container {
+  width: 150px;
+  height: 100px;
+  background-color: white;
+}
