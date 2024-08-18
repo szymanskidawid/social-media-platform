@@ -8,6 +8,7 @@ import { MainViewContext } from "../../../contexts/MainViewContext";
 import Profile from "./profile/Profile";
 import Friends from "./profile/Friends";
 import EditProfile from "./profile/EditProfile";
+import PhotoAlbum from "./profile/PhotoAlbum";
 
 const MainPage = () => {
   const { mainView } = useContext(MainViewContext);
@@ -19,6 +20,8 @@ const MainPage = () => {
         return <Profile />;
       case "editProfile":
         return <EditProfile />;
+      case "photos":
+        return <PhotoAlbum />;
       case "friends":
         return <Friends />;
     }

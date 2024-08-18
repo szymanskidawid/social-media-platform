@@ -16,6 +16,7 @@ const Sidebar = () => {
         text={"Edit Profile"}
         onClick={() => setMainView("editProfile")}
       />
+      <MainButton text={"Photos"} onClick={() => setMainView("photos")} />
       <MainButton text={"Friends"} onClick={() => setMainView("friends")} />
     </nav>
   );

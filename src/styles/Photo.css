@@ -1,4 +1,4 @@
-.picture-container {
+.photo-container {
   height: 100%;
   width: 100%;
   cursor: pointer;
@@ -8,12 +8,12 @@
   overflow: hidden;
 }
 
-.picture-normal img {
+.photo-normal img {
   width: 100%;
   height: auto;
 }
 
-.picture-zoom {
+.photo-zoom {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -27,6 +27,6 @@
   z-index: 1000;
 }
 
-.picture-zoom img {
+.photo-zoom img {
   z-index: inherit;
 }

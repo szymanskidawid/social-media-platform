@@ -15,7 +15,7 @@ const CreatePost = () => {
       />
       <div className="create-post-bottom-section">
         <div className="create-post-icons">
-          <i class="icon-light-mode fa-solid fa-image fa-xl"></i>
+          <i className="icon-light-mode fa-solid fa-image fa-xl"></i>
         </div>
         <MainButton text={"Send"} />
       </div>

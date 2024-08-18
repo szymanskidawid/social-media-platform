@@ -2,7 +2,7 @@ import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import Feed from "../posts/Feed";
 import { MainViewContext } from "../../../../contexts/MainViewContext";
-import Picture from "../../../small-components/Picture";
+import Photo from "../../../small-components/Photo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const Profile = () => {
@@ -15,11 +15,12 @@ const Profile = () => {
       >
         <div className="profile-top-container">
           <div className="profile-background-pic-container">
-            <Picture src={"https://picsum.photos/id/236/400/400"} />
+            <Photo type={"view"} src={"https://picsum.photos/id/236/400/400"} />
           </div>
 
           <div className="profile-pic-container">
-            <Picture
+            <Photo
+              type={"view"}
               style={{ borderRadius: "100%" }}
               src={"https://picsum.photos/id/237/400/400"}
             />
@@ -31,19 +32,19 @@ const Profile = () => {
         >
           <div className="profile-info">
             <div className="profile-info-icon">
-              <i class="fa-solid fa-city fa-xl"></i>
+              <i className="fa-solid fa-city fa-xl"></i>
             </div>
             <div className="profile-info-text">Town</div>
           </div>
           <div className="profile-info">
             <div className="profile-info-icon">
-              <i class="fa-solid fa-school fa-xl"></i>
+              <i className="fa-solid fa-school fa-xl"></i>
             </div>
             <div className="profile-info-text">School</div>
           </div>
           <div className="profile-info">
             <div className="profile-info-icon">
-              <i class="fa-solid fa-briefcase fa-xl"></i>
+              <i className="fa-solid fa-briefcase fa-xl"></i>
             </div>
             <div className="profile-info-text">Work</div>
           </div>

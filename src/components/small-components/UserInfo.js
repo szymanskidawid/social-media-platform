@@ -1,7 +1,7 @@
 const UserInfo = ({ type, onClick }) => {
   return (
     <div className={`user-info-container-${type}`} onClick={onClick}>
-      <div className="user-info-picture">
+      <div className="user-info-photo">
         <img src="https://picsum.photos/id/237/40/40" />
       </div>
       <div className="user-info-name">Great Dog</div>

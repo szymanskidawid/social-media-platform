@@ -18,7 +18,7 @@ const Chat = () => {
           className="chat-window-close-btn"
           onClick={() => setOpenChatWindow(false)}
         >
-          <i class="icon-light-mode fa-solid fa-xmark fa-xl"></i>
+          <i className="icon-light-mode fa-solid fa-xmark fa-xl"></i>
         </div>
       </div>
       <div className="chat-window-history">Chat History</div>

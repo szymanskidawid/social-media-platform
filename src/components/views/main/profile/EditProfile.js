@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import InputField from "../../../small-components/InputField";
-import Picture from "../../../small-components/Picture";
+import Photo from "../../../small-components/Photo";
 import MainButton from "../../../small-components/MainButton";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 
@@ -13,15 +13,21 @@ const EditProfile = () => {
       <div className="edit-profile-top-section">Edit Profile</div>
       <form className="edit-profile-form">
         <div className="edit-profile-change-photo-container">
-          <label>Change Background Picture</label>
+          <label>Change Background Photo</label>
           <div className="edit-profile-photo">
-            <Picture src={"https://picsum.photos/id/236/400/400"} />
+            <Photo
+              type={"change"}
+              src={"https://picsum.photos/id/236/400/400"}
+            />
           </div>
         </div>
         <div className="edit-profile-change-photo-container">
-          <label>Change Profile Picture</label>
+          <label>Change Profile Photo</label>
           <div className="edit-profile-photo">
-            <Picture src={"https://picsum.photos/id/237/400/400"} />
+            <Photo
+              type={"change"}
+              src={"https://picsum.photos/id/237/400/400"}
+            />
           </div>
         </div>
         <div className="edit-profile-fields">
