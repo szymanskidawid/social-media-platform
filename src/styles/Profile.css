@@ -67,28 +67,39 @@
   padding-left: 10px;
 }
 
+.profile-photos-container,
 .profile-friends-container {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
+.profile-photo-container {
+  margin: 10px;
+  width: 150px;
+  height: 100px;
+  background-color: white;
+}
+
 .profile-friends-top-section {
   margin: 5px;
-  font-size: 20px;
   display: flex;
   flex-direction: row;
 }
 
+.profile-photos-text,
 .profile-friends-text {
+  font-size: 20px;
   margin: 5px;
 }
 
+.profile-photos,
 .profile-friends {
   display: flex;
   flex-direction: row;
 }
 
+.profile-photos-view-more-button,
 .profile-friends-view-more-button {
   margin: 5px;
   text-decoration: underline;
