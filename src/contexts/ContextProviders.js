@@ -4,6 +4,8 @@ import { ContainerViewContext } from "./ContainerViewContext";
 import { OpenChatWindowContext } from "./OpenChatWindowContext";
 import { MainViewContext } from "./MainViewContext";
 import { LoginStateContext } from "./LoginStateContext";
+import { UserContext } from "./UserContext";
+import { PeopleContext } from "./PeopleContext";
 
 const ContextProviders = ({
   children,
@@ -19,6 +21,10 @@ const ContextProviders = ({
   setContainerView,
   openChatWindow,
   setOpenChatWindow,
+  user,
+  setUser,
+  people,
+  setPeople,
 }) => {
   return (
     <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
@@ -31,7 +37,11 @@ const ContextProviders = ({
               <OpenChatWindowContext.Provider
                 value={{ openChatWindow, setOpenChatWindow }}
               >
-                {children}
+                <UserContext.Provider value={{ user, setUser }}>
+                  <PeopleContext.Provider value={{ people, setPeople }}>
+                    {children}
+                  </PeopleContext.Provider>
+                </UserContext.Provider>
               </OpenChatWindowContext.Provider>
             </ContainerViewContext.Provider>
           </MainViewContext.Provider>

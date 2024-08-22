@@ -10,6 +10,8 @@ function App() {
   const [mainView, setMainView] = useState("mainFeed");
   const [containerView, setContainerView] = useState("");
   const [openChatWindow, setOpenChatWindow] = useState(false);
+  const [user, setUser] = useState({});
+  const [people, setPeople] = useState({});
 
   useEffect(() => {
     if (!isLightMode) {
@@ -35,6 +37,10 @@ function App() {
           setContainerView,
           openChatWindow,
           setOpenChatWindow,
+          user,
+          setUser,
+          people,
+          setPeople,
         }}
       >
         <Router />
