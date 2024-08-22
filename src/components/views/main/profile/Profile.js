@@ -50,7 +50,38 @@ const Profile = () => {
           </div>
         </div>
         <div
-          className={`profile-friends-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+          className={`profile-photos-container ${isLightMode ? "light-mode-1" : "dark-mode-1"}`}
+        >
+          <div className="profile-photos-text">Photos</div>
+          <div className="profile-photos">
+            <div className="profile-photo-container">
+              <Photo
+                type={"view"}
+                src={"https://picsum.photos/id/237/400/400"}
+              />
+            </div>
+            <div className="profile-photo-container">
+              <Photo
+                type={"view"}
+                src={"https://picsum.photos/id/237/400/400"}
+              />
+            </div>
+            <div className="profile-photo-container">
+              <Photo
+                type={"view"}
+                src={"https://picsum.photos/id/238/400/400"}
+              />
+            </div>
+          </div>
+          <div
+            className="profile-photos-view-more-button"
+            onClick={() => setMainView("photos")}
+          >
+            View more photos
+          </div>
+        </div>
+        <div
+          className={`profile-friends-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
         >
           <div className="profile-friends-top-section">
             <div className="profile-friends-text">Friends: </div>
