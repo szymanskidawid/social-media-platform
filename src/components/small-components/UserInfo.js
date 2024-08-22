@@ -1,10 +1,10 @@
-const UserInfo = ({ type, onClick }) => {
+const UserInfo = ({ type, src, onClick, name }) => {
   return (
     <div className={`user-info-container-${type}`} onClick={onClick}>
       <div className="user-info-photo">
-        <img src="https://picsum.photos/id/237/40/40" />
+        <img src={src} />
       </div>
-      <div className="user-info-name">Great Dog</div>
+      <div className="user-info-name">{name}</div>
     </div>
   );
 };

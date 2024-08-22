@@ -8,25 +8,58 @@ import MainButton from "../../small-components/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
+import { UserContext } from "../../../contexts/UserContext";
+import { loginFetch } from "../../helpers/fetch";
+import { peopleFetch } from "../../helpers/fetch";
+import { PeopleContext } from "../../../contexts/PeopleContext";
 
 // TODO: Prevent default submission
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { isLoggedIn, setIsLoggedIn } = useContext(LoginStateContext);
+  const { setIsLoggedIn } = useContext(LoginStateContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
+  const { setUser } = useContext(UserContext);
+  const { setPeople } = useContext(PeopleContext);
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    setIsLoggedIn(!isLoggedIn);
-    navigate("/home");
+  const handleLogin = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const email = formData.get("login");
+    const password = formData.get("password");
+
+    try {
+      const [loggedUser, allUsers] = await Promise.all([
+        loginFetch(email, password),
+        peopleFetch(),
+      ]);
+
+      if (loggedUser !== null) {
+        setUser(loggedUser);
+        console.log({ allUsers });
+        setPeople(allUsers);
+
+        setIsLoggedIn(true);
+        navigate("/home");
+      } else {
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
+    }
   };
 
   const selectedLoginPageView = (selection) => {
     if (selection === "loginView") {
       return (
         <>
-          <form className="login-page-form" method="POST">
+          <form
+            className="login-page-form"
+            onSubmit={handleLogin}
+            method="POST"
+          >
             <InputField
               style={{ height: "30px", width: "200px" }}
               placeholder={"Enter email"}
@@ -39,7 +72,7 @@ const LoginPage = () => {
               name={"password"}
               required
             />
-            <MainButton onClick={handleLogin} text={"Log In"} />
+            <MainButton type="submit" text={"Log In"} />
           </form>
           <div
             className="login-page-underline-buttons"
