@@ -1,0 +1,20 @@
+[
+  {
+    "chat_id": "chat1_id",
+    "user_ids": ["id1", "id2"],
+    "chat_messages": [
+      {
+        "message_id": "msg1",
+        "user_id": "id1",
+        "message": "Hi!",
+        "time_sent": "2024-08-22T14:00:00Z"
+      },
+      {
+        "message_id": "msg2",
+        "user_id": "id2",
+        "message": "Hello!",
+        "time_sent": "2024-08-22T14:01:00Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "post_id": "post1_id",
+    "user_id": "id1",
+    "time_posted": "2024-08-22T12:34:56Z",
+    "post_message": "Hello world!",
+    "post_photo": "post_photo1.jpg",
+    "post_comments_id": "comment1_id"
+  }
+]

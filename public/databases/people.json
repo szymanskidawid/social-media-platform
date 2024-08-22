@@ -1,0 +1,270 @@
+[
+  {
+    "user_id": "id1",
+    "name": "Adam",
+    "surname": "Nowak",
+    "full_name": "Adam Nowak",
+    "town": "Warsaw",
+    "school": "College",
+    "work": "Warehouse",
+    "background_photo": "https://picsum.photos/id/1/400/400",
+    "profile_photo": "https://picsum.photos/id/2/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/3/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/4/400/400"
+      }
+    ],
+    "friends": ["id2", "id3"],
+    "posts": ["post1_id", "post2_id"],
+    "chats": ["chat1_id", "chat2_id"]
+  },
+  {
+    "user_id": "id2",
+    "name": "Ewa",
+    "surname": "Kowalska",
+    "full_name": "Ewa Kowalska",
+    "town": "Krakow",
+    "school": "University",
+    "work": "Teacher",
+    "background_photo": "https://picsum.photos/id/5/400/400",
+    "profile_photo": "https://picsum.photos/id/6/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/7/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/8/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/9/400/400"
+      }
+    ],
+    "friends": ["id1", "id3"],
+    "posts": ["post3_id", "post4_id"],
+    "chats": ["chat2_id", "chat3_id"]
+  },
+  {
+    "user_id": "id3",
+    "name": "Marek",
+    "surname": "Wojcik",
+    "full_name": "Marek Wojcik",
+    "town": "Gdansk",
+    "school": "Technical School",
+    "work": "Engineer",
+    "background_photo": "https://picsum.photos/id/10/400/400",
+    "profile_photo": "https://picsum.photos/id/11/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/12/400/400"
+      }
+    ],
+    "friends": ["id1", "id2"],
+    "posts": ["post5_id", "post6_id"],
+    "chats": ["chat1_id", "chat3_id"]
+  },
+  {
+    "user_id": "id4",
+    "name": "Anna",
+    "surname": "Nowicka",
+    "full_name": "Anna Nowicka",
+    "town": "Poznan",
+    "school": "Art School",
+    "work": "Designer",
+    "background_photo": "https://picsum.photos/id/13/400/400",
+    "profile_photo": "https://picsum.photos/id/14/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/15/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/16/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/17/400/400"
+      }
+    ],
+    "friends": ["id5", "id6"],
+    "posts": ["post7_id", "post8_id"],
+    "chats": ["chat4_id", "chat5_id"]
+  },
+  {
+    "user_id": "id5",
+    "name": "Piotr",
+    "surname": "Lewandowski",
+    "full_name": "Piotr Lewandowski",
+    "town": "Wroclaw",
+    "school": "Medical School",
+    "work": "Doctor",
+    "background_photo": "https://picsum.photos/id/18/400/400",
+    "profile_photo": "https://picsum.photos/id/19/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/20/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/21/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/22/400/400"
+      },
+      {
+        "id": "photo4",
+        "url": "https://picsum.photos/id/23/400/400"
+      }
+    ],
+    "friends": ["id4", "id6"],
+    "posts": ["post9_id", "post10_id"],
+    "chats": ["chat6_id", "chat7_id"]
+  },
+  {
+    "user_id": "id6",
+    "name": "Zofia",
+    "surname": "Sikorska",
+    "full_name": "Zofia Sikorska",
+    "town": "Lodz",
+    "school": "Law School",
+    "work": "Lawyer",
+    "background_photo": "https://picsum.photos/id/24/400/400",
+    "profile_photo": "https://picsum.photos/id/25/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/26/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/27/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/28/400/400"
+      }
+    ],
+    "friends": ["id4", "id5"],
+    "posts": ["post11_id", "post12_id"],
+    "chats": ["chat4_id", "chat8_id"]
+  },
+  {
+    "user_id": "id7",
+    "name": "Krzysztof",
+    "surname": "Pawlak",
+    "full_name": "Krzysztof Pawlak",
+    "town": "Lublin",
+    "school": "Business School",
+    "work": "Manager",
+    "background_photo": "https://picsum.photos/id/29/400/400",
+    "profile_photo": "https://picsum.photos/id/30/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/31/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/32/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/33/400/400"
+      },
+      {
+        "id": "photo4",
+        "url": "https://picsum.photos/id/34/400/400"
+      },
+      {
+        "id": "photo5",
+        "url": "https://picsum.photos/id/35/400/400"
+      }
+    ],
+    "friends": ["id8", "id9"],
+    "posts": ["post13_id", "post14_id"],
+    "chats": ["chat9_id", "chat10_id"]
+  },
+  {
+    "user_id": "id8",
+    "name": "Barbara",
+    "surname": "Kaczmarek",
+    "full_name": "Barbara Kaczmarek",
+    "town": "Katowice",
+    "school": "Music School",
+    "work": "Musician",
+    "background_photo": "https://picsum.photos/id/36/400/400",
+    "profile_photo": "https://picsum.photos/id/37/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/38/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/39/400/400"
+      }
+    ],
+    "friends": ["id7", "id9"],
+    "posts": ["post15_id", "post16_id"],
+    "chats": ["chat9_id", "chat11_id"]
+  },
+  {
+    "user_id": "id9",
+    "name": "Tomasz",
+    "surname": "Zielinski",
+    "full_name": "Tomasz Zielinski",
+    "town": "Gdynia",
+    "school": "Marine School",
+    "work": "Sailor",
+    "background_photo": "https://picsum.photos/id/40/400/400",
+    "profile_photo": "https://picsum.photos/id/41/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/42/400/400"
+      },
+      {
+        "id": "photo2",
+        "url": "https://picsum.photos/id/43/400/400"
+      },
+      {
+        "id": "photo3",
+        "url": "https://picsum.photos/id/44/400/400"
+      }
+    ],
+    "friends": ["id7", "id8"],
+    "posts": ["post17_id", "post18_id"],
+    "chats": ["chat10_id", "chat11_id"]
+  },
+  {
+    "user_id": "id10",
+    "name": "Monika",
+    "surname": "Michalska",
+    "full_name": "Monika Michalska",
+    "town": "Szczecin",
+    "school": "Architecture School",
+    "work": "Architect",
+    "background_photo": "https://picsum.photos/id/45/400/400",
+    "profile_photo": "https://picsum.photos/id/46/400/400",
+    "photos": [
+      {
+        "id": "photo1",
+        "url": "https://picsum.photos/id/47/400/400"
+      }
+    ],
+    "friends": ["id1", "id2"],
+    "posts": ["post19_id", "post20_id"],
+    "chats": ["chat12_id", "chat13_id"]
+  }
+]

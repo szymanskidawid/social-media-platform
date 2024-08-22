@@ -1,0 +1,52 @@
+[
+  {
+    "email": "user1@mail.com",
+    "password": "password1",
+    "user_id": "id1"
+  },
+  {
+    "email": "user2@mail.com",
+    "password": "password2",
+    "user_id": "id2"
+  },
+  {
+    "email": "user3@mail.com",
+    "password": "password3",
+    "user_id": "id3"
+  },
+  {
+    "email": "user4@mail.com",
+    "password": "password4",
+    "user_id": "id4"
+  },
+  {
+    "email": "user5@mail.com",
+    "password": "password5",
+    "user_id": "id5"
+  },
+  {
+    "email": "user6@mail.com",
+    "password": "password6",
+    "user_id": "id6"
+  },
+  {
+    "email": "user7@mail.com",
+    "password": "password7",
+    "user_id": "id7"
+  },
+  {
+    "email": "user8@mail.com",
+    "password": "password8",
+    "user_id": "id8"
+  },
+  {
+    "email": "user9@mail.com",
+    "password": "password9",
+    "user_id": "id9"
+  },
+  {
+    "email": "user10@mail.com",
+    "password": "password10",
+    "user_id": "id10"
+  }
+]
