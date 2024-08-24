@@ -5,6 +5,13 @@ export const peopleFetch = async () => {
 
   return people;
 };
+
+export const postsFetch = async () => {
+  const posts = await fetch("/databases/posts.json").then((res) => res.json());
+
+  return posts;
+};
+
 export const loginFetch = async (email, password) => {
   const logins = await fetch("/databases/logins.json").then((res) =>
     res.json()

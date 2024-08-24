@@ -5,12 +5,15 @@ import Photo from "../../../small-components/Photo";
 import CommentsWindow from "./CommentsWindow";
 import LikesWindow from "./LikesWindow";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
+import { PeopleContext } from "../../../../contexts/PeopleContext";
 
-const Post = () => {
+const Post = ({ personId, timePosted, postMessage, src, commentsId }) => {
   const { isLightMode } = useContext(LightModeContext);
   const [showLikes, setShowLikes] = useState(false);
   const [showComments, setShowComments] = useState(false);
-  const { setMainView } = useContext(MainViewContext);
+  const { people } = useContext(PeopleContext);
+
+  const person = people.find((person) => person.user_id === personId);
 
   return (
     <div
@@ -18,17 +21,25 @@ const Post = () => {
     >
       <div className="post-top-section">
         <div className="post-top-user-info">
-          <UserInfo
-            type={"horizontal"}
-            onClick={() => setMainView("profile")}
-          />
+          {person && (
+            <UserInfo
+              personId={person.user_id}
+              type={"horizontal"}
+              src={person.profile_photo}
+              name={person.full_name}
+            />
+          )}
         </div>
-        <div className="post-top-time-posted">Posted 12 hours ago</div>
+        <div className="post-top-time-posted">{timePosted}</div>
       </div>
-      <div className="post-top-description">Look at my new Photo!</div>
-      <div className="post-image">
-        <Photo type={"view"} src={"https://picsum.photos/id/237/400/400"} />
-      </div>
+      <div className="post-top-description">{postMessage}</div>
+      {src !== "" ? (
+        <div className="post-image">
+          <Photo type={"view"} src={src} />
+        </div>
+      ) : (
+        ""
+      )}
       <div className="post-bot-section">
         <div className="post-bot-like">
           <div

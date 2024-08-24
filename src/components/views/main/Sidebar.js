@@ -14,9 +14,9 @@ const Sidebar = () => {
       className={`sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
     >
       <UserInfo
+        personId={user.user_id}
         type={"horizontal"}
         src={user.profile_photo}
-        onClick={() => setMainView("profile")}
         name={user.full_name}
       />
       <MainButton

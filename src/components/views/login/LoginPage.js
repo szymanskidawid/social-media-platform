@@ -9,11 +9,10 @@ import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
 import { UserContext } from "../../../contexts/UserContext";
-import { loginFetch } from "../../helpers/fetch";
+import { loginFetch, postsFetch } from "../../helpers/fetch";
 import { peopleFetch } from "../../helpers/fetch";
 import { PeopleContext } from "../../../contexts/PeopleContext";
-
-// TODO: Prevent default submission
+import { PostsContext } from "../../../contexts/PostsContext";
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -21,6 +20,7 @@ const LoginPage = () => {
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
   const { setUser } = useContext(UserContext);
   const { setPeople } = useContext(PeopleContext);
+  const { setPosts } = useContext(PostsContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -31,15 +31,16 @@ const LoginPage = () => {
     const password = formData.get("password");
 
     try {
-      const [loggedUser, allUsers] = await Promise.all([
+      const [loggedUser, allUsers, allPosts] = await Promise.all([
         loginFetch(email, password),
         peopleFetch(),
+        postsFetch(),
       ]);
 
       if (loggedUser !== null) {
         setUser(loggedUser);
-        console.log({ allUsers });
         setPeople(allUsers);
+        setPosts(allPosts);
 
         setIsLoggedIn(true);
         navigate("/home");

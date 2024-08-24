@@ -12,6 +12,8 @@ function App() {
   const [openChatWindow, setOpenChatWindow] = useState(false);
   const [user, setUser] = useState({});
   const [people, setPeople] = useState({});
+  const [posts, setPosts] = useState({});
+  const [selectedPersonId, setSelectedPersonId] = useState("");
 
   useEffect(() => {
     if (!isLightMode) {
@@ -41,6 +43,10 @@ function App() {
           setUser,
           people,
           setPeople,
+          posts,
+          setPosts,
+          selectedPersonId,
+          setSelectedPersonId,
         }}
       >
         <Router />
