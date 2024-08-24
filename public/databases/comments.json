@@ -9,5 +9,237 @@
         "time_posted": "2024-08-22T13:00:00Z"
       }
     ]
+  },
+  {
+    "post_comments_id": "comment2_id",
+    "comments": [
+      {
+        "comment_id": "comment2",
+        "user_id": "id1",
+        "comment": "Looks fun!",
+        "time_posted": "2024-07-30T11:00:00Z"
+      },
+      {
+        "comment_id": "comment3",
+        "user_id": "id5",
+        "comment": "Wish I was there!",
+        "time_posted": "2024-07-30T12:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment3_id",
+    "comments": [
+      {
+        "comment_id": "comment4",
+        "user_id": "id6",
+        "comment": "Which book?",
+        "time_posted": "2024-08-15T17:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment4_id",
+    "comments": [
+      {
+        "comment_id": "comment5",
+        "user_id": "id8",
+        "comment": "Love the energy!",
+        "time_posted": "2024-08-10T09:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment5_id",
+    "comments": [
+      {
+        "comment_id": "comment6",
+        "user_id": "id7",
+        "comment": "Share the recipe?",
+        "time_posted": "2024-07-29T19:45:00Z"
+      },
+      {
+        "comment_id": "comment7",
+        "user_id": "id10",
+        "comment": "Looks delicious!",
+        "time_posted": "2024-07-29T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment6_id",
+    "comments": [
+      {
+        "comment_id": "comment8",
+        "user_id": "id3",
+        "comment": "Where did you hike?",
+        "time_posted": "2024-08-18T15:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment7_id",
+    "comments": [
+      {
+        "comment_id": "comment9",
+        "user_id": "id9",
+        "comment": "Your art is amazing!",
+        "time_posted": "2024-08-12T21:45:00Z"
+      },
+      {
+        "comment_id": "comment10",
+        "user_id": "id11",
+        "comment": "Keep it up!",
+        "time_posted": "2024-08-12T22:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment8_id",
+    "comments": [
+      {
+        "comment_id": "comment11",
+        "user_id": "id12",
+        "comment": "Beautiful garden!",
+        "time_posted": "2024-08-01T11:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment9_id",
+    "comments": []
+  },
+  {
+    "post_comments_id": "comment10_id",
+    "comments": [
+      {
+        "comment_id": "comment12",
+        "user_id": "id13",
+        "comment": "What a view!",
+        "time_posted": "2024-08-20T19:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment11_id",
+    "comments": [
+      {
+        "comment_id": "comment13",
+        "user_id": "id14",
+        "comment": "Morning runs are the best!",
+        "time_posted": "2024-08-03T07:45:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment12_id",
+    "comments": [
+      {
+        "comment_id": "comment14",
+        "user_id": "id15",
+        "comment": "Gorgeous sunset!",
+        "time_posted": "2024-07-31T20:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment13_id",
+    "comments": [
+      {
+        "comment_id": "comment15",
+        "user_id": "id16",
+        "comment": "Work hard, play hard!",
+        "time_posted": "2024-08-21T16:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment14_id",
+    "comments": [
+      {
+        "comment_id": "comment16",
+        "user_id": "id17",
+        "comment": "The smell of rain is soothing.",
+        "time_posted": "2024-08-05T13:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment15_id",
+    "comments": [
+      {
+        "comment_id": "comment17",
+        "user_id": "id18",
+        "comment": "Stargazing is so peaceful.",
+        "time_posted": "2024-08-17T23:30:00Z"
+      },
+      {
+        "comment_id": "comment18",
+        "user_id": "id19",
+        "comment": "I love it too!",
+        "time_posted": "2024-08-18T00:00:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment16_id",
+    "comments": [
+      {
+        "comment_id": "comment19",
+        "user_id": "id20",
+        "comment": "What's the new hobby?",
+        "time_posted": "2024-08-11T18:15:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment17_id",
+    "comments": [
+      {
+        "comment_id": "comment20",
+        "user_id": "id1",
+        "comment": "Cooking is so fun!",
+        "time_posted": "2024-07-25T16:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment18_id",
+    "comments": [
+      {
+        "comment_id": "comment21",
+        "user_id": "id2",
+        "comment": "Family time is precious.",
+        "time_posted": "2024-08-19T12:30:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment19_id",
+    "comments": [
+      {
+        "comment_id": "comment22",
+        "user_id": "id3",
+        "comment": "What movie?",
+        "time_posted": "2024-08-14T10:15:00Z"
+      }
+    ]
+  },
+  {
+    "post_comments_id": "comment20_id",
+    "comments": [
+      {
+        "comment_id": "comment23",
+        "user_id": "id4",
+        "comment": "Glad to hear that!",
+        "time_posted": "2024-07-26T08:30:00Z"
+      },
+      {
+        "comment_id": "comment24",
+        "user_id": "id5",
+        "comment": "Productive days are the best!",
+        "time_posted": "2024-07-26T09:00:00Z"
+      }
+    ]
   }
 ]

@@ -4,7 +4,159 @@
     "user_id": "id1",
     "time_posted": "2024-08-22T12:34:56Z",
     "post_message": "Hello world!",
-    "post_photo": "post_photo1.jpg",
+    "post_photo": "https://picsum.photos/id/48/400/400",
     "post_comments_id": "comment1_id"
+  },
+  {
+    "post_id": "post2_id",
+    "user_id": "id2",
+    "time_posted": "2024-07-30T10:21:34Z",
+    "post_message": "Enjoying the sunny weather!",
+    "post_photo": "https://picsum.photos/id/49/400/400",
+    "post_comments_id": "comment2_id"
+  },
+  {
+    "post_id": "post3_id",
+    "user_id": "id3",
+    "time_posted": "2024-08-15T16:45:12Z",
+    "post_message": "Just finished a great book.",
+    "post_photo": "",
+    "post_comments_id": "comment3_id"
+  },
+  {
+    "post_id": "post4_id",
+    "user_id": "id4",
+    "time_posted": "2024-08-10T08:30:00Z",
+    "post_message": "Weekend vibes!",
+    "post_photo": "https://picsum.photos/id/50/400/400",
+    "post_comments_id": "comment4_id"
+  },
+  {
+    "post_id": "post5_id",
+    "user_id": "id5",
+    "time_posted": "2024-07-29T19:15:47Z",
+    "post_message": "Loving this new recipe I tried!",
+    "post_photo": "https://picsum.photos/id/51/400/400",
+    "post_comments_id": "comment5_id"
+  },
+  {
+    "post_id": "post6_id",
+    "user_id": "id6",
+    "time_posted": "2024-08-18T14:56:23Z",
+    "post_message": "Had a fantastic hike today!",
+    "post_photo": "",
+    "post_comments_id": "comment6_id"
+  },
+  {
+    "post_id": "post7_id",
+    "user_id": "id7",
+    "time_posted": "2024-08-12T21:22:39Z",
+    "post_message": "Feeling creative with my art!",
+    "post_photo": "https://picsum.photos/id/52/400/400",
+    "post_comments_id": "comment7_id"
+  },
+  {
+    "post_id": "post8_id",
+    "user_id": "id8",
+    "time_posted": "2024-08-01T11:10:05Z",
+    "post_message": "A day well spent in the garden.",
+    "post_photo": "https://picsum.photos/id/53/400/400",
+    "post_comments_id": "comment8_id"
+  },
+  {
+    "post_id": "post9_id",
+    "user_id": "id9",
+    "time_posted": "2024-07-27T09:40:16Z",
+    "post_message": "Coffee is life.",
+    "post_photo": "",
+    "post_comments_id": "comment9_id"
+  },
+  {
+    "post_id": "post10_id",
+    "user_id": "id10",
+    "time_posted": "2024-08-20T18:47:45Z",
+    "post_message": "Exploring new places is the best!",
+    "post_photo": "https://picsum.photos/id/54/400/400",
+    "post_comments_id": "comment10_id"
+  },
+  {
+    "post_id": "post11_id",
+    "user_id": "id11",
+    "time_posted": "2024-08-03T07:22:50Z",
+    "post_message": "Starting my morning with a run.",
+    "post_photo": "",
+    "post_comments_id": "comment11_id"
+  },
+  {
+    "post_id": "post12_id",
+    "user_id": "id12",
+    "time_posted": "2024-07-31T20:14:00Z",
+    "post_message": "This sunset is breathtaking!",
+    "post_photo": "https://picsum.photos/id/55/400/400",
+    "post_comments_id": "comment12_id"
+  },
+  {
+    "post_id": "post13_id",
+    "user_id": "id13",
+    "time_posted": "2024-08-21T15:38:21Z",
+    "post_message": "Just another day at the office.",
+    "post_photo": "https://picsum.photos/id/56/400/400",
+    "post_comments_id": "comment13_id"
+  },
+  {
+    "post_id": "post14_id",
+    "user_id": "id14",
+    "time_posted": "2024-08-05T13:11:11Z",
+    "post_message": "Love the smell of rain!",
+    "post_photo": "",
+    "post_comments_id": "comment14_id"
+  },
+  {
+    "post_id": "post15_id",
+    "user_id": "id15",
+    "time_posted": "2024-08-17T22:59:33Z",
+    "post_message": "Who else loves stargazing?",
+    "post_photo": "https://picsum.photos/id/57/400/400",
+    "post_comments_id": "comment15_id"
+  },
+  {
+    "post_id": "post16_id",
+    "user_id": "id16",
+    "time_posted": "2024-08-11T17:55:44Z",
+    "post_message": "Trying out a new hobby!",
+    "post_photo": "https://picsum.photos/id/58/400/400",
+    "post_comments_id": "comment16_id"
+  },
+  {
+    "post_id": "post17_id",
+    "user_id": "id17",
+    "time_posted": "2024-07-25T16:02:19Z",
+    "post_message": "Cooking up a storm in the kitchen.",
+    "post_photo": "",
+    "post_comments_id": "comment17_id"
+  },
+  {
+    "post_id": "post18_id",
+    "user_id": "id18",
+    "time_posted": "2024-08-19T12:12:12Z",
+    "post_message": "Love spending time with family!",
+    "post_photo": "https://picsum.photos/id/59/400/400",
+    "post_comments_id": "comment18_id"
+  },
+  {
+    "post_id": "post19_id",
+    "user_id": "id19",
+    "time_posted": "2024-08-14T10:00:00Z",
+    "post_message": "Watching a great movie!",
+    "post_photo": "",
+    "post_comments_id": "comment19_id"
+  },
+  {
+    "post_id": "post20_id",
+    "user_id": "id20",
+    "time_posted": "2024-07-26T08:08:08Z",
+    "post_message": "Having a productive day!",
+    "post_photo": "https://picsum.photos/id/60/400/400",
+    "post_comments_id": "comment20_id"
   }
 ]
