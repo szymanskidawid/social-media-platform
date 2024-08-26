@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/Chat.css";
 import "./styles/ChatSelectionWindow.css";
+import "./styles/Comment.css";
 import "./styles/CommentsWindow.css";
 import "./styles/CreatePost.css";
 import "./styles/EditProfile.css";
