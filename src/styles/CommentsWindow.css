@@ -6,13 +6,8 @@
   justify-content: space-between;
 }
 
-.comments-window-empty,
 .comments-window {
   overflow: auto;
-}
-
-.comments-window-empty {
-  text-align: center;
 }
 
 .comments-bot-section {
