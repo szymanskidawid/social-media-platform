@@ -12,6 +12,14 @@ export const postsFetch = async () => {
   return posts;
 };
 
+export const commentsFetch = async () => {
+  const comments = await fetch("/databases/comments.json").then((res) =>
+    res.json()
+  );
+
+  return comments;
+};
+
 export const loginFetch = async (email, password) => {
   const logins = await fetch("/databases/logins.json").then((res) =>
     res.json()

@@ -73,7 +73,7 @@ const Post = ({ personId, timePosted, postMessage, src, commentsId }) => {
       )}
 
       <div className={`post-hidden-container ${showComments ? "open" : ""}`}>
-        <CommentsWindow />
+        <CommentsWindow commentsId={commentsId} />
       </div>
     </div>
   );

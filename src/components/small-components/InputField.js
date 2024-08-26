@@ -1,4 +1,4 @@
-const InputField = ({ style, placeholder, name, required }) => {
+const InputField = ({ style, placeholder, name, value, required }) => {
   return (
     <input
       style={style}
@@ -6,6 +6,7 @@ const InputField = ({ style, placeholder, name, required }) => {
       type="text"
       placeholder={placeholder}
       name={name}
+      value={value}
       required={required}
     />
   );

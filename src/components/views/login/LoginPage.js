@@ -9,11 +9,16 @@ import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
 import { UserContext } from "../../../contexts/UserContext";
-import { loginFetch, postsFetch } from "../../helpers/fetch";
-import { peopleFetch } from "../../helpers/fetch";
+import {
+  peopleFetch,
+  commentsFetch,
+  loginFetch,
+  postsFetch,
+} from "../../helpers/fetch";
 import { PeopleContext } from "../../../contexts/PeopleContext";
 import { PostsContext } from "../../../contexts/PostsContext";
 import { SelectedPersonIdContext } from "../../../contexts/SelectedPersonIdContext";
+import { CommentsContext } from "../../../contexts/CommentsContext";
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -23,6 +28,7 @@ const LoginPage = () => {
   const { setPeople } = useContext(PeopleContext);
   const { setPosts } = useContext(PostsContext);
   const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
+  const { setComments } = useContext(CommentsContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -33,16 +39,18 @@ const LoginPage = () => {
     const password = formData.get("password");
 
     try {
-      const [loggedUser, allUsers, allPosts] = await Promise.all([
+      const [loggedUser, allUsers, allPosts, allComments] = await Promise.all([
         loginFetch(email, password),
         peopleFetch(),
         postsFetch(),
+        commentsFetch(),
       ]);
 
       if (loggedUser !== null) {
         setUser(loggedUser);
         setPeople(allUsers);
         setPosts(allPosts);
+        setComments(allComments);
         setSelectedPersonId(loggedUser.user_id);
 
         setIsLoggedIn(true);

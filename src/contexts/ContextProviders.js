@@ -7,6 +7,7 @@ import { UserContext } from "./UserContext";
 import { PeopleContext } from "./PeopleContext";
 import { PostsContext } from "./PostsContext";
 import { SelectedPersonIdContext } from "./SelectedPersonIdContext";
+import { CommentsContext } from "./CommentsContext";
 
 const ContextProviders = ({
   children,
@@ -28,6 +29,8 @@ const ContextProviders = ({
   setPosts,
   selectedPersonId,
   setSelectedPersonId,
+  comments,
+  setComments,
 }) => {
   return (
     <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
@@ -45,7 +48,11 @@ const ContextProviders = ({
                     <SelectedPersonIdContext.Provider
                       value={{ selectedPersonId, setSelectedPersonId }}
                     >
-                      {children}
+                      <CommentsContext.Provider
+                        value={{ comments, setComments }}
+                      >
+                        {children}
+                      </CommentsContext.Provider>
                     </SelectedPersonIdContext.Provider>
                   </PostsContext.Provider>
                 </PeopleContext.Provider>

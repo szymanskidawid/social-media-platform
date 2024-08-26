@@ -13,6 +13,7 @@ function App() {
   const [people, setPeople] = useState({});
   const [posts, setPosts] = useState({});
   const [selectedPersonId, setSelectedPersonId] = useState("");
+  const [comments, setComments] = useState({});
 
   useEffect(() => {
     if (!isLightMode) {
@@ -44,6 +45,8 @@ function App() {
           setPosts,
           selectedPersonId,
           setSelectedPersonId,
+          comments,
+          setComments,
         }}
       >
         <Router />
