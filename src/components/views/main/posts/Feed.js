@@ -26,7 +26,7 @@ const Feed = () => {
             timePosted={post.time_posted}
             postMessage={post.post_message}
             src={post.post_photo}
-            commentsId={[post.post_comments_id]}
+            commentsId={post.post_comments_id}
           />
         ))
       ) : (

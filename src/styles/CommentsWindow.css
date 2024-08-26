@@ -8,7 +8,7 @@
 
 .comments-window-empty,
 .comments-window {
-  height: auto;
+  overflow: auto;
 }
 
 .comments-window-empty {
