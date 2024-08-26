@@ -27,11 +27,11 @@ const PhotoAlbum = () => {
           <Photo type={"change"} src="/assets/addNewPhoto.jpg" />
         </div>
         {selectedPerson.photos && selectedPerson.photos.length > 0 ? (
-          selectedPerson.photos.map((photo) => {
+          selectedPerson.photos.map((photo) => (
             <div className="photo-album-photo-container">
               <Photo type={"view"} key={photo.id} src={photo.url} />
-            </div>;
-          })
+            </div>
+          ))
         ) : (
           <p>No photos available.</p>
         )}

@@ -77,7 +77,9 @@ const Profile = () => {
             </div>
             <div
               className="profile-photos-view-more-button"
-              onClick={() => navigate(`/home/profile/${person.user_id}/photos`)}
+              onClick={() =>
+                navigate(`/home/profile/${selectedPerson.user_id}/photos`)
+              }
             >
               View more photos
             </div>
