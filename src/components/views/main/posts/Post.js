@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { MainViewContext } from "../../../../contexts/MainViewContext";
 import UserInfo from "../../../small-components/UserInfo";
 import Photo from "../../../small-components/Photo";
 import CommentsWindow from "./CommentsWindow";

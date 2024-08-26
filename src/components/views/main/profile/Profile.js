@@ -1,40 +1,43 @@
 import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import Feed from "../posts/Feed";
-import { MainViewContext } from "../../../../contexts/MainViewContext";
 import Photo from "../../../small-components/Photo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { PeopleContext } from "../../../../contexts/PeopleContext";
 import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { setMainView } = useContext(MainViewContext);
   const { people } = useContext(PeopleContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
-  const person = people.find((person) => person.user_id === selectedPersonId);
+  const navigate = useNavigate();
+
+  const selectedPerson = people.find(
+    (person) => person.user_id === selectedPersonId
+  );
 
   return (
     <>
-      {person && (
+      {selectedPerson && (
         <div
           className={`profile-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
         >
           <div className="profile-top-container">
             <div className="profile-background-pic-container">
-              <Photo type={"view"} src={person.background_photo} />
+              <Photo type={"view"} src={selectedPerson.background_photo} />
             </div>
 
             <div className="profile-pic-container">
               <Photo
                 type={"view"}
                 style={{ borderRadius: "100%" }}
-                src={person.profile_photo}
+                src={selectedPerson.profile_photo}
               />
             </div>
           </div>
-          <p className="profile-name">{person.full_name}</p>
+          <p className="profile-name">{selectedPerson.full_name}</p>
           <div
             className={`profile-info-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
           >
@@ -42,19 +45,19 @@ const Profile = () => {
               <div className="profile-info-icon">
                 <i className="fa-solid fa-city fa-xl"></i>
               </div>
-              <div className="profile-info-text">{person.town}</div>
+              <div className="profile-info-text">{selectedPerson.town}</div>
             </div>
             <div className="profile-info">
               <div className="profile-info-icon">
                 <i className="fa-solid fa-school fa-xl"></i>
               </div>
-              <div className="profile-info-text">{person.school}</div>
+              <div className="profile-info-text">{selectedPerson.school}</div>
             </div>
             <div className="profile-info">
               <div className="profile-info-icon">
                 <i className="fa-solid fa-briefcase fa-xl"></i>
               </div>
-              <div className="profile-info-text">{person.work}</div>
+              <div className="profile-info-text">{selectedPerson.work}</div>
             </div>
           </div>
           <div
@@ -62,10 +65,10 @@ const Profile = () => {
           >
             <div className="profile-photos-text">Photos</div>
             <div className="profile-photos">
-              {person.photos && person.photos.length > 0 ? (
-                person.photos.map((photo) => (
+              {selectedPerson.photos && selectedPerson.photos.length > 0 ? (
+                selectedPerson.photos.map((photo) => (
                   <div className="profile-photo-container" key={photo.id}>
-                    <Photo type={"view"} src={photo.url} />
+                    <Photo type={"view"} key={photo.id} src={photo.url} />
                   </div>
                 ))
               ) : (
@@ -74,7 +77,7 @@ const Profile = () => {
             </div>
             <div
               className="profile-photos-view-more-button"
-              onClick={() => setMainView("photos")}
+              onClick={() => navigate(`/home/profile/${person.user_id}/photos`)}
             >
               View more photos
             </div>
@@ -85,19 +88,22 @@ const Profile = () => {
             <div className="profile-friends-top-section">
               <div className="profile-friends-text">Friends: </div>
               <div className="profile-friends-text">
-                {person.friends.length}
+                {selectedPerson.friends.length}
               </div>
             </div>
             <div className="profile-friends">
-              {person.friends && person.friends.length > 0 ? (
+              {selectedPerson.friends && selectedPerson.friends.length > 0 ? (
                 people
-                  .filter((person) => person.friends.includes(person.user_id))
-                  .map((person) => (
+                  .filter((person) =>
+                    selectedPerson.friends.includes(person.user_id)
+                  )
+                  .map((friend) => (
                     <UserInfo
+                      personId={friend.user_id}
                       type={"vertical"}
-                      key={person.user_id}
-                      src={person.profile_photo}
-                      name={person.full_name}
+                      key={friend.user_id}
+                      src={friend.profile_photo}
+                      name={friend.full_name}
                     />
                   ))
               ) : (
@@ -106,7 +112,9 @@ const Profile = () => {
             </div>
             <div
               className="profile-friends-view-more-button"
-              onClick={() => setMainView("friends")}
+              onClick={() =>
+                navigate(`/home/profile/${selectedPerson.user_id}/friends`)
+              }
             >
               View more friends
             </div>

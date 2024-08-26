@@ -1,20 +1,23 @@
 import { useContext } from "react";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
-import { MainViewContext } from "../../../../contexts/MainViewContext";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { PostsContext } from "../../../../contexts/PostsContext";
+import { UserContext } from "../../../../contexts/UserContext";
+import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
 
 const Feed = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { mainView } = useContext(MainViewContext);
   const { posts } = useContext(PostsContext);
+  const { user } = useContext(UserContext);
+  const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   return (
     <div
       className={`feed-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
     >
-      {mainView === "mainFeed" ? <CreatePost /> : ""}
+      {selectedPersonId === "" ||
+        (selectedPersonId === user.user_id && <CreatePost />)}
       {posts && posts.length > 0 ? (
         posts.map((post) => (
           <Post

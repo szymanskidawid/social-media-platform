@@ -1,14 +1,16 @@
 import { useContext } from "react";
 import UserInfo from "../../small-components/UserInfo";
 import MainButton from "../../small-components/MainButton";
-import { MainViewContext } from "../../../contexts/MainViewContext";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { UserContext } from "../../../contexts/UserContext";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { setMainView } = useContext(MainViewContext);
   const { user } = useContext(UserContext);
+
+  const navigate = useNavigate();
+
   return (
     <nav
       className={`sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
@@ -21,10 +23,16 @@ const Sidebar = () => {
       />
       <MainButton
         text={"Edit Profile"}
-        onClick={() => setMainView("editProfile")}
+        onClick={() => navigate(`/home/profile/${user.user_id}/edit`)}
       />
-      <MainButton text={"Photos"} onClick={() => setMainView("photos")} />
-      <MainButton text={"Friends"} onClick={() => setMainView("friends")} />
+      <MainButton
+        text={"Photos"}
+        onClick={() => navigate(`/home/profile/${user.user_id}/photos`)}
+      />
+      <MainButton
+        text={"Friends"}
+        onClick={() => navigate(`/home/profile/${user.user_id}/friends`)}
+      />
     </nav>
   );
 };

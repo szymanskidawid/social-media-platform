@@ -7,7 +7,6 @@ function App() {
   const [isLightMode, setIsLightMode] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginPageView, setLoginPageView] = useState("loginView");
-  const [mainView, setMainView] = useState("mainFeed");
   const [containerView, setContainerView] = useState("");
   const [openChatWindow, setOpenChatWindow] = useState(false);
   const [user, setUser] = useState({});
@@ -33,8 +32,6 @@ function App() {
           setIsLoggedIn,
           loginPageView,
           setLoginPageView,
-          mainView,
-          setMainView,
           containerView,
           setContainerView,
           openChatWindow,
