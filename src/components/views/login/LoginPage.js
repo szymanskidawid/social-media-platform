@@ -13,6 +13,7 @@ import { loginFetch, postsFetch } from "../../helpers/fetch";
 import { peopleFetch } from "../../helpers/fetch";
 import { PeopleContext } from "../../../contexts/PeopleContext";
 import { PostsContext } from "../../../contexts/PostsContext";
+import { SelectedPersonIdContext } from "../../../contexts/SelectedPersonIdContext";
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -21,6 +22,7 @@ const LoginPage = () => {
   const { setUser } = useContext(UserContext);
   const { setPeople } = useContext(PeopleContext);
   const { setPosts } = useContext(PostsContext);
+  const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -41,6 +43,7 @@ const LoginPage = () => {
         setUser(loggedUser);
         setPeople(allUsers);
         setPosts(allPosts);
+        setSelectedPersonId(loggedUser.user_id);
 
         setIsLoggedIn(true);
         navigate("/home");
