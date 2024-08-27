@@ -1,19 +1,201 @@
 [
   {
     "chat_id": "chat1_id",
-    "user_ids": ["id1", "id2"],
+    "user_ids": ["id1", "id3"],
     "chat_messages": [
       {
         "message_id": "msg1",
         "user_id": "id1",
-        "message": "Hi!",
-        "time_sent": "2024-08-22T14:00:00Z"
+        "message": "Hey Marek, how's the project going?"
       },
       {
         "message_id": "msg2",
+        "user_id": "id3",
+        "message": "Hi Adam! It's going well, just a bit busy with all the tasks."
+      },
+      {
+        "message_id": "msg3",
+        "user_id": "id3",
+        "message": "How about you? How's work?"
+      },
+      {
+        "message_id": "msg4",
+        "user_id": "id1",
+        "message": "Work is fine. Just the usual warehouse stuff."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat2_id",
+    "user_ids": ["id1", "id2"],
+    "chat_messages": []
+  },
+  {
+    "chat_id": "chat3_id",
+    "user_ids": ["id2", "id3"],
+    "chat_messages": [
+      {
+        "message_id": "msg5",
         "user_id": "id2",
-        "message": "Hello!",
-        "time_sent": "2024-08-22T14:01:00Z"
+        "message": "Marek, can you help me with some coding?"
+      },
+      {
+        "message_id": "msg6",
+        "user_id": "id3",
+        "message": "Sure Ewa, what do you need help with?"
+      },
+      {
+        "message_id": "msg7",
+        "user_id": "id2",
+        "message": "I'm stuck with this loop logic."
+      },
+      {
+        "message_id": "msg8",
+        "user_id": "id3",
+        "message": "Let me send you some examples."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat4_id",
+    "user_ids": ["id4", "id6"],
+    "chat_messages": [
+      {
+        "message_id": "msg9",
+        "user_id": "id4",
+        "message": "Zofia, are you attending the design seminar?"
+      },
+      {
+        "message_id": "msg10",
+        "user_id": "id6",
+        "message": "Yes, I am! Looking forward to it."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat5_id",
+    "user_ids": ["id4", "id5"],
+    "chat_messages": [
+      {
+        "message_id": "msg11",
+        "user_id": "id5",
+        "message": "Hey Anna, let's catch up over coffee soon!"
+      }
+    ]
+  },
+  {
+    "chat_id": "chat6_id",
+    "user_ids": ["id5", "id6"],
+    "chat_messages": []
+  },
+  {
+    "chat_id": "chat7_id",
+    "user_ids": ["id5", "id4"],
+    "chat_messages": [
+      {
+        "message_id": "msg12",
+        "user_id": "id4",
+        "message": "Piotr, I found this amazing design tool!"
+      },
+      {
+        "message_id": "msg13",
+        "user_id": "id4",
+        "message": "It's perfect for our next project."
+      },
+      {
+        "message_id": "msg14",
+        "user_id": "id5",
+        "message": "Sounds great! Share it with me."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat8_id",
+    "user_ids": ["id6", "id4"],
+    "chat_messages": [
+      {
+        "message_id": "msg15",
+        "user_id": "id6",
+        "message": "Anna, have you finished the draft?"
+      }
+    ]
+  },
+  {
+    "chat_id": "chat9_id",
+    "user_ids": ["id7", "id8"],
+    "chat_messages": [
+      {
+        "message_id": "msg16",
+        "user_id": "id7",
+        "message": "Barbara, can you review my presentation?"
+      },
+      {
+        "message_id": "msg17",
+        "user_id": "id8",
+        "message": "Sure Krzysztof, send it over."
+      },
+      {
+        "message_id": "msg18",
+        "user_id": "id7",
+        "message": "Thank you!"
+      }
+    ]
+  },
+  {
+    "chat_id": "chat10_id",
+    "user_ids": ["id7", "id9"],
+    "chat_messages": [
+      {
+        "message_id": "msg19",
+        "user_id": "id9",
+        "message": "Krzysztof, we need to plan the trip."
+      },
+      {
+        "message_id": "msg20",
+        "user_id": "id7",
+        "message": "Let's meet tomorrow to discuss."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat11_id",
+    "user_ids": ["id8", "id9"],
+    "chat_messages": [
+      {
+        "message_id": "msg21",
+        "user_id": "id8",
+        "message": "Tomasz, I finished the music piece."
+      },
+      {
+        "message_id": "msg22",
+        "user_id": "id9",
+        "message": "That's great, Barbara! Can't wait to hear it."
+      }
+    ]
+  },
+  {
+    "chat_id": "chat12_id",
+    "user_ids": ["id10", "id1"],
+    "chat_messages": []
+  },
+  {
+    "chat_id": "chat13_id",
+    "user_ids": ["id10", "id2"],
+    "chat_messages": [
+      {
+        "message_id": "msg23",
+        "user_id": "id10",
+        "message": "Ewa, are you free this weekend?"
+      },
+      {
+        "message_id": "msg24",
+        "user_id": "id2",
+        "message": "Yes Monika, I am! What's the plan?"
+      },
+      {
+        "message_id": "msg25",
+        "user_id": "id10",
+        "message": "Thinking of a small gathering."
       }
     ]
   }
