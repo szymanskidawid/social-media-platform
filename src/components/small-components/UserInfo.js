@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { SelectedPersonIdContext } from "../../contexts/SelectedPersonIdContext";
 import { useNavigate } from "react-router-dom";
 
-const UserInfo = ({ personId, type, src, name }) => {
+const UserInfo = ({ personId, type, src, name, onClick }) => {
   const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
 
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const UserInfo = ({ personId, type, src, name }) => {
   return (
     <div
       className={`user-info-container-${type}`}
-      onClick={() => handleClick()}
+      onClick={onClick ? onClick : () => handleClick()}
     >
       <div className="user-info-photo">
         <img src={src} />
