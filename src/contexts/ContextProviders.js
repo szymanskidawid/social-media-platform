@@ -1,13 +1,13 @@
 import { LightModeContext } from "./LightModeContext";
 import { LoginViewContext } from "./LoginViewContext";
 import { ContainerViewContext } from "./ContainerViewContext";
-import { OpenChatWindowContext } from "./OpenChatWindowContext";
 import { LoginStateContext } from "./LoginStateContext";
 import { UserContext } from "./UserContext";
 import { PeopleContext } from "./PeopleContext";
 import { PostsContext } from "./PostsContext";
 import { SelectedPersonIdContext } from "./SelectedPersonIdContext";
 import { CommentsContext } from "./CommentsContext";
+import { ChatsContext } from "./ChatsContext";
 
 const ContextProviders = ({
   children,
@@ -19,8 +19,6 @@ const ContextProviders = ({
   setLoginPageView,
   containerView,
   setContainerView,
-  openChatWindow,
-  setOpenChatWindow,
   user,
   setUser,
   people,
@@ -31,6 +29,8 @@ const ContextProviders = ({
   setSelectedPersonId,
   comments,
   setComments,
+  chats,
+  setChats,
 }) => {
   return (
     <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
@@ -39,25 +39,21 @@ const ContextProviders = ({
           <ContainerViewContext.Provider
             value={{ containerView, setContainerView }}
           >
-            <OpenChatWindowContext.Provider
-              value={{ openChatWindow, setOpenChatWindow }}
-            >
-              <UserContext.Provider value={{ user, setUser }}>
-                <PeopleContext.Provider value={{ people, setPeople }}>
-                  <PostsContext.Provider value={{ posts, setPosts }}>
-                    <SelectedPersonIdContext.Provider
-                      value={{ selectedPersonId, setSelectedPersonId }}
-                    >
-                      <CommentsContext.Provider
-                        value={{ comments, setComments }}
-                      >
+            <UserContext.Provider value={{ user, setUser }}>
+              <PeopleContext.Provider value={{ people, setPeople }}>
+                <PostsContext.Provider value={{ posts, setPosts }}>
+                  <SelectedPersonIdContext.Provider
+                    value={{ selectedPersonId, setSelectedPersonId }}
+                  >
+                    <CommentsContext.Provider value={{ comments, setComments }}>
+                      <ChatsContext.Provider value={{ chats, setChats }}>
                         {children}
-                      </CommentsContext.Provider>
-                    </SelectedPersonIdContext.Provider>
-                  </PostsContext.Provider>
-                </PeopleContext.Provider>
-              </UserContext.Provider>
-            </OpenChatWindowContext.Provider>
+                      </ChatsContext.Provider>
+                    </CommentsContext.Provider>
+                  </SelectedPersonIdContext.Provider>
+                </PostsContext.Provider>
+              </PeopleContext.Provider>
+            </UserContext.Provider>
           </ContainerViewContext.Provider>
         </LoginViewContext.Provider>
       </LoginStateContext.Provider>

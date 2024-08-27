@@ -20,6 +20,12 @@ export const commentsFetch = async () => {
   return comments;
 };
 
+export const chatsFetch = async () => {
+  const chats = await fetch("/databases/chats.json").then((res) => res.json());
+
+  return chats;
+};
+
 export const loginFetch = async (email, password) => {
   const logins = await fetch("/databases/logins.json").then((res) =>
     res.json()
