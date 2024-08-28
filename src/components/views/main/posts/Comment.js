@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const Comment = ({ personId, text }) => {
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
 
   const selectedPerson = people.find((person) => person.user_id === personId);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="comment-container">

@@ -2,11 +2,11 @@ import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const Friends = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   const selectedPerson = people.find(
@@ -18,6 +18,8 @@ const Friends = () => {
       potentialFriend.user_id !== selectedPerson.user_id &&
       !(selectedPerson.friends || []).includes(potentialFriend.user_id)
   );
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div

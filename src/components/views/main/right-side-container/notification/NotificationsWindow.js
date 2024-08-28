@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import Notification from "./Notification";
-import { UserContext } from "../../../../../contexts/UserContext";
-import { NotificationsContext } from "../../../../../contexts/NotificationsContext";
+import { DataContext } from "../../../../../contexts/DataContext";
 
 const NotificationsWindow = () => {
-  const { user } = useContext(UserContext);
-  const { notifications } = useContext(NotificationsContext);
+  const { user, notifications, loading } = useContext(DataContext);
 
   const selectedNotifications = notifications.filter(
     (notification) => notification.notified_user_id === user.user_id
   );
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>

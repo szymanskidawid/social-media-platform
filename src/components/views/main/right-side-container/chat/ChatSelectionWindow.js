@@ -2,16 +2,14 @@ import { useContext, useState } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import Chat from "./Chat";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
-import { UserContext } from "../../../../../contexts/UserContext";
-import { PeopleContext } from "../../../../../contexts/PeopleContext";
 import { SelectedPersonIdContext } from "../../../../../contexts/SelectedPersonIdContext";
+import { DataContext } from "../../../../../contexts/DataContext";
 
 const ChatSelectionWindow = () => {
   const [openChatWindow, setOpenChatWindow] = useState(false);
 
   const { isLightMode } = useContext(LightModeContext);
-  const { user } = useContext(UserContext);
-  const { people } = useContext(PeopleContext);
+  const { user, people, loading } = useContext(DataContext);
   const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
 
   const friends = people.filter((person) =>
@@ -22,6 +20,8 @@ const ChatSelectionWindow = () => {
     setOpenChatWindow(true);
     setSelectedPersonId(friend);
   };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="chat-selection-container">

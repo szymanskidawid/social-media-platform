@@ -3,12 +3,12 @@ import InputField from "../../../small-components/InputField";
 import Photo from "../../../small-components/Photo";
 import MainButton from "../../../small-components/MainButton";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
 import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const EditProfile = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   const selectedPerson = people.find(
@@ -19,6 +19,8 @@ const EditProfile = () => {
     //TODO - Finish the function
     event.preventDefault();
   };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>

@@ -2,14 +2,16 @@ import { useContext } from "react";
 import UserInfo from "../../small-components/UserInfo";
 import MainButton from "../../small-components/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
-import { UserContext } from "../../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { DataContext } from "../../../contexts/DataContext";
 
 const Sidebar = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { user } = useContext(UserContext);
+  const { user, loading } = useContext(DataContext);
 
   const navigate = useNavigate();
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <nav

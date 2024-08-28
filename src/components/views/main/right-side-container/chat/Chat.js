@@ -3,14 +3,12 @@ import UserInfo from "../../../../small-components/UserInfo";
 import InputField from "../../../../small-components/InputField";
 import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
-import { ChatsContext } from "../../../../../contexts/ChatsContext";
 import { SelectedPersonIdContext } from "../../../../../contexts/SelectedPersonIdContext";
-import { PeopleContext } from "../../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../../contexts/DataContext";
 
 const Chat = ({ userId, setOpenChatWindow }) => {
   const { isLightMode } = useContext(LightModeContext);
-  const { chats } = useContext(ChatsContext);
-  const { people } = useContext(PeopleContext);
+  const { people, chats, loading } = useContext(DataContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   const friend = people.find((person) => person.user_id === selectedPersonId);
@@ -20,7 +18,7 @@ const Chat = ({ userId, setOpenChatWindow }) => {
       chat.user_ids.includes(userId) && chat.user_ids.includes(friend.user_id)
   );
 
-  console.log({ selectedChat });
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div

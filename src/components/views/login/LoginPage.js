@@ -8,33 +8,15 @@ import MainButton from "../../small-components/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
-import { UserContext } from "../../../contexts/UserContext";
-import {
-  peopleFetch,
-  commentsFetch,
-  loginFetch,
-  postsFetch,
-  chatsFetch,
-  notificationsFetch,
-} from "../../helpers/fetch";
-import { PeopleContext } from "../../../contexts/PeopleContext";
-import { PostsContext } from "../../../contexts/PostsContext";
 import { SelectedPersonIdContext } from "../../../contexts/SelectedPersonIdContext";
-import { CommentsContext } from "../../../contexts/CommentsContext";
-import { ChatsContext } from "../../../contexts/ChatsContext";
-import { NotificationsContext } from "../../../contexts/NotificationsContext";
+import { DataContext } from "../../../contexts/DataContext";
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { setIsLoggedIn } = useContext(LoginStateContext);
   const { loginPageView, setLoginPageView } = useContext(LoginViewContext);
-  const { setUser } = useContext(UserContext);
-  const { setPeople } = useContext(PeopleContext);
-  const { setPosts } = useContext(PostsContext);
-  const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
-  const { setComments } = useContext(CommentsContext);
-  const { setChats } = useContext(ChatsContext);
-  const { setNotifications } = useContext(NotificationsContext);
+  const { setUser, loginCheck } = useContext(DataContext);
+  //const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -45,29 +27,10 @@ const LoginPage = () => {
     const password = formData.get("password");
 
     try {
-      const [
-        loggedUser,
-        allUsers,
-        allPosts,
-        allComments,
-        allChats,
-        allNotifications,
-      ] = await Promise.all([
-        loginFetch(email, password),
-        peopleFetch(),
-        postsFetch(),
-        commentsFetch(),
-        chatsFetch(),
-        notificationsFetch(),
-      ]);
+      const loggedUser = await loginCheck(email, password);
 
       if (loggedUser !== null) {
         setUser(loggedUser);
-        setPeople(allUsers);
-        setPosts(allPosts);
-        setComments(allComments);
-        setChats(allChats);
-        setNotifications(allNotifications);
         //setSelectedPersonId(loggedUser.user_id);
 
         setIsLoggedIn(true);

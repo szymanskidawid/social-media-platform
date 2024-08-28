@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import MainButton from "../../../small-components/MainButton";
 import InputField from "../../../small-components/InputField";
-import { CommentsContext } from "../../../../contexts/CommentsContext";
 import Comment from "./Comment";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const CommentsWindow = ({ commentsId }) => {
-  const { comments } = useContext(CommentsContext);
+  const { comments, loading } = useContext(DataContext);
 
   const selectedComments = comments.filter(
     (comment) => comment.post_comments_id === commentsId
   );
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div className="comments-container">

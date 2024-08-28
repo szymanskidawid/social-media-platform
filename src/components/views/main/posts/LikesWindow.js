@@ -1,15 +1,17 @@
 import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const LikesWindow = ({ likesIDs }) => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
 
   const selectedPeople = people.filter((person) =>
     likesIDs.includes(person.user_id)
   );
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div

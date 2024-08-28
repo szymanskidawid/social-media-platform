@@ -4,7 +4,7 @@ import Photo from "../../../small-components/Photo";
 import CommentsWindow from "./CommentsWindow";
 import LikesWindow from "./LikesWindow";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const Post = ({
   personId,
@@ -17,9 +17,11 @@ const Post = ({
   const { isLightMode } = useContext(LightModeContext);
   const [showLikes, setShowLikes] = useState(false);
   const [showComments, setShowComments] = useState(false);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
 
   const person = people.find((person) => person.user_id === personId);
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div

@@ -3,13 +3,13 @@ import UserInfo from "../../../small-components/UserInfo";
 import Feed from "../posts/Feed";
 import Photo from "../../../small-components/Photo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { PeopleContext } from "../../../../contexts/PeopleContext";
 import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
 import { useNavigate } from "react-router-dom";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const Profile = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   const navigate = useNavigate();
@@ -17,6 +17,8 @@ const Profile = () => {
   const selectedPerson = people.find(
     (person) => person.user_id === selectedPersonId
   );
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <>

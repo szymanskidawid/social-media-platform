@@ -2,11 +2,11 @@ import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
-import { PeopleContext } from "../../../../../contexts/PeopleContext";
+import { DataContext } from "../../../../../contexts/DataContext";
 
 const Notification = ({ personId, type }) => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people } = useContext(PeopleContext);
+  const { people, loading } = useContext(DataContext);
 
   const selectedPerson = people.find((person) => person.user_id === personId);
 
@@ -20,6 +20,8 @@ const Notification = ({ personId, type }) => {
         return "Commented your post!";
     }
   };
+
+  if (loading) return <p>Loading...</p>;
 
   const notificationAction = (selection) => {
     if (selection === "friend_request") {

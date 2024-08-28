@@ -8,13 +8,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginPageView, setLoginPageView] = useState("loginView");
   const [containerView, setContainerView] = useState("");
-  const [user, setUser] = useState({});
-  const [people, setPeople] = useState({});
-  const [posts, setPosts] = useState({});
   const [selectedPersonId, setSelectedPersonId] = useState("");
-  const [comments, setComments] = useState({});
-  const [chats, setChats] = useState({});
-  const [notifications, setNotifications] = useState({});
 
   useEffect(() => {
     if (!isLightMode) {
@@ -36,20 +30,8 @@ function App() {
           setLoginPageView,
           containerView,
           setContainerView,
-          user,
-          setUser,
-          people,
-          setPeople,
-          posts,
-          setPosts,
           selectedPersonId,
           setSelectedPersonId,
-          comments,
-          setComments,
-          chats,
-          setChats,
-          notifications,
-          setNotifications,
         }}
       >
         <Router />

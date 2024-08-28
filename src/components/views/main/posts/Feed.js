@@ -2,14 +2,12 @@ import { useContext } from "react";
 import CreatePost from "./CreatePost";
 import Post from "./Post";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { PostsContext } from "../../../../contexts/PostsContext";
-import { UserContext } from "../../../../contexts/UserContext";
 import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
+import { DataContext } from "../../../../contexts/DataContext";
 
 const Feed = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { posts } = useContext(PostsContext);
-  const { user } = useContext(UserContext);
+  const { user, posts, loading } = useContext(DataContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
   const profilePosts = posts.filter(
@@ -20,6 +18,8 @@ const Feed = () => {
   );
 
   const displayedPosts = selectedPersonId ? profilePosts : friendsPosts;
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div
