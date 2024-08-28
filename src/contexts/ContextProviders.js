@@ -1,5 +1,4 @@
 import { LightModeContext } from "./LightModeContext";
-import { LoginViewContext } from "./LoginViewContext";
 import { ContainerViewContext } from "./ContainerViewContext";
 import { LoginStateContext } from "./LoginStateContext";
 import { SelectedPersonIdContext } from "./SelectedPersonIdContext";
@@ -11,8 +10,6 @@ const ContextProviders = ({
   isLoggedIn,
   setIsLoggedIn,
   setIsLightMode,
-  loginPageView,
-  setLoginPageView,
   containerView,
   setContainerView,
   selectedPersonId,
@@ -21,17 +18,15 @@ const ContextProviders = ({
   return (
     <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
       <LoginStateContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-        <LoginViewContext.Provider value={{ loginPageView, setLoginPageView }}>
-          <ContainerViewContext.Provider
-            value={{ containerView, setContainerView }}
+        <ContainerViewContext.Provider
+          value={{ containerView, setContainerView }}
+        >
+          <SelectedPersonIdContext.Provider
+            value={{ selectedPersonId, setSelectedPersonId }}
           >
-            <SelectedPersonIdContext.Provider
-              value={{ selectedPersonId, setSelectedPersonId }}
-            >
-              <DataProvider>{children}</DataProvider>
-            </SelectedPersonIdContext.Provider>
-          </ContainerViewContext.Provider>
-        </LoginViewContext.Provider>
+            <DataProvider>{children}</DataProvider>
+          </SelectedPersonIdContext.Provider>
+        </ContainerViewContext.Provider>
       </LoginStateContext.Provider>
     </LightModeContext.Provider>
   );

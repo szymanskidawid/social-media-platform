@@ -12,6 +12,9 @@ import EditProfile from "../views/main/profile/EditProfile";
 import Friends from "../views/main/profile/Friends";
 import PhotoAlbum from "../views/main/profile/PhotoAlbum";
 import Feed from "../views/main/posts/Feed";
+import RegisterView from "../views/login/RegisterView";
+import ForgotPasswordView from "../views/login/ForgotPasswordView";
+import LoginView from "../views/login/LoginView";
 
 const Router = () => {
   const { isLoggedIn } = useContext(LoginStateContext);
@@ -25,6 +28,21 @@ const Router = () => {
     {
       path: "/login",
       element: isLoggedIn ? <Navigate to={"/home"} /> : <LoginPage />,
+      children: [
+        {
+          path: "",
+          element: <LoginView />,
+        },
+        {
+          path: "/login/register",
+          element: <RegisterView />,
+        },
+
+        {
+          path: "/login/forgotpassword",
+          element: <ForgotPasswordView />,
+        },
+      ],
     },
 
     {

@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
-import { LoginViewContext } from "../../../contexts/LoginViewContext";
+import { useState } from "react";
 import InputField from "../../small-components/InputField";
 import MainButton from "../../small-components/MainButton";
+import { useNavigate } from "react-router-dom";
 
 // TODO: Prevent default submission
 
 const ForgotPasswordView = () => {
-  const { setLoginPageView } = useContext(LoginViewContext);
-
   const [emailValidation, setEmailValidation] = useState(false);
+
+  const navigate = useNavigate();
 
   const selectedForgotPasswordView = (selection) => {
     if (!selection) {
@@ -20,10 +20,7 @@ const ForgotPasswordView = () => {
             name={"email"}
             required
           />
-          <MainButton
-            onClick={() => setEmailValidation(!selection)}
-            text={"Send"}
-          />
+          <MainButton onClick={() => setEmailValidation(true)} text={"Send"} />
         </form>
       );
     } else {
@@ -32,8 +29,8 @@ const ForgotPasswordView = () => {
           <p>If email exists, you will receive a link.</p>
           <MainButton
             onClick={() => {
-              setLoginPageView("loginView");
-              setEmailValidation(!selection);
+              navigate("/login");
+              setEmailValidation(false);
             }}
             text={"Back"}
           />

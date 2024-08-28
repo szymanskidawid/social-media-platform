@@ -1,14 +1,14 @@
-import { useContext, useState } from "react";
-import { LoginViewContext } from "../../../contexts/LoginViewContext";
+import { useState } from "react";
 import InputField from "../../small-components/InputField";
 import MainButton from "../../small-components/MainButton";
+import { useNavigate } from "react-router-dom";
 
 // TODO: Prevent default submission
 
 const RegisterView = () => {
-  const { setLoginPageView } = useContext(LoginViewContext);
-
   const [registerSuccessful, setRegisterSuccessful] = useState(false);
+
+  const navigate = useNavigate();
 
   const selectedRegisterView = (selection) => {
     if (!selection) {
@@ -33,7 +33,7 @@ const RegisterView = () => {
             required
           />
           <MainButton
-            onClick={() => setRegisterSuccessful(!selection)}
+            onClick={() => setRegisterSuccessful(true)}
             text={"Register"}
           />
         </form>
@@ -44,8 +44,8 @@ const RegisterView = () => {
           <p>Go to your email to validate account..</p>
           <MainButton
             onClick={() => {
-              setLoginPageView("loginView");
-              setRegisterSuccessful(!selection);
+              navigate("/login");
+              setRegisterSuccessful(false);
             }}
             text={"Back"}
           />
