@@ -1,4 +1,4 @@
-const { createContext, useState } = require("react");
+const { createContext, useState, useEffect } = require("react");
 
 export const LightModeContext = createContext();
 
