@@ -4,10 +4,12 @@ import MainButton from "../../small-components/MainButton";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../../contexts/DataContext";
+import { IdTrackingContext } from "../../../contexts/IdTrackingContext";
 
 const Sidebar = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { user, loading } = useContext(DataContext);
+  const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
 
@@ -25,15 +27,24 @@ const Sidebar = () => {
       />
       <MainButton
         text={"Edit Profile"}
-        onClick={() => navigate(`/home/profile/${user.user_id}/edit`)}
+        onClick={() => {
+          navigate(`/home/profile/${user.user_id}/edit`);
+          setSelectedProfileId(user.user_id);
+        }}
       />
       <MainButton
         text={"Photos"}
-        onClick={() => navigate(`/home/profile/${user.user_id}/photos`)}
+        onClick={() => {
+          navigate(`/home/profile/${user.user_id}/photos`);
+          setSelectedProfileId(user.user_id);
+        }}
       />
       <MainButton
         text={"Friends"}
-        onClick={() => navigate(`/home/profile/${user.user_id}/friends`)}
+        onClick={() => {
+          navigate(`/home/profile/${user.user_id}/friends`);
+          setSelectedProfileId(user.user_id);
+        }}
       />
     </nav>
   );

@@ -21,8 +21,30 @@
 }
 
 .chat-window-history {
+  padding: 10px;
   height: 200px;
   background-color: var(--gray1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+}
+
+.chat-message-user,
+.chat-message-friend {
+  max-width: 60%;
+  border-radius: 5px;
+  background-color: var(--green1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chat-message-user {
+  align-self: flex-start;
+}
+
+.chat-message-friend {
+  align-self: flex-end;
 }
 
 .chat-window-bottom-section {

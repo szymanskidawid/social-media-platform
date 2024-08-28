@@ -1,3 +1,21 @@
-const { createContext } = require("react");
+const { createContext, useState } = require("react");
 
-export const LightModeContext = createContext(true);
+export const LightModeContext = createContext();
+
+export const LightModeProvider = ({ children }) => {
+  const [isLightMode, setIsLightMode] = useState(true);
+
+  useEffect(() => {
+    if (!isLightMode) {
+      document.body.classList.add("dark-mode-4");
+    } else {
+      document.body.classList.remove("dark-mode-4");
+    }
+  }, [isLightMode]);
+
+  return (
+    <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
+      {children}
+    </LightModeContext.Provider>
+  );
+};

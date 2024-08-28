@@ -1,34 +1,20 @@
-import { LightModeContext } from "./LightModeContext";
-import { ContainerViewContext } from "./ContainerViewContext";
-import { LoginStateContext } from "./LoginStateContext";
-import { SelectedPersonIdContext } from "./SelectedPersonIdContext";
+import { LightModeProvider } from "./LightModeContext";
+import { ContainerViewProvider } from "./ContainerViewContext";
+import { LoginStateProvider } from "./LoginStateContext";
 import { DataProvider } from "./DataContext";
+import { IdTrackingProvider } from "./IdTrackingContext";
 
-const ContextProviders = ({
-  children,
-  isLightMode,
-  isLoggedIn,
-  setIsLoggedIn,
-  setIsLightMode,
-  containerView,
-  setContainerView,
-  selectedPersonId,
-  setSelectedPersonId,
-}) => {
+const ContextProviders = ({ children }) => {
   return (
-    <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
-      <LoginStateContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-        <ContainerViewContext.Provider
-          value={{ containerView, setContainerView }}
-        >
-          <SelectedPersonIdContext.Provider
-            value={{ selectedPersonId, setSelectedPersonId }}
-          >
-            <DataProvider>{children}</DataProvider>
-          </SelectedPersonIdContext.Provider>
-        </ContainerViewContext.Provider>
-      </LoginStateContext.Provider>
-    </LightModeContext.Provider>
+    <LightModeProvider>
+      <ContainerViewProvider>
+        <LoginStateProvider>
+          <DataProvider>
+            <IdTrackingProvider>{children}</IdTrackingProvider>
+          </DataProvider>
+        </LoginStateProvider>
+      </ContainerViewProvider>
+    </LightModeProvider>
   );
 };
 

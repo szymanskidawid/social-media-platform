@@ -3,15 +3,15 @@ import UserInfo from "../../../../small-components/UserInfo";
 import InputField from "../../../../small-components/InputField";
 import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
-import { SelectedPersonIdContext } from "../../../../../contexts/SelectedPersonIdContext";
+import { IdTrackingContext } from "../../../../../contexts/IdTrackingContext";
 import { DataContext } from "../../../../../contexts/DataContext";
 
 const Chat = ({ userId, setOpenChatWindow }) => {
   const { isLightMode } = useContext(LightModeContext);
   const { people, chats, loading } = useContext(DataContext);
-  const { selectedPersonId } = useContext(SelectedPersonIdContext);
+  const { activeChatId } = useContext(IdTrackingContext);
 
-  const friend = people.find((person) => person.user_id === selectedPersonId);
+  const friend = people.find((person) => person.user_id === activeChatId);
 
   const selectedChat = chats.filter(
     (chat) =>

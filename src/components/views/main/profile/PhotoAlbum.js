@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import Photo from "../../../small-components/Photo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
+import { IdTrackingContext } from "../../../../contexts/IdTrackingContext";
 import { DataContext } from "../../../../contexts/DataContext";
 
 const PhotoAlbum = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { people, loading } = useContext(DataContext);
-  const { selectedPersonId } = useContext(SelectedPersonIdContext);
+  const { selectedProfileId } = useContext(IdTrackingContext);
 
   const selectedPerson = people.find(
-    (person) => person.user_id === selectedPersonId
+    (person) => person.user_id === selectedProfileId
   );
 
   if (loading) return <p>Loading...</p>;

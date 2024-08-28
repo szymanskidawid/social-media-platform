@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import Chat from "./Chat";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
-import { SelectedPersonIdContext } from "../../../../../contexts/SelectedPersonIdContext";
+import { IdTrackingContext } from "../../../../../contexts/IdTrackingContext";
 import { DataContext } from "../../../../../contexts/DataContext";
 
 const ChatSelectionWindow = () => {
@@ -10,7 +10,7 @@ const ChatSelectionWindow = () => {
 
   const { isLightMode } = useContext(LightModeContext);
   const { user, people, loading } = useContext(DataContext);
-  const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
+  const { setActiveChatId } = useContext(IdTrackingContext);
 
   const friends = people.filter((person) =>
     user.friends.includes(person.user_id)
@@ -18,7 +18,7 @@ const ChatSelectionWindow = () => {
 
   const handleOpenChat = (friend) => {
     setOpenChatWindow(true);
-    setSelectedPersonId(friend);
+    setActiveChatId(friend);
   };
 
   if (loading) return <p>Loading...</p>;

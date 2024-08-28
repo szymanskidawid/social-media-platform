@@ -8,7 +8,7 @@ import { DataContext } from "../../../contexts/DataContext";
 const LoginView = () => {
   const { setIsLoggedIn } = useContext(LoginStateContext);
   const { setUser, loginCheck } = useContext(DataContext);
-  //const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
+  //const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const LoginView = () => {
 
       if (loggedUser !== null) {
         setUser(loggedUser);
-        //setSelectedPersonId(loggedUser.user_id);
+        //setSelectedProfileId(loggedUser.user_id);
 
         setIsLoggedIn(true);
         navigate("/home");

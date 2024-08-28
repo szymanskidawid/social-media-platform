@@ -3,17 +3,11 @@ import InputField from "../../../small-components/InputField";
 import Photo from "../../../small-components/Photo";
 import MainButton from "../../../small-components/MainButton";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
 import { DataContext } from "../../../../contexts/DataContext";
 
 const EditProfile = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people, loading } = useContext(DataContext);
-  const { selectedPersonId } = useContext(SelectedPersonIdContext);
-
-  const selectedPerson = people.find(
-    (person) => person.user_id === selectedPersonId
-  );
+  const { user, loading } = useContext(DataContext);
 
   const handleSaveChanges = async (event) => {
     //TODO - Finish the function
@@ -24,7 +18,7 @@ const EditProfile = () => {
 
   return (
     <>
-      {selectedPerson && (
+      {user && (
         <div
           className={`edit-profile-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
         >
@@ -37,42 +31,34 @@ const EditProfile = () => {
             <div className="edit-profile-change-photo-container">
               <label>Change Background Photo</label>
               <div className="edit-profile-photo">
-                <Photo type={"change"} src={selectedPerson.background_photo} />
+                <Photo type={"change"} src={user.background_photo} />
               </div>
             </div>
             <div className="edit-profile-change-photo-container">
               <label>Change Profile Photo</label>
               <div className="edit-profile-photo">
-                <Photo type={"change"} src={selectedPerson.profile_photo} />
+                <Photo type={"change"} src={user.profile_photo} />
               </div>
             </div>
             <div className="edit-profile-fields">
               <label>Name</label>
-              <InputField name={"Name"} value={selectedPerson.name} required />
+              <InputField name={"Name"} value={user.name} required />
             </div>
             <div className="edit-profile-fields">
               <label>Surname</label>
-              <InputField
-                name={"Surname"}
-                value={selectedPerson.surname}
-                required
-              />
+              <InputField name={"Surname"} value={user.surname} required />
             </div>
             <div className="edit-profile-fields">
               <label>Town</label>
-              <InputField name={"Town"} value={selectedPerson.town} required />
+              <InputField name={"Town"} value={user.town} required />
             </div>
             <div className="edit-profile-fields">
               <label>School</label>
-              <InputField
-                name={"School"}
-                value={selectedPerson.school}
-                required
-              />
+              <InputField name={"School"} value={user.school} required />
             </div>
             <div className="edit-profile-fields">
               <label>Work</label>
-              <InputField name={"Work"} value={selectedPerson.work} required />
+              <InputField name={"Work"} value={user.work} required />
             </div>
             <MainButton type="submit" text={"Save changes"} />
           </form>

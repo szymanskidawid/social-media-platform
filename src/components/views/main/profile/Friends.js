@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
-import { SelectedPersonIdContext } from "../../../../contexts/SelectedPersonIdContext";
+import { IdTrackingContext } from "../../../../contexts/IdTrackingContext";
 import { DataContext } from "../../../../contexts/DataContext";
 
 const Friends = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { people, loading } = useContext(DataContext);
-  const { selectedPersonId } = useContext(SelectedPersonIdContext);
+  const { selectedProfileId } = useContext(IdTrackingContext);
 
   const selectedPerson = people.find(
-    (person) => person.user_id === selectedPersonId
+    (person) => person.user_id === selectedProfileId
   );
 
   const recommendedFriends = people.filter(

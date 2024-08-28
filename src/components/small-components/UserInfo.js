@@ -1,14 +1,14 @@
 import { useContext } from "react";
-import { SelectedPersonIdContext } from "../../contexts/SelectedPersonIdContext";
+import { IdTrackingContext } from "../../contexts/IdTrackingContext";
 import { useNavigate } from "react-router-dom";
 
 const UserInfo = ({ personId, type, src, name, onClick }) => {
-  const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
+  const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setSelectedPersonId(personId);
+    setSelectedProfileId(personId);
     navigate(`/home/profile/${personId}`);
   };
   return (
