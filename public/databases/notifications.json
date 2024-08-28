@@ -1,163 +1,191 @@
 [
   {
-    "user_id": "id1",
+    "notified_user_id": "id1",
     "notifications": [
       {
+        "id": "notification1_id",
         "type": "friend_request",
-        "to": "id4"
+        "from": "id4"
       },
       {
+        "id": "notification2_id",
         "type": "friend_request",
-        "to": "id7"
+        "from": "id7"
       },
       {
+        "id": "notification3_id",
         "type": "like",
-        "to": "id2"
+        "from": "id2"
       },
       {
+        "id": "notification4_id",
         "type": "comment",
-        "to": "id2"
+        "from": "id2"
       }
     ]
   },
   {
-    "user_id": "id2",
+    "notified_user_id": "id2",
     "notifications": [
       {
+        "id": "notification5_id",
         "type": "friend_request",
-        "to": "id3"
+        "from": "id3"
       },
       {
+        "id": "notification6_id",
         "type": "like",
-        "to": "id1"
+        "from": "id1"
       },
       {
+        "id": "notification7_id",
         "type": "comment",
-        "to": "id1"
+        "from": "id1"
       }
     ]
   },
   {
-    "user_id": "id3",
+    "notified_user_id": "id3",
     "notifications": [
       {
+        "id": "notification8_id",
         "type": "friend_request",
-        "to": "id1"
+        "from": "id1"
       },
       {
+        "id": "notification9_id",
         "type": "friend_request",
-        "to": "id5"
+        "from": "id5"
       },
       {
+        "id": "notification10_id",
         "type": "like",
-        "to": "id4"
+        "from": "id4"
       },
       {
+        "id": "notification11_id",
         "type": "comment",
-        "to": "id4"
+        "from": "id4"
       }
     ]
   },
   {
-    "user_id": "id4",
+    "notified_user_id": "id4",
     "notifications": [
       {
+        "id": "notification12_id",
         "type": "friend_request",
-        "to": "id2"
+        "from": "id2"
       },
       {
+        "id": "notification13_id",
         "type": "like",
-        "to": "id1"
+        "from": "id1"
       },
       {
+        "id": "notification14_id",
         "type": "comment",
-        "to": "id1"
+        "from": "id1"
       }
     ]
   },
   {
-    "user_id": "id5",
+    "notified_user_id": "id5",
     "notifications": [
       {
+        "id": "notification15_id",
         "type": "friend_request",
-        "to": "id6"
+        "from": "id6"
       },
       {
+        "id": "notification16_id",
         "type": "like",
-        "to": "id4"
+        "from": "id4"
       },
       {
+        "id": "notification17_id",
         "type": "comment",
-        "to": "id4"
+        "from": "id4"
       }
     ]
   },
   {
-    "user_id": "id6",
+    "notified_user_id": "id6",
     "notifications": [
       {
+        "id": "notification18_id",
         "type": "friend_request",
-        "to": "id5"
+        "from": "id5"
       },
       {
+        "id": "notification19_id",
         "type": "like",
-        "to": "id7"
+        "from": "id7"
       },
       {
+        "id": "notification20_id",
         "type": "comment",
-        "to": "id7"
+        "from": "id7"
       }
     ]
   },
   {
-    "user_id": "id7",
+    "notified_user_id": "id7",
     "notifications": [
       {
+        "id": "notification21_id",
         "type": "friend_request",
-        "to": "id6"
+        "from": "id6"
       },
       {
+        "id": "notification22_id",
         "type": "like",
-        "to": "id8"
+        "from": "id8"
       },
       {
+        "id": "notification23_id",
         "type": "comment",
-        "to": "id8"
+        "from": "id8"
       }
     ]
   },
   {
-    "user_id": "id8",
+    "notified_user_id": "id8",
     "notifications": [
       {
+        "id": "notification24_id",
         "type": "friend_request",
-        "to": "id9"
+        "from": "id9"
       },
       {
+        "id": "notification25_id",
         "type": "like",
-        "to": "id10"
+        "from": "id10"
       },
       {
+        "id": "notification26_id",
         "type": "comment",
-        "to": "id10"
+        "from": "id10"
       }
     ]
   },
   {
-    "user_id": "id9",
+    "notified_user_id": "id9",
     "notifications": [
       {
+        "id": "notification27_id",
         "type": "friend_request",
-        "to": "id8"
+        "from": "id8"
       }
     ]
   },
   {
-    "user_id": "id10",
+    "notified_user_id": "id10",
     "notifications": [
       {
+        "id": "notification28_id",
         "type": "friend_request",
-        "to": "id9"
+        "from": "id9"
       }
     ]
   }
