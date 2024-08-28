@@ -6,7 +6,14 @@ import LikesWindow from "./LikesWindow";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { PeopleContext } from "../../../../contexts/PeopleContext";
 
-const Post = ({ personId, timePosted, postMessage, src, commentsId }) => {
+const Post = ({
+  personId,
+  timePosted,
+  postMessage,
+  src,
+  likesIDs,
+  commentsId,
+}) => {
   const { isLightMode } = useContext(LightModeContext);
   const [showLikes, setShowLikes] = useState(false);
   const [showComments, setShowComments] = useState(false);
@@ -45,7 +52,7 @@ const Post = ({ personId, timePosted, postMessage, src, commentsId }) => {
             className="post-bot-like-counter"
             onClick={() => setShowLikes(!showLikes)}
           >
-            0
+            {likesIDs.length}
           </div>
           <i className="icon-light-mode fa-solid fa-thumbs-up fa-xl"></i>
         </div>
@@ -66,7 +73,7 @@ const Post = ({ personId, timePosted, postMessage, src, commentsId }) => {
             setShowLikes(!showLikes);
           }}
         >
-          <LikesWindow />
+          <LikesWindow likesIDs={likesIDs} />
         </div>
       ) : (
         ""

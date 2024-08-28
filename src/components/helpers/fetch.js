@@ -26,6 +26,14 @@ export const chatsFetch = async () => {
   return chats;
 };
 
+export const notificationsFetch = async () => {
+  const notifications = await fetch("/databases/notifications.json").then(
+    (res) => res.json()
+  );
+
+  return notifications;
+};
+
 export const loginFetch = async (email, password) => {
   const logins = await fetch("/databases/logins.json").then((res) =>
     res.json()

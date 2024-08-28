@@ -15,12 +15,14 @@ import {
   loginFetch,
   postsFetch,
   chatsFetch,
+  notificationsFetch,
 } from "../../helpers/fetch";
 import { PeopleContext } from "../../../contexts/PeopleContext";
 import { PostsContext } from "../../../contexts/PostsContext";
 import { SelectedPersonIdContext } from "../../../contexts/SelectedPersonIdContext";
 import { CommentsContext } from "../../../contexts/CommentsContext";
 import { ChatsContext } from "../../../contexts/ChatsContext";
+import { NotificationsContext } from "../../../contexts/NotificationsContext";
 
 const LoginPage = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -32,6 +34,7 @@ const LoginPage = () => {
   const { setSelectedPersonId } = useContext(SelectedPersonIdContext);
   const { setComments } = useContext(CommentsContext);
   const { setChats } = useContext(ChatsContext);
+  const { setNotifications } = useContext(NotificationsContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -42,14 +45,21 @@ const LoginPage = () => {
     const password = formData.get("password");
 
     try {
-      const [loggedUser, allUsers, allPosts, allComments, allChats] =
-        await Promise.all([
-          loginFetch(email, password),
-          peopleFetch(),
-          postsFetch(),
-          commentsFetch(),
-          chatsFetch(),
-        ]);
+      const [
+        loggedUser,
+        allUsers,
+        allPosts,
+        allComments,
+        allChats,
+        allNotifications,
+      ] = await Promise.all([
+        loginFetch(email, password),
+        peopleFetch(),
+        postsFetch(),
+        commentsFetch(),
+        chatsFetch(),
+        notificationsFetch(),
+      ]);
 
       if (loggedUser !== null) {
         setUser(loggedUser);
@@ -57,7 +67,8 @@ const LoginPage = () => {
         setPosts(allPosts);
         setComments(allComments);
         setChats(allChats);
-        setSelectedPersonId(loggedUser.user_id);
+        setNotifications(allNotifications);
+        //setSelectedPersonId(loggedUser.user_id);
 
         setIsLoggedIn(true);
         navigate("/home");

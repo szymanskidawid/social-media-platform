@@ -8,6 +8,7 @@ import { PostsContext } from "./PostsContext";
 import { SelectedPersonIdContext } from "./SelectedPersonIdContext";
 import { CommentsContext } from "./CommentsContext";
 import { ChatsContext } from "./ChatsContext";
+import { NotificationsContext } from "./NotificationsContext";
 
 const ContextProviders = ({
   children,
@@ -31,6 +32,8 @@ const ContextProviders = ({
   setComments,
   chats,
   setChats,
+  notifications,
+  setNotifications,
 }) => {
   return (
     <LightModeContext.Provider value={{ isLightMode, setIsLightMode }}>
@@ -47,7 +50,11 @@ const ContextProviders = ({
                   >
                     <CommentsContext.Provider value={{ comments, setComments }}>
                       <ChatsContext.Provider value={{ chats, setChats }}>
-                        {children}
+                        <NotificationsContext.Provider
+                          value={{ notifications, setNotifications }}
+                        >
+                          {children}
+                        </NotificationsContext.Provider>
                       </ChatsContext.Provider>
                     </CommentsContext.Provider>
                   </SelectedPersonIdContext.Provider>

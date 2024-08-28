@@ -12,20 +12,30 @@ const Feed = () => {
   const { user } = useContext(UserContext);
   const { selectedPersonId } = useContext(SelectedPersonIdContext);
 
+  const profilePosts = posts.filter(
+    (post) => post.user_id === selectedPersonId
+  );
+  const friendsPosts = posts.filter((post) =>
+    user.friends.includes(post.user_id)
+  );
+
+  const displayedPosts = selectedPersonId ? profilePosts : friendsPosts;
+
   return (
     <div
       className={`feed-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
     >
       {selectedPersonId === "" ||
         (selectedPersonId === user.user_id && <CreatePost />)}
-      {posts && posts.length > 0 ? (
-        posts.map((post) => (
+      {displayedPosts && displayedPosts.length > 0 ? (
+        displayedPosts.map((post) => (
           <Post
             key={post.post_id}
             personId={post.user_id}
             timePosted={post.time_posted}
             postMessage={post.post_message}
             src={post.post_photo}
+            likesIDs={post.post_likes}
             commentsId={post.post_comments_id}
           />
         ))
