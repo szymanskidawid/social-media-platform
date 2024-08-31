@@ -25,7 +25,7 @@ const Post = ({
 
   return (
     <div
-      className={`post-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+      className={`post-container ${isLightMode ? "light-mode-2" : "dark-mode-3"}`}
     >
       <div className="post-top-section">
         <div className="post-top-user-info">
@@ -38,7 +38,7 @@ const Post = ({
             />
           )}
         </div>
-        <div className="post-top-time-posted">{timePosted}</div>
+        <div className="post-top-time-posted">{`${timePosted} ago`}</div>
       </div>
       <div className="post-top-description">{postMessage}</div>
       {src !== "" ? (
@@ -56,12 +56,14 @@ const Post = ({
           >
             {likesIDs.length}
           </div>
-          <i className="icon-light-mode fa-solid fa-thumbs-up fa-xl"></i>
+          <i
+            className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-thumbs-up fa-xl`}
+          ></i>
         </div>
         <div className="post-bot-comment">
           <div className="post-bot-comment-text">Comment</div>
           <i
-            className="icon-light-mode fa-solid fa-comment fa-xl"
+            className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-comment fa-xl`}
             onClick={() => {
               setShowComments(!showComments);
             }}
