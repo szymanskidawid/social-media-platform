@@ -5,7 +5,7 @@ const Footer = () => {
   const { isLightMode } = useContext(LightModeContext);
   return (
     <div
-      className={`footer-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
+      className={`footer-container ${isLightMode ? "light-mode-3" : "dark-mode-4"}`}
     >
       © 2024 Dawid Szymański. All rights reserved.
     </div>

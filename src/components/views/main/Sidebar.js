@@ -26,6 +26,7 @@ const Sidebar = () => {
         name={user.full_name}
       />
       <MainButton
+        style={{ width: "100%" }}
         text={"Edit Profile"}
         onClick={() => {
           navigate(`/home/profile/${user.user_id}/edit`);
@@ -33,6 +34,7 @@ const Sidebar = () => {
         }}
       />
       <MainButton
+        style={{ width: "100%" }}
         text={"Photos"}
         onClick={() => {
           navigate(`/home/profile/${user.user_id}/photos`);
@@ -40,6 +42,7 @@ const Sidebar = () => {
         }}
       />
       <MainButton
+        style={{ width: "100%" }}
         text={"Friends"}
         onClick={() => {
           navigate(`/home/profile/${user.user_id}/friends`);

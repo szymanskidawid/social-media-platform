@@ -16,10 +16,15 @@ const OptionsWindow = () => {
   return (
     <div className="options-window-container">
       <MainButton
+        style={{ width: "100%" }}
         text={isLightMode ? "Dark Mode" : "Light Mode"}
         onClick={() => setIsLightMode(!isLightMode)}
       />
-      <MainButton text={"Log Out"} onClick={handleLogout} />
+      <MainButton
+        style={{ width: "100%" }}
+        text={"Log Out"}
+        onClick={handleLogout}
+      />
     </div>
   );
 };

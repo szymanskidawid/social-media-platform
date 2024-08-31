@@ -6,24 +6,29 @@ body {
 
 .light-mode-1 {
   background-color: var(--green1);
+  color: black;
 }
 
 .light-mode-2 {
   background-color: var(--green2);
+  color: black;
 }
 
 .light-mode-3 {
   background-color: var(--green3);
+  color: black;
 }
 
 .light-mode-4 {
   background-color: var(--green4);
+  color: black;
 }
 
 .dark-mode-1,
 .dark-mode-2,
 .dark-mode-3,
 .dark-mode-4 {
+  color: white;
 }
 
 .dark-mode-1 {

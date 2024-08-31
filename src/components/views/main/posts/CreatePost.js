@@ -15,7 +15,9 @@ const CreatePost = () => {
       />
       <div className="create-post-bottom-section">
         <div className="create-post-icons">
-          <i className="icon-light-mode fa-solid fa-image fa-xl"></i>
+          <i
+            className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-image fa-xl`}
+          ></i>
         </div>
         <MainButton text={"Send"} />
       </div>

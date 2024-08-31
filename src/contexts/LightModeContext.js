@@ -7,9 +7,9 @@ export const LightModeProvider = ({ children }) => {
 
   useEffect(() => {
     if (!isLightMode) {
-      document.body.classList.add("dark-mode-4");
+      document.body.classList.add("dark-mode-3");
     } else {
-      document.body.classList.remove("dark-mode-4");
+      document.body.classList.remove("dark-mode-3");
     }
   }, [isLightMode]);
 

@@ -3,8 +3,10 @@ import ChatSelectionWindow from "./chat/ChatSelectionWindow";
 import NotificationsWindow from "./notification/NotificationsWindow";
 import OptionsWindow from "./options/OptionsWindow";
 import { ContainerViewContext } from "../../../../contexts/ContainerViewContext";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const RightSideContainer = () => {
+  const { isLightMode } = useContext(LightModeContext);
   const { containerView } = useContext(ContainerViewContext);
   const selectedContainer = (selection) => {
     if (selection === "chats") {
@@ -16,9 +18,15 @@ const RightSideContainer = () => {
     }
   };
   return (
-    <div className="right-side-window-container">
-      {selectedContainer(containerView)}
-    </div>
+    <>
+      {containerView !== "" && (
+        <div
+          className={`right-side-window-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+        >
+          {selectedContainer(containerView)}
+        </div>
+      )}
+    </>
   );
 };
 

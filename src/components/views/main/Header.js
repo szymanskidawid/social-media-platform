@@ -9,7 +9,7 @@ const Header = () => {
   const { setContainerView } = useContext(ContainerViewContext);
   return (
     <header
-      className={`header-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+      className={`header-container ${isLightMode ? "light-mode-2" : "dark-mode-4"}`}
     >
       <div className="header-logo-container">
         <Logo />
