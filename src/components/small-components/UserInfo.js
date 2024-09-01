@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { IdTrackingContext } from "../../contexts/IdTrackingContext";
 import { useNavigate } from "react-router-dom";
+import { LightModeContext } from "../../contexts/LightModeContext";
 
 const UserInfo = ({ personId, type, src, name, onClick }) => {
+  const { isLightMode } = useContext(LightModeContext);
   const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ const UserInfo = ({ personId, type, src, name, onClick }) => {
   };
   return (
     <div
-      className={`user-info-container-${type}`}
+      className={`user-info-container-${type} ${isLightMode ? "button-light-mode" : "button-dark-mode"}`}
       onClick={onClick ? onClick : () => handleClick()}
     >
       <div className="user-info-photo">

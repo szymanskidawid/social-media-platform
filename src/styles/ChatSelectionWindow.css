@@ -1,15 +1,16 @@
 .chat-selection-container {
-  width: 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: row-reverse;
+  gap: 10px;
 }
 
 .chat-selection-available-friends {
-  flex: 2;
+  width: 200px;
   display: flex;
   flex-direction: column;
 }
 
 .chat-selection-chat-window {
-  flex: 3;
+  width: 290px;
 }

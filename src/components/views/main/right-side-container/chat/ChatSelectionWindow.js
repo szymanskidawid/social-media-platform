@@ -26,7 +26,7 @@ const ChatSelectionWindow = () => {
   return (
     <div className="chat-selection-container">
       <div
-        className={`chat-selection-available-friends ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+        className={`chat-selection-available-friends ${isLightMode ? "light-mode-2" : "dark-mode-3"}`}
       >
         {friends && friends.length > 0 ? (
           friends.map((friend) => (
@@ -42,11 +42,9 @@ const ChatSelectionWindow = () => {
           <p>No friends, no chatting</p>
         )}
       </div>
-      <div className="chat-selection-chat-container">
-        {openChatWindow && (
-          <Chat userId={user.user_id} setOpenChatWindow={setOpenChatWindow} />
-        )}
-      </div>
+      {openChatWindow && (
+        <Chat userId={user.user_id} setOpenChatWindow={setOpenChatWindow} />
+      )}
     </div>
   );
 };

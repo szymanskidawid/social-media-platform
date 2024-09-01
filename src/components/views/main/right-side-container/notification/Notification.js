@@ -36,7 +36,7 @@ const Notification = ({ personId, type }) => {
 
   return (
     <div
-      className={`notification-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+      className={`notification-container ${isLightMode ? "light-mode-2" : "dark-mode-3"}`}
     >
       <UserInfo
         personId={selectedPerson.user_id}

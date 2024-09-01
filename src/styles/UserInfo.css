@@ -18,12 +18,9 @@
 }
 
 .user-info-container-vertical {
+  max-width: 120px;
+  text-align: center;
   flex-direction: column;
-}
-
-.user-info-container-horizontal:hover,
-.user-info-container-vertical:hover {
-  background-color: white;
 }
 
 .user-info-photo {

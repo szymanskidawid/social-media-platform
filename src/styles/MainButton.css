@@ -7,27 +7,11 @@
   cursor: pointer;
 }
 
-.main-button-light-mode {
-  background-color: var(--green1);
-}
-
-.main-button-dark-mode {
-  background-color: var(--gray4);
-  color: white;
-}
-
-.main-button-light-mode:hover {
-  background-color: white;
-}
-
-.main-button-dark-mode:hover {
-  background-color: var(--green2);
-}
-
 .main-button.red {
   background-color: red;
 }
 
 .main-button.red:hover {
   background-color: white;
+  color: black;
 }

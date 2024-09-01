@@ -4,24 +4,27 @@ body {
   font-family: "Roboto";
 }
 
+.light-mode-1,
+.light-mode-2,
+.light-mode-3,
+.light-mode-4 {
+  color: black;
+}
+
 .light-mode-1 {
   background-color: var(--green1);
-  color: black;
 }
 
 .light-mode-2 {
   background-color: var(--green2);
-  color: black;
 }
 
 .light-mode-3 {
   background-color: var(--green3);
-  color: black;
 }
 
 .light-mode-4 {
   background-color: var(--green4);
-  color: black;
 }
 
 .dark-mode-1,
@@ -58,4 +61,12 @@ body {
 
 .icon-dark-mode:hover {
   color: var(--green2);
+}
+
+.button-light-mode:hover {
+  background-color: white;
+}
+
+.button-dark-mode:hover {
+  background-color: var(--green2);
 }

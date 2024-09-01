@@ -6,7 +6,7 @@ const MainButton = ({ style, className, type, onClick, text }) => {
   return (
     <button
       style={style}
-      className={`main-button ${className} ${isLightMode ? "main-button-light-mode" : "main-button-dark-mode"}`}
+      className={`main-button ${className} ${isLightMode ? "light-mode-1 button-light-mode" : "dark-mode-4 button-dark-mode"}`}
       type={type}
       onClick={onClick}
     >

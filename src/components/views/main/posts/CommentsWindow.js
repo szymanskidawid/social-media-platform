@@ -3,8 +3,10 @@ import MainButton from "../../../small-components/MainButton";
 import InputField from "../../../small-components/InputField";
 import Comment from "./Comment";
 import { DataContext } from "../../../../contexts/DataContext";
+import { LightModeContext } from "../../../../contexts/LightModeContext";
 
 const CommentsWindow = ({ commentsId }) => {
+  const { isLightMode } = useContext(LightModeContext);
   const { comments, loading } = useContext(DataContext);
 
   const selectedComments = comments.filter(
@@ -15,7 +17,9 @@ const CommentsWindow = ({ commentsId }) => {
 
   return (
     <div className="comments-container">
-      <div className="comments-window">
+      <div
+        className={`comments-window ${isLightMode ? "light-mode-4" : "dark-mode-4"}`}
+      >
         {selectedComments && selectedComments.length > 0 ? (
           selectedComments.map((commentGroup) =>
             commentGroup.comments.map((comment) => (

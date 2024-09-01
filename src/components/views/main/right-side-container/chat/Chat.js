@@ -38,12 +38,14 @@ const Chat = ({ userId, setOpenChatWindow }) => {
           <i className="icon-light-mode fa-solid fa-xmark fa-xl"></i>
         </div>
       </div>
-      <div className="chat-window-history">
+      <div
+        className={`chat-window-history ${isLightMode ? "light-mode-4" : "dark-mode-4"}`}
+      >
         {selectedChat && selectedChat.length > 0 ? (
           selectedChat.map((chatGroup) =>
             chatGroup.chat_messages.map((message) => (
               <div
-                className={`chat-message-${message.user_id === userId ? "user" : "friend"}`}
+                className={`chat-message-${message.user_id === userId ? "user" : "friend"} ${isLightMode ? "light-mode-1" : "dark-mode-2"}`}
                 key={message.message_id}
               >
                 {message.message}
@@ -55,7 +57,10 @@ const Chat = ({ userId, setOpenChatWindow }) => {
         )}
       </div>
       <div className="chat-window-bottom-section">
-        <InputField placeholder={"Chat with your friend :)"} />
+        <InputField
+          style={{ width: "100%" }}
+          placeholder={"Chat with your friend :)"}
+        />
         <MainButton text={"Send"} />
       </div>
     </div>

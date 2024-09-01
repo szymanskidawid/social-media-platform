@@ -64,7 +64,6 @@
 .post-bot-comment-text {
   padding: 7px;
   font-size: 20px;
-  font-weight: 700;
 }
 
 .post-bot-like-counter {
@@ -91,7 +90,6 @@
 
 .post-hidden-container {
   height: 0px;
-  background-color: var(--gray1);
   overflow: hidden;
   transition: height 0.2s ease-in-out;
   display: flex;

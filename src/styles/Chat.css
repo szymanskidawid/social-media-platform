@@ -1,6 +1,7 @@
 .chat-window-container {
   padding: 10px;
   height: 300px;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -23,7 +24,7 @@
 .chat-window-history {
   padding: 10px;
   height: 200px;
-  background-color: var(--gray1);
+  width: 270px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -32,9 +33,9 @@
 
 .chat-message-user,
 .chat-message-friend {
+  padding: 3px;
   max-width: 60%;
   border-radius: 5px;
-  background-color: var(--green1);
   display: flex;
   flex-wrap: wrap;
 }

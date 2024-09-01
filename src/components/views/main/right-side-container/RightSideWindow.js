@@ -21,7 +21,7 @@ const RightSideContainer = () => {
     <>
       {containerView !== "" && (
         <div
-          className={`right-side-window-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
+          className={`right-side-window-container ${isLightMode ? "light-mode-3" : "dark-mode-2"}`}
         >
           {selectedContainer(containerView)}
         </div>
