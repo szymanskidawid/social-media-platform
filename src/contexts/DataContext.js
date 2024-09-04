@@ -3,7 +3,7 @@ import { useState, useEffect, createContext } from "react";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
   const [people, setPeople] = useState([]);
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
@@ -14,7 +14,9 @@ export const DataProvider = ({ children }) => {
 
   const fetchData = async (db) => {
     try {
-      const response = await fetch(`/databases/${db}.json`);
+      const response = await fetch(
+        `https://social-media-platform-backend-l5h4.onrender.com/${db}`
+      );
       const data = await response.json();
       return data;
     } catch (err) {
