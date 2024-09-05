@@ -61,7 +61,7 @@ const Post = ({
           ></i>
         </div>
         <div className="post-bot-comment">
-          <div className="post-bot-comment-text">Comment</div>
+          <div className="post-bot-comment-text">{`Comments ${commentsId.length}`}</div>
           <i
             className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-comment fa-xl`}
             onClick={() => {
