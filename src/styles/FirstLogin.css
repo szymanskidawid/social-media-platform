@@ -1,0 +1,21 @@
+.first-login-page-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.first-login-content {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 70vh;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.first-login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

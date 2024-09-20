@@ -15,6 +15,7 @@ import Feed from "../views/main/posts/Feed";
 import RegisterView from "../views/login/RegisterView";
 import ForgotPasswordView from "../views/login/ForgotPasswordView";
 import LoginView from "../views/login/LoginView";
+import FirstLogin from "../views/login/FirstLogin";
 
 const Router = () => {
   const { isLoggedIn } = useContext(LoginStateContext);
@@ -43,6 +44,11 @@ const Router = () => {
           element: <ForgotPasswordView />,
         },
       ],
+    },
+
+    {
+      path: "/welcome",
+      element: <FirstLogin />,
     },
 
     {

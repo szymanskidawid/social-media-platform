@@ -24,7 +24,7 @@ const LoginView = () => {
       if (loggedUser !== null) {
         setUser(loggedUser);
         setIsLoggedIn(true);
-        navigate("/home");
+        navigate("/welcome");
       } else {
         console.log("Login failed");
       }

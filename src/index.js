@@ -10,6 +10,7 @@ import "./styles/CommentsWindow.css";
 import "./styles/CreatePost.css";
 import "./styles/EditProfile.css";
 import "./styles/Feed.css";
+import "./styles/FirstLogin.css";
 import "./styles/Friends.css";
 import "./styles/Footer.css";
 import "./styles/Header.css";
