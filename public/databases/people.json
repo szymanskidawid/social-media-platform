@@ -1,6 +1,5 @@
 [
   {
-    "user_id": "id1",
     "name": "Adam",
     "surname": "Nowak",
     "full_name": "Adam Nowak",
@@ -19,12 +18,11 @@
         "url": "https://picsum.photos/id/4/400/400"
       }
     ],
-    "friends": ["id2", "id3"],
-    "posts": ["post1_id", "post2_id"],
-    "chats": ["chat1_id", "chat2_id"]
+    "friends": ["66d8c77e0dea4f441553b11e", "66d8c77e0dea4f441553b11f"],
+    "posts": ["66d46b6b0763ddfb55b40cde", "66d46b6b0763ddfb55b40ce0"],
+    "chats": ["66d46ade0763ddfb55b1aa77", "66d46ade0763ddfb55b1aa78"]
   },
   {
-    "user_id": "id2",
     "name": "Ewa",
     "surname": "Kowalska",
     "full_name": "Ewa Kowalska",
@@ -47,12 +45,11 @@
         "url": "https://picsum.photos/id/9/400/400"
       }
     ],
-    "friends": ["id1", "id3"],
-    "posts": ["post3_id", "post4_id"],
-    "chats": ["chat2_id", "chat3_id"]
+    "friends": ["66d8c77e0dea4f441553b11d", "66d8c77e0dea4f441553b11f"],
+    "posts": ["66d46b6b0763ddfb55b40cd9", "66d46b6b0763ddfb55b40cda"],
+    "chats": ["66d46ade0763ddfb55b1aa78", "66d46ade0763ddfb55b1aa79"]
   },
   {
-    "user_id": "id3",
     "name": "Marek",
     "surname": "Wojcik",
     "full_name": "Marek Wojcik",
@@ -67,12 +64,11 @@
         "url": "https://picsum.photos/id/12/400/400"
       }
     ],
-    "friends": ["id1", "id2"],
-    "posts": ["post5_id", "post6_id"],
-    "chats": ["chat1_id", "chat3_id"]
+    "friends": ["66d8c77e0dea4f441553b11d", "66d8c77e0dea4f441553b11e"],
+    "posts": ["66d46b6b0763ddfb55b40cdf", "66d46b6b0763ddfb55b40cd7"],
+    "chats": ["66d46ade0763ddfb55b1aa77", "66d46ade0763ddfb55b1aa79"]
   },
   {
-    "user_id": "id4",
     "name": "Anna",
     "surname": "Nowicka",
     "full_name": "Anna Nowicka",
@@ -95,12 +91,11 @@
         "url": "https://picsum.photos/id/17/400/400"
       }
     ],
-    "friends": ["id5", "id6"],
-    "posts": ["post7_id", "post8_id"],
-    "chats": ["chat4_id", "chat5_id"]
+    "friends": ["66d8c77e0dea4f441553b121", "66d8c77e0dea4f441553b122"],
+    "posts": ["66d46b6b0763ddfb55b40cdc", "66d46b6b0763ddfb55b40ce2"],
+    "chats": ["66d46ade0763ddfb55b1aa7a", "66d46ade0763ddfb55b1aa7b"]
   },
   {
-    "user_id": "id5",
     "name": "Piotr",
     "surname": "Lewandowski",
     "full_name": "Piotr Lewandowski",
@@ -127,12 +122,11 @@
         "url": "https://picsum.photos/id/23/400/400"
       }
     ],
-    "friends": ["id4", "id6"],
-    "posts": ["post9_id", "post10_id"],
-    "chats": ["chat6_id", "chat7_id"]
+    "friends": ["66d8c77e0dea4f441553b120", "66d8c77e0dea4f441553b122"],
+    "posts": ["66d46b6b0763ddfb55b40ce3", "66d46b6b0763ddfb55b40cd6"],
+    "chats": ["66d46ade0763ddfb55b1aa7c", "66d46ade0763ddfb55b1aa7d"]
   },
   {
-    "user_id": "id6",
     "name": "Zofia",
     "surname": "Sikorska",
     "full_name": "Zofia Sikorska",
@@ -155,12 +149,11 @@
         "url": "https://picsum.photos/id/28/400/400"
       }
     ],
-    "friends": ["id4", "id5"],
-    "posts": ["post11_id", "post12_id"],
-    "chats": ["chat4_id", "chat8_id"]
+    "friends": ["66d8c77e0dea4f441553b120", "66d8c77e0dea4f441553b121"],
+    "posts": ["66d46b6b0763ddfb55b40ce5", "66d46b6b0763ddfb55b40ce1"],
+    "chats": ["66d46ade0763ddfb55b1aa7a", "66d46ade0763ddfb55b1aa7e"]
   },
   {
-    "user_id": "id7",
     "name": "Krzysztof",
     "surname": "Pawlak",
     "full_name": "Krzysztof Pawlak",
@@ -191,12 +184,11 @@
         "url": "https://picsum.photos/id/35/400/400"
       }
     ],
-    "friends": ["id8", "id9"],
-    "posts": ["post13_id", "post14_id"],
-    "chats": ["chat9_id", "chat10_id"]
+    "friends": ["66d8c77e0dea4f441553b124", "66d8c77e0dea4f441553b125"],
+    "posts": ["66d46b6b0763ddfb55b40cd5", "66d46b6b0763ddfb55b40ce4"],
+    "chats": ["66d46ade0763ddfb55b1aa7f", "66d46ade0763ddfb55b1aa80"]
   },
   {
-    "user_id": "id8",
     "name": "Barbara",
     "surname": "Kaczmarek",
     "full_name": "Barbara Kaczmarek",
@@ -215,12 +207,11 @@
         "url": "https://picsum.photos/id/39/400/400"
       }
     ],
-    "friends": ["id7", "id9"],
-    "posts": ["post15_id", "post16_id"],
-    "chats": ["chat9_id", "chat11_id"]
+    "friends": ["66d8c77e0dea4f441553b123", "66d8c77e0dea4f441553b125"],
+    "posts": ["66d46b6b0763ddfb55b40cd8", "66d46b6b0763ddfb55b40cdb"],
+    "chats": ["66d46ade0763ddfb55b1aa7f", "66d46ade0763ddfb55b1aa81"]
   },
   {
-    "user_id": "id9",
     "name": "Tomasz",
     "surname": "Zielinski",
     "full_name": "Tomasz Zielinski",
@@ -243,12 +234,11 @@
         "url": "https://picsum.photos/id/44/400/400"
       }
     ],
-    "friends": ["id7", "id8"],
-    "posts": ["post17_id", "post18_id"],
-    "chats": ["chat10_id", "chat11_id"]
+    "friends": ["66d8c77e0dea4f441553b123", "66d8c77e0dea4f441553b124"],
+    "posts": ["66d46b6b0763ddfb55b40ce6", "66d46b6b0763ddfb55b40cdd"],
+    "chats": ["66d46ade0763ddfb55b1aa80", "66d46ade0763ddfb55b1aa81"]
   },
   {
-    "user_id": "id10",
     "name": "Monika",
     "surname": "Michalska",
     "full_name": "Monika Michalska",
@@ -263,8 +253,8 @@
         "url": "https://picsum.photos/id/47/400/400"
       }
     ],
-    "friends": ["id1", "id2"],
-    "posts": ["post19_id", "post20_id"],
-    "chats": ["chat12_id", "chat13_id"]
+    "friends": ["66d8c77e0dea4f441553b11d", "66d8c77e0dea4f441553b11e"],
+    "posts": ["post19_id", "66d46b6b0763ddfb55b40ce7"],
+    "chats": ["66d46ade0763ddfb55b1aa82", "66d46ade0763ddfb55b1aa83"]
   }
 ]
