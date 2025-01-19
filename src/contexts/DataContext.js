@@ -27,25 +27,6 @@ export const DataProvider = ({ children }) => {
     }
   };
 
-  const loginCheck = async (email, password) => {
-    try {
-      const user = (await fetchData("logins")).find(
-        (u) => u.email === email && u.password === password
-      );
-
-      if (user) {
-        const peopleData = await fetchData("people");
-        const loggedUser = peopleData.find((p) => p._id === user._id);
-        return loggedUser;
-      } else {
-        return null;
-      }
-    } catch (err) {
-      setError(err);
-      return null;
-    }
-  };
-
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
@@ -97,7 +78,6 @@ export const DataProvider = ({ children }) => {
         setComments,
         setChats,
         setNotifications,
-        loginCheck,
       }}
     >
       {children}
