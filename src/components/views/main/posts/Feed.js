@@ -30,19 +30,17 @@ const Feed = () => {
     <div
       className={`feed-container ${isLightMode ? "light-mode-3" : "dark-mode-4"}`}
     >
-      {(path === "/home" || selectedProfileId === user.user_id) && (
-        <CreatePost />
-      )}
+      {(path === "/home" || selectedProfileId === user._id) && <CreatePost />}
       {displayedPosts && displayedPosts.length > 0 ? (
         displayedPosts.map((post) => (
           <Post
-            key={post.post_id}
+            key={post._id}
             personId={post.user_id}
             timePosted={formatDistanceToNow(new Date(post.time_posted))}
             postMessage={post.post_message}
             src={post.post_photo}
             likesIDs={post.post_likes}
-            commentsId={post.post_comments_id}
+            commentsId={post._id}
           />
         ))
       ) : (

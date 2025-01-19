@@ -11,11 +11,11 @@ const Chat = ({ userId, setOpenChatWindow }) => {
   const { people, chats, loading } = useContext(DataContext);
   const { activeChatId } = useContext(IdTrackingContext);
 
-  const friend = people.find((person) => person.user_id === activeChatId);
+  const friend = people.find((person) => person._id === activeChatId);
 
   const selectedChat = chats.filter(
     (chat) =>
-      chat.user_ids.includes(userId) && chat.user_ids.includes(friend.user_id)
+      chat.user_ids.includes(userId) && chat.user_ids.includes(friend._id)
   );
 
   if (loading) return <p>Loading...</p>;
@@ -26,7 +26,7 @@ const Chat = ({ userId, setOpenChatWindow }) => {
     >
       <div className="chat-window-top-section">
         <UserInfo
-          personId={friend.user_id}
+          personId={friend._id}
           type={"horizontal"}
           src={friend.profile_photo}
           name={friend.full_name}

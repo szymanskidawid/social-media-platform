@@ -20,7 +20,7 @@ const Sidebar = () => {
       className={`sidebar-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
     >
       <UserInfo
-        personId={user.user_id}
+        personId={user._id}
         type={"horizontal"}
         src={user.profile_photo}
         name={user.full_name}
@@ -29,24 +29,24 @@ const Sidebar = () => {
         style={{ width: "100%" }}
         text={"Edit Profile"}
         onClick={() => {
-          navigate(`/home/profile/${user.user_id}/edit`);
-          setSelectedProfileId(user.user_id);
+          navigate(`/home/profile/${user._id}/edit`);
+          setSelectedProfileId(user._id);
         }}
       />
       <MainButton
         style={{ width: "100%" }}
         text={"Photos"}
         onClick={() => {
-          navigate(`/home/profile/${user.user_id}/photos`);
-          setSelectedProfileId(user.user_id);
+          navigate(`/home/profile/${user._id}/photos`);
+          setSelectedProfileId(user._id);
         }}
       />
       <MainButton
         style={{ width: "100%" }}
         text={"Friends"}
         onClick={() => {
-          navigate(`/home/profile/${user.user_id}/friends`);
-          setSelectedProfileId(user.user_id);
+          navigate(`/home/profile/${user._id}/friends`);
+          setSelectedProfileId(user._id);
         }}
       />
     </nav>

@@ -19,7 +19,7 @@ const Post = ({
   const [showComments, setShowComments] = useState(false);
   const { people, comments, loading } = useContext(DataContext);
 
-  const person = people.find((person) => person.user_id === personId);
+  const person = people.find((person) => person._id === personId);
 
   if (loading) return <p>Loading...</p>;
 
@@ -31,7 +31,7 @@ const Post = ({
         <div className="post-top-user-info">
           {person && (
             <UserInfo
-              personId={person.user_id}
+              personId={person._id}
               type={"horizontal"}
               src={person.profile_photo}
               name={person.full_name}
@@ -61,7 +61,7 @@ const Post = ({
           ></i>
         </div>
         <div className="post-bot-comment">
-          <div className="post-bot-comment-text">{`Comments ${comments.find((postComments) => postComments.post_comments_id === commentsId)?.comments.length || 0}`}</div>
+          <div className="post-bot-comment-text">{`Comments ${comments.find((postComments) => postComments._id === commentsId)?.comments.length || 0}`}</div>
           <i
             className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-comment fa-xl`}
             onClick={() => {

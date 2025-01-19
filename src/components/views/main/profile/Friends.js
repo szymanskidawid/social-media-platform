@@ -10,13 +10,13 @@ const Friends = () => {
   const { selectedProfileId } = useContext(IdTrackingContext);
 
   const selectedPerson = people.find(
-    (person) => person.user_id === selectedProfileId
+    (person) => person._id === selectedProfileId
   );
 
   const recommendedFriends = people.filter(
     (potentialFriend) =>
-      potentialFriend.user_id !== selectedPerson.user_id &&
-      !(selectedPerson.friends || []).includes(potentialFriend.user_id)
+      potentialFriend._id !== selectedPerson._id &&
+      !(selectedPerson.friends || []).includes(potentialFriend._id)
   );
 
   if (loading) return <p>Loading...</p>;
@@ -34,12 +34,12 @@ const Friends = () => {
       <div className="friends-all">
         {selectedPerson.friends && selectedPerson.friends.length > 0 ? (
           people
-            .filter((person) => selectedPerson.friends.includes(person.user_id))
+            .filter((person) => selectedPerson.friends.includes(person._id))
             .map((friend) => (
               <UserInfo
-                personId={friend.user_id}
+                personId={friend._id}
                 type={"vertical"}
-                key={friend.user_id}
+                key={friend._id}
                 src={friend.profile_photo}
                 name={friend.full_name}
               />
@@ -58,9 +58,9 @@ const Friends = () => {
           {recommendedFriends && recommendedFriends.length > 0 ? (
             recommendedFriends.map((potentialFriend) => (
               <UserInfo
-                personId={potentialFriend.user_id}
+                personId={potentialFriend._id}
                 type={"vertical"}
-                key={potentialFriend.user_id}
+                key={potentialFriend._id}
                 src={potentialFriend.profile_photo}
                 name={potentialFriend.full_name}
               />

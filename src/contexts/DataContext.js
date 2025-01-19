@@ -35,7 +35,7 @@ export const DataProvider = ({ children }) => {
 
       if (user) {
         const peopleData = await fetchData("people");
-        const loggedUser = peopleData.find((p) => p.user_id === user.user_id);
+        const loggedUser = peopleData.find((p) => p._id === user._id);
         return loggedUser;
       } else {
         return null;

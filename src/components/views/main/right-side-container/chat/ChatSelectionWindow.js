@@ -12,9 +12,7 @@ const ChatSelectionWindow = () => {
   const { user, people, loading } = useContext(DataContext);
   const { setActiveChatId } = useContext(IdTrackingContext);
 
-  const friends = people.filter((person) =>
-    user.friends.includes(person.user_id)
-  );
+  const friends = people.filter((person) => user.friends.includes(person._id));
 
   const handleOpenChat = (friend) => {
     setOpenChatWindow(true);
@@ -32,10 +30,10 @@ const ChatSelectionWindow = () => {
           friends.map((friend) => (
             <UserInfo
               type={"horizontal"}
-              key={friend.user_id}
+              key={friend._id}
               src={friend.profile_photo}
               name={friend.full_name}
-              onClick={() => handleOpenChat(friend.user_id)}
+              onClick={() => handleOpenChat(friend._id)}
             />
           ))
         ) : (
@@ -43,7 +41,7 @@ const ChatSelectionWindow = () => {
         )}
       </div>
       {openChatWindow && (
-        <Chat userId={user.user_id} setOpenChatWindow={setOpenChatWindow} />
+        <Chat userId={user._id} setOpenChatWindow={setOpenChatWindow} />
       )}
     </div>
   );

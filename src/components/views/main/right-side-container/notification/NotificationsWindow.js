@@ -6,7 +6,7 @@ const NotificationsWindow = () => {
   const { user, notifications, loading } = useContext(DataContext);
 
   const selectedNotifications = notifications.filter(
-    (notification) => notification.notified_user_id === user.user_id
+    (notification) => notification.notified_user_id === user._id
   );
 
   if (loading) return <p>Loading...</p>;

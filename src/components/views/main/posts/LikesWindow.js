@@ -8,7 +8,7 @@ const LikesWindow = ({ likesIDs }) => {
   const { people, loading } = useContext(DataContext);
 
   const selectedPeople = people.filter((person) =>
-    likesIDs.includes(person.user_id)
+    likesIDs.includes(person._id)
   );
 
   if (loading) return <p>Loading...</p>;
@@ -22,7 +22,7 @@ const LikesWindow = ({ likesIDs }) => {
         {selectedPeople && selectedPeople.length > 0 ? (
           selectedPeople.map((person) => (
             <UserInfo
-              personId={person.user_id}
+              personId={person._id}
               type={"horizontal"}
               src={person.profile_photo}
               name={person.full_name}

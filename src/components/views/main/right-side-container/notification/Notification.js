@@ -8,7 +8,7 @@ const Notification = ({ personId, type }) => {
   const { isLightMode } = useContext(LightModeContext);
   const { people, loading } = useContext(DataContext);
 
-  const selectedPerson = people.find((person) => person.user_id === personId);
+  const selectedPerson = people.find((person) => person._id === personId);
 
   const notificationText = (selection) => {
     switch (selection) {
@@ -39,7 +39,7 @@ const Notification = ({ personId, type }) => {
       className={`notification-container ${isLightMode ? "light-mode-2" : "dark-mode-3"}`}
     >
       <UserInfo
-        personId={selectedPerson.user_id}
+        personId={selectedPerson._id}
         type={"horizontal"}
         src={selectedPerson.profile_photo}
         name={selectedPerson.full_name}

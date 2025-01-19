@@ -10,7 +10,7 @@ const PhotoAlbum = () => {
   const { selectedProfileId } = useContext(IdTrackingContext);
 
   const selectedPerson = people.find(
-    (person) => person.user_id === selectedProfileId
+    (person) => person._id === selectedProfileId
   );
 
   if (loading) return <p>Loading...</p>;

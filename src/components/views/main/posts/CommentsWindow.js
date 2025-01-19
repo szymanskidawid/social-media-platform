@@ -10,7 +10,7 @@ const CommentsWindow = ({ commentsId }) => {
   const { comments, loading } = useContext(DataContext);
 
   const selectedComments = comments.filter(
-    (comment) => comment.post_comments_id === commentsId
+    (comment) => comment._id === commentsId
   );
 
   if (loading) return <p>Loading...</p>;

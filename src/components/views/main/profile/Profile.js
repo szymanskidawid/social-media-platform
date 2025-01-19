@@ -15,7 +15,7 @@ const Profile = () => {
   const navigate = useNavigate();
 
   const selectedPerson = people.find(
-    (person) => person.user_id === selectedProfileId
+    (person) => person._id === selectedProfileId
   );
 
   if (loading) return <p>Loading...</p>;
@@ -80,7 +80,7 @@ const Profile = () => {
             <div
               className="profile-photos-view-more-button"
               onClick={() =>
-                navigate(`/home/profile/${selectedPerson.user_id}/photos`)
+                navigate(`/home/profile/${selectedPerson._id}/photos`)
               }
             >
               View more photos
@@ -99,13 +99,13 @@ const Profile = () => {
               {selectedPerson.friends && selectedPerson.friends.length > 0 ? (
                 people
                   .filter((person) =>
-                    selectedPerson.friends.includes(person.user_id)
+                    selectedPerson.friends.includes(person._id)
                   )
                   .map((friend) => (
                     <UserInfo
-                      personId={friend.user_id}
+                      personId={friend._id}
                       type={"vertical"}
-                      key={friend.user_id}
+                      key={friend._id}
                       src={friend.profile_photo}
                       name={friend.full_name}
                     />
@@ -117,7 +117,7 @@ const Profile = () => {
             <div
               className="profile-friends-view-more-button"
               onClick={() =>
-                navigate(`/home/profile/${selectedPerson.user_id}/friends`)
+                navigate(`/home/profile/${selectedPerson._id}/friends`)
               }
             >
               View more friends
