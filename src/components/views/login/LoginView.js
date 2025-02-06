@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import InputField from "../../small-components/InputField";
 import MainButton from "../../small-components/MainButton";
+import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
 import { DataContext } from "../../../contexts/DataContext";
 
 const LoginView = () => {
+  const [incorrectLogin, setIncorrectLogin] = useState(false);
   const { setIsLoggedIn } = useContext(LoginStateContext);
-  const { setUser, loginCheck } = useContext(DataContext);
+  const { setUser } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -15,18 +17,33 @@ const LoginView = () => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    const email = formData.get("login");
+    const email = formData.get("email");
     const password = formData.get("password");
 
-    try {
-      const loggedUser = await loginCheck(email, password);
+    setIncorrectLogin(false);
 
-      if (loggedUser !== null) {
-        setUser(loggedUser);
+    try {
+      const response = await fetch(
+        //"https://social-media-platform-backend-l5h4.onrender.com/logins",
+        `http://localhost:4000/logins`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setUser(data);
         setIsLoggedIn(true);
         navigate("/welcome");
       } else {
-        console.log("Login failed");
+        setIncorrectLogin(true);
+        console.log("Login failed", data.error);
       }
     } catch (error) {
       console.log("There was an error: ", error);
@@ -39,7 +56,7 @@ const LoginView = () => {
         <InputField
           style={{ height: "30px", width: "200px" }}
           placeholder={"Enter email"}
-          name={"login"}
+          name={"email"}
           required
         />
         <InputField
@@ -50,6 +67,11 @@ const LoginView = () => {
         />
         <MainButton type="submit" text={"Log In"} />
       </form>
+      {incorrectLogin ? (
+        <Alert severity="error">Incorrect Login or Password!</Alert>
+      ) : (
+        ""
+      )}
       <div
         className="login-page-underline-buttons"
         onClick={() => navigate("/login/forgotpassword")}
