@@ -15,7 +15,8 @@ export const DataProvider = ({ children }) => {
   const fetchData = async (db) => {
     try {
       const response = await fetch(
-        `https://social-media-platform-backend-l5h4.onrender.com/${db}`
+        //`https://social-media-platform-backend-l5h4.onrender.com/${db}`
+        `http://localhost:4000/${db}`
       );
       const data = await response.json();
       return data;
