@@ -1,6 +1,25 @@
-const InputField = ({ style, placeholder, name, value, required }) => {
+import { TextField } from "@mui/material";
+
+const InputField = ({ name, label, placeholder, value, required }) => {
   return (
-    <input
+    <TextField
+      name={name}
+      label={label}
+      placeholder={placeholder}
+      variant="outlined"
+      margin="normal"
+      value={value}
+      sx={{
+        "& .MuiInputBase-root": {
+          backgroundColor: "white",
+        },
+        "& .MuiOutlinedInput-notchedOutline": {
+          borderColor: "black",
+        },
+      }}
+      required={required}
+    />
+    /*<input
       style={style}
       className="input"
       type="text"
@@ -8,7 +27,7 @@ const InputField = ({ style, placeholder, name, value, required }) => {
       name={name}
       value={value}
       required={required}
-    />
+    />*/
   );
 };
 

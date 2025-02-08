@@ -40,26 +40,21 @@ const EditProfile = () => {
                 <Photo type={"change"} src={user.profile_photo} />
               </div>
             </div>
-            <div className="edit-profile-fields">
-              <label>Name</label>
-              <InputField name={"Name"} value={user.name} required />
-            </div>
-            <div className="edit-profile-fields">
-              <label>Surname</label>
-              <InputField name={"Surname"} value={user.surname} required />
-            </div>
-            <div className="edit-profile-fields">
-              <label>Town</label>
-              <InputField name={"Town"} value={user.town} required />
-            </div>
-            <div className="edit-profile-fields">
-              <label>School</label>
-              <InputField name={"School"} value={user.school} required />
-            </div>
-            <div className="edit-profile-fields">
-              <label>Work</label>
-              <InputField name={"Work"} value={user.work} required />
-            </div>
+            <InputField name="name" label="Name" value={user.name} required />
+            <InputField
+              name="surname"
+              label="Surname"
+              value={user.surname}
+              required
+            />
+            <InputField name="town" label="Town" value={user.town} required />
+            <InputField
+              name="school"
+              label="School"
+              value={user.school}
+              required
+            />
+            <InputField name="work" label="Work" value={user.work} required />
             <MainButton type="submit" text={"Save changes"} />
           </form>
         </div>

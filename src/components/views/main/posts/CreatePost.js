@@ -9,10 +9,7 @@ const CreatePost = () => {
     <div
       className={`create-post-container ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
     >
-      <InputField
-        style={{ width: "max(100% - 18px)", height: "100%" }}
-        placeholder={"Write a comment..."}
-      />
+      <InputField name="post" placeholder={"What's on your mind?"} />
       <div className="create-post-bottom-section">
         <div className="create-post-icons">
           <i

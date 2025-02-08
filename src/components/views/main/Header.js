@@ -18,10 +18,7 @@ const Header = () => {
         <i
           className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-magnifying-glass fa-2xl`}
         ></i>
-        <InputField
-          style={{ height: "40px", width: "300px" }}
-          placeholder={"Search for something..."}
-        />
+        <InputField name="search" placeholder="Search for something..." />
       </div>
       <nav className="header-navbar-container">
         <i

@@ -59,22 +59,11 @@ const RegisterView = () => {
             onSubmit={handleRegister}
             method="POST"
           >
+            <InputField name="email" label="Email" required />
+            <InputField name="password" label="Password" required />
             <InputField
-              style={{ height: "30px", width: "200px" }}
-              placeholder={"Enter email"}
-              name={"email"}
-              required
-            />
-            <InputField
-              style={{ height: "30px", width: "200px" }}
-              placeholder={"Enter password"}
-              name={"password"}
-              required
-            />
-            <InputField
-              style={{ height: "30px", width: "200px" }}
-              placeholder={"Enter password"}
-              name={"repeatPassword"}
+              name="repeatPassword"
+              label="Repeat Password"
               required
             />
             <MainButton type="submit" text={"Register"} />

@@ -57,10 +57,7 @@ const Chat = ({ userId, setOpenChatWindow }) => {
         )}
       </div>
       <div className="chat-window-bottom-section">
-        <InputField
-          style={{ width: "100%" }}
-          placeholder={"Chat with your friend :)"}
-        />
+        <InputField name="chat" placeholder={"Chat with your friend :)"} />
         <MainButton text={"Send"} />
       </div>
     </div>

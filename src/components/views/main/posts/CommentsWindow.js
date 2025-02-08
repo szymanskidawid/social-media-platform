@@ -36,8 +36,9 @@ const CommentsWindow = ({ commentsId }) => {
       </div>
       <div className="comments-bot-section">
         <InputField
-          style={{ width: "100%" }}
+          name="comment"
           placeholder={"Write a comment..."}
+          required
         />
         <MainButton text={"Send"} />
       </div>
