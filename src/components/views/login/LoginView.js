@@ -53,8 +53,8 @@ const LoginView = () => {
   return (
     <>
       <form className="login-page-form" onSubmit={handleLogin} method="POST">
-        <InputField name="email" label="Email" required />
-        <InputField name="password" label="Password" required />
+        <InputField name="email" placeholder="Email" required />
+        <InputField name="password" placeholder="Password" required />
         <MainButton type="submit" text={"Log In"} />
       </form>
       {incorrectLogin ? (

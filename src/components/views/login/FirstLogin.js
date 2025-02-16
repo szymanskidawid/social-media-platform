@@ -8,10 +8,61 @@ import InputField from "../../small-components/InputField";
 
 const FirstLogin = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { loading } = useContext(DataContext);
+  const { user, loading } = useContext(DataContext);
   const [firstLoginView, setFirstLoginView] = useState("page1");
+  const [newUserData, setNewUserData] = useState({});
 
   const navigate = useNavigate();
+
+  const handleFirstStep = (event) => {
+    event.preventDefault();
+
+    const formElement = event.target.closest("form");
+    const formData = new FormData(formElement);
+    setNewUserData({
+      name: formData.get("name"),
+      surname: formData.get("surname"),
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    setNewUserData((previousData) => ({
+      ...previousData,
+      town: formData.get("town"),
+      school: formData.get("school"),
+      work: formData.get("work"),
+    }));
+
+    try {
+      const response = await fetch(
+        //"https://social-media-platform-backend-l5h4.onrender.com/logins/create",
+        `http://localhost:4000/people/create`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            loginId: user._id,
+            ...newUserData,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        navigate("/home");
+      } else {
+        console.log("Person creation failed", data.error);
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
+    }
+  };
 
   if (loading) return <p>Loading...</p>;
 
@@ -19,51 +70,30 @@ const FirstLogin = () => {
     switch (selection) {
       case "page1":
         return (
-          <form className="first-login-form">
-            <div className="first-login-fields">
-              <label>First Name</label>
-              <InputField name={"Name"} required />
-            </div>
-            <div className="first-login-fields">
-              <label>Surname</label>
-              <InputField name={"Surname"} required />
-            </div>
+          <>
+            <InputField name="name" placeholder="Name" required />
+            <InputField name="surname" placeholder="Surname" required />
             <MainButton
               text={"Next"}
-              onClick={() => setFirstLoginView("page2")}
+              onClick={(event) => {
+                handleFirstStep(event);
+                setFirstLoginView("page2");
+              }}
             />
-          </form>
+          </>
         );
       case "page2":
         return (
-          <form className="first-login-form">
+          <>
             <div className="first-login-fields">
               <label>Profile Picture</label>
               <Photo type={"change"} src="/assets/addNewPhoto.jpg" />
             </div>
-            <MainButton
-              text={"Next"}
-              onClick={() => setFirstLoginView("page3")}
-            />
-          </form>
-        );
-      case "page3":
-        return (
-          <form className="first-login-form">
-            <div className="first-login-fields">
-              <label>Town</label>
-              <InputField name={"Town"} />
-            </div>
-            <div className="first-login-fields">
-              <label>School</label>
-              <InputField name={"School"} />
-            </div>
-            <div className="first-login-fields">
-              <label>Work</label>
-              <InputField name={"Work"} />
-            </div>
-            <MainButton text={"Save"} onClick={() => navigate("/home")} />
-          </form>
+            <InputField name="town" placeholder="Town" />
+            <InputField name="school" placeholder="School" />
+            <InputField name="work" placeholder="Work" />
+            <MainButton type="submit" text={"Save"} />
+          </>
         );
     }
   };
@@ -72,7 +102,13 @@ const FirstLogin = () => {
       <div
         className={`first-login-content ${isLightMode ? "light-mode-2" : "dark-mode-2"}`}
       >
-        {selectedFirstLoginView(firstLoginView)}
+        <form
+          className="first-login-form"
+          onSubmit={handleSubmit}
+          method="POST"
+        >
+          {selectedFirstLoginView(firstLoginView)}
+        </form>
       </div>
     </div>
   );
