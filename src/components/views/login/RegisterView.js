@@ -59,11 +59,11 @@ const RegisterView = () => {
             onSubmit={handleRegister}
             method="POST"
           >
-            <InputField name="email" label="Email" required />
-            <InputField name="password" label="Password" required />
+            <InputField name="email" placeholder="Email" required />
+            <InputField name="password" placeholder="Password" required />
             <InputField
               name="repeatPassword"
-              label="Repeat Password"
+              placeholder="Repeat Password"
               required
             />
             <MainButton type="submit" text={"Register"} />

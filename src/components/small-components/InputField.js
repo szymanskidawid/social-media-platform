@@ -1,10 +1,9 @@
 import { TextField } from "@mui/material";
 
-const InputField = ({ name, label, placeholder, value, required }) => {
+const InputField = ({ name, placeholder, value, required }) => {
   return (
     <TextField
       name={name}
-      label={label}
       placeholder={placeholder}
       variant="outlined"
       margin="normal"

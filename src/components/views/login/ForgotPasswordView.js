@@ -14,7 +14,7 @@ const ForgotPasswordView = () => {
     if (!selection) {
       return (
         <form className="login-page-form">
-          <InputField name="email" label="Email" required />
+          <InputField name="email" placeholder="Email" required />
           <MainButton onClick={() => setEmailValidation(true)} text={"Send"} />
         </form>
       );
