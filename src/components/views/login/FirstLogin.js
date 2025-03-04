@@ -55,9 +55,39 @@ const FirstLogin = () => {
       const data = await response.json();
 
       if (response.ok) {
-        navigate("/home");
+        updateFirstLoginBoolean();
       } else {
         console.log("Person creation failed", data.error);
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
+    }
+  };
+
+  const updateFirstLoginBoolean = async () => {
+    try {
+      console.log(user._id);
+      const response = await fetch(
+        //"https://social-media-platform-backend-l5h4.onrender.com/logins/create",
+        `http://localhost:4000/logins/update`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            loginId: user._id,
+            firstLogin: false,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        navigate("/home");
+      } else {
+        console.log("first_login update failed", data.error);
       }
     } catch (error) {
       console.log("There was an error: ", error);
