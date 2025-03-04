@@ -9,7 +9,7 @@ import { DataContext } from "../../../contexts/DataContext";
 const LoginView = () => {
   const [incorrectLogin, setIncorrectLogin] = useState(false);
   const { setIsLoggedIn } = useContext(LoginStateContext);
-  const { setUser } = useContext(DataContext);
+  const { user, setUser } = useContext(DataContext);
 
   const navigate = useNavigate();
 
@@ -40,7 +40,11 @@ const LoginView = () => {
       if (response.ok) {
         setUser(data);
         setIsLoggedIn(true);
-        navigate("/welcome");
+        if (data.first_login == true) {
+          navigate("/welcome");
+        } else {
+          navigate("/home");
+        }
       } else {
         setIncorrectLogin(true);
         console.log("Login failed", data.error);
