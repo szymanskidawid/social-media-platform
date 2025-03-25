@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LightModeContext } from "../../../contexts/LightModeContext";
 import { DataContext } from "../../../contexts/DataContext";
 import MainButton from "../../small-components/MainButton";
@@ -8,7 +8,7 @@ import InputField from "../../small-components/InputField";
 
 const FirstLogin = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { user, loading } = useContext(DataContext);
+  const { user, setUser, loading } = useContext(DataContext);
   const [firstLoginView, setFirstLoginView] = useState("page1");
   const [newUserData, setNewUserData] = useState({});
 
@@ -23,6 +23,8 @@ const FirstLogin = () => {
       name: formData.get("name"),
       surname: formData.get("surname"),
     });
+
+    setFirstLoginView("page2");
   };
 
   const handleSubmit = async (event) => {
@@ -55,7 +57,7 @@ const FirstLogin = () => {
       const data = await response.json();
 
       if (response.ok) {
-        updateFirstLoginBoolean();
+        setUser(data);
       } else {
         console.log("Person creation failed", data.error);
       }
@@ -66,7 +68,6 @@ const FirstLogin = () => {
 
   const updateFirstLoginBoolean = async () => {
     try {
-      console.log(user._id);
       const response = await fetch(
         //"https://social-media-platform-backend-l5h4.onrender.com/logins/create",
         `http://localhost:4000/logins/update`,
@@ -76,7 +77,7 @@ const FirstLogin = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            loginId: user._id,
+            loginId: user.login_id,
             firstLogin: false,
           }),
         }
@@ -94,39 +95,15 @@ const FirstLogin = () => {
     }
   };
 
+  useEffect(() => {
+    if (user) {
+      console.log({ user });
+      updateFirstLoginBoolean();
+    }
+  }, [user]);
+
   if (loading) return <p>Loading...</p>;
 
-  const selectedFirstLoginView = (selection) => {
-    switch (selection) {
-      case "page1":
-        return (
-          <>
-            <InputField name="name" placeholder="Name" required />
-            <InputField name="surname" placeholder="Surname" required />
-            <MainButton
-              text={"Next"}
-              onClick={(event) => {
-                handleFirstStep(event);
-                setFirstLoginView("page2");
-              }}
-            />
-          </>
-        );
-      case "page2":
-        return (
-          <>
-            <div className="first-login-fields">
-              <label>Profile Picture</label>
-              <Photo type={"change"} src="/assets/addNewPhoto.jpg" />
-            </div>
-            <InputField name="town" placeholder="Town" />
-            <InputField name="school" placeholder="School" />
-            <InputField name="work" placeholder="Work" />
-            <MainButton type="submit" text={"Save"} />
-          </>
-        );
-    }
-  };
   return (
     <div className="first-login-page-container">
       <div
@@ -137,7 +114,26 @@ const FirstLogin = () => {
           onSubmit={handleSubmit}
           method="POST"
         >
-          {selectedFirstLoginView(firstLoginView)}
+          {firstLoginView === "page1" && (
+            <>
+              <InputField name="name" placeholder="Name" required />
+              <InputField name="surname" placeholder="Surname" required />
+              <MainButton text={"Next"} onClick={handleFirstStep} />
+            </>
+          )}
+
+          {firstLoginView === "page2" && (
+            <>
+              <div className="first-login-fields">
+                <label>Profile Picture</label>
+                <Photo type={"change"} src="/assets/addNewPhoto.jpg" />
+              </div>
+              <InputField name="town" placeholder="Town" required />
+              <InputField name="school" placeholder="School" required />
+              <InputField name="work" placeholder="Work" required />
+              <MainButton type="submit" text={"Save"} />
+            </>
+          )}
         </form>
       </div>
     </div>
