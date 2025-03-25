@@ -5,11 +5,13 @@ import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { LoginStateContext } from "../../../contexts/LoginStateContext";
 import { DataContext } from "../../../contexts/DataContext";
+import { IdTrackingContext } from "../../../contexts/IdTrackingContext";
 
 const LoginView = () => {
   const [incorrectLogin, setIncorrectLogin] = useState(false);
   const { setIsLoggedIn } = useContext(LoginStateContext);
-  const { user, setUser } = useContext(DataContext);
+  const { user, setUser, people } = useContext(DataContext);
+  const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
 
@@ -38,7 +40,12 @@ const LoginView = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setUser(data);
+        if (data.first_login === true) {
+          setUser(data);
+        } else {
+          setUser(people.find((person) => person.login_id === data._id));
+        }
+        setSelectedProfileId(data._id);
         setIsLoggedIn(true);
         if (data.first_login == true) {
           navigate("/welcome");
