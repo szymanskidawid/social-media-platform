@@ -10,7 +10,7 @@ import { IdTrackingContext } from "../../../contexts/IdTrackingContext";
 const LoginView = () => {
   const [incorrectLogin, setIncorrectLogin] = useState(false);
   const { setIsLoggedIn } = useContext(LoginStateContext);
-  const { user, setUser, people } = useContext(DataContext);
+  const { setUser, people } = useContext(DataContext);
   const { setSelectedProfileId } = useContext(IdTrackingContext);
 
   const navigate = useNavigate();
