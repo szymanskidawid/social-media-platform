@@ -36,7 +36,7 @@ const CreatePost = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setPosts(...posts, data);
+        setPosts((posts) => [...posts, data]);
       }
     } catch (error) {
       console.log("There was an error: ", error);
