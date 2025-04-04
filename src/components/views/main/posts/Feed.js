@@ -32,17 +32,19 @@ const Feed = () => {
     >
       {(path === "/home" || selectedProfileId === user._id) && <CreatePost />}
       {displayedPosts && displayedPosts.length > 0 ? (
-        displayedPosts.map((post) => (
-          <Post
-            key={post._id}
-            personId={post.user_id}
-            timePosted={formatDistanceToNow(new Date(post.time_posted))}
-            postMessage={post.post_message}
-            src={post.post_photo}
-            likesIDs={post.post_likes}
-            commentsId={post._id}
-          />
-        ))
+        displayedPosts
+          .sort((a, b) => new Date(b.time_posted) - new Date(a.time_posted))
+          .map((post) => (
+            <Post
+              key={post._id}
+              personId={post.user_id}
+              timePosted={formatDistanceToNow(new Date(post.time_posted))}
+              postMessage={post.post_message}
+              src={post.post_photo}
+              likesIDs={post.post_likes}
+              commentsId={post._id}
+            />
+          ))
       ) : (
         <p>No posts available</p>
       )}
