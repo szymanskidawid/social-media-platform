@@ -19,11 +19,13 @@ const FirstLogin = () => {
 
     const formElement = event.target.closest("form");
     const formData = new FormData(formElement);
+    const name = formData.get("name");
+    const surname = formData.get("surname");
     setNewUserData({
-      name: formData.get("name"),
-      surname: formData.get("surname"),
+      name,
+      surname,
     });
-
+    console.log({ newUserData });
     setFirstLoginView("page2");
   };
 
@@ -31,12 +33,17 @@ const FirstLogin = () => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    setNewUserData((previousData) => ({
-      ...previousData,
-      town: formData.get("town"),
-      school: formData.get("school"),
-      work: formData.get("work"),
-    }));
+    const town = formData.get("town");
+    const school = formData.get("school");
+    const work = formData.get("work");
+
+    const fullUserData = {
+      name: newUserData.name,
+      surname: newUserData.surname,
+      town,
+      school,
+      work,
+    };
 
     try {
       const response = await fetch(
@@ -49,7 +56,7 @@ const FirstLogin = () => {
           },
           body: JSON.stringify({
             loginId: user._id,
-            ...newUserData,
+            ...fullUserData,
           }),
         }
       );
@@ -97,7 +104,6 @@ const FirstLogin = () => {
 
   useEffect(() => {
     if (user) {
-      console.log({ user });
       updateFirstLoginBoolean();
     }
   }, [user]);
