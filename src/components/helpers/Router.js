@@ -16,6 +16,7 @@ import RegisterView from "../views/login/RegisterView";
 import ForgotPasswordView from "../views/login/ForgotPasswordView";
 import LoginView from "../views/login/LoginView";
 import FirstLogin from "../views/login/FirstLogin";
+import ChangePassword from "../views/main/other/ChangePassword";
 
 const Router = () => {
   const { isLoggedIn } = useContext(LoginStateContext);
@@ -74,6 +75,10 @@ const Router = () => {
         {
           path: `/home/profile/:id/photos`,
           element: <PhotoAlbum />,
+        },
+        {
+          path: "/home/changepassword",
+          element: <ChangePassword />,
         },
       ],
     },

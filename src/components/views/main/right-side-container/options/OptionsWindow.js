@@ -22,6 +22,11 @@ const OptionsWindow = () => {
       />
       <MainButton
         style={{ width: "100%" }}
+        text="Change Password"
+        onClick={() => navigate("/home/changepassword")}
+      />
+      <MainButton
+        style={{ width: "100%" }}
         text={"Log Out"}
         onClick={handleLogout}
       />

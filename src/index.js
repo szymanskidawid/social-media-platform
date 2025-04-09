@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./styles/ChangePassword.css";
 import "./styles/Chat.css";
 import "./styles/ChatSelectionWindow.css";
 import "./styles/Comment.css";
