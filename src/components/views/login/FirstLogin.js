@@ -76,8 +76,8 @@ const FirstLogin = () => {
   const updateFirstLoginBoolean = async () => {
     try {
       const response = await fetch(
-        //"https://social-media-platform-backend-l5h4.onrender.com/logins/create",
-        `http://localhost:4000/logins/update`,
+        //"https://social-media-platform-backend-l5h4.onrender.com/logins/updateFirstLogin",
+        `http://localhost:4000/logins/updateFirstLogin`,
         {
           method: "PUT",
           headers: {

@@ -18,12 +18,12 @@ const RegisterView = () => {
     const password = formData.get("password");
     const repeatPassword = formData.get("repeatPassword");
 
+    setPasswordMismatch(false);
+
     if (password !== repeatPassword) {
       setPasswordMismatch(true);
       return;
     }
-
-    setPasswordMismatch(false);
 
     try {
       const response = await fetch(
