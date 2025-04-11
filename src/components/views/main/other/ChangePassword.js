@@ -3,16 +3,14 @@ import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../contexts/DataContext";
 import InputField from "../../../small-components/InputField";
 import MainButton from "../../../small-components/MainButton";
-import { useNavigate } from "react-router-dom";
 import { Alert } from "@mui/material";
 
 const ChangePassword = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { user } = useContext(DataContext);
   const [incorrectPassword, setIncorrectPassword] = useState(false);
+  const [samePassword, setSamePassword] = useState(false);
   const [newPasswordMismatch, setNewPasswordMismatch] = useState(false);
-
-  const navigate = useNavigate();
 
   const handleChangePassword = async (event) => {
     event.preventDefault();
@@ -22,16 +20,24 @@ const ChangePassword = () => {
     const newPassword = formData.get("newPassword");
     const repeatNewPassword = formData.get("repeatNewPassword");
 
+    setIncorrectPassword(false);
+    setSamePassword(false);
+    setNewPasswordMismatch(false);
+
     if (newPassword !== repeatNewPassword) {
       setNewPasswordMismatch(true);
+      return;
     }
 
-    setNewPasswordMismatch(false);
+    if (oldPassword === newPassword) {
+      setSamePassword(true);
+      return;
+    }
 
     try {
       const response = await fetch(
-        //"https://social-media-platform-backend-l5h4.onrender.com/logins/update",
-        `http://localhost:4000/logins/update`,
+        //"https://social-media-platform-backend-l5h4.onrender.com/logins/changePassword",
+        `http://localhost:4000/logins/changePassword`,
         {
           method: "PUT",
           headers: {
@@ -48,13 +54,11 @@ const ChangePassword = () => {
       const data = await response.json();
 
       if (response.ok) {
-      } else if (response) {
-        setIncorrectPassword(true);
+        console.log("Password change successful");
       } else {
-        console.log("Password change failed", data.error);
+        setIncorrectPassword(true);
+        console.log("Password change failed: ", data.error);
       }
-
-      setIncorrectPassword(false);
     } catch (error) {
       console.log("There was an error: ", error);
     }
@@ -80,6 +84,13 @@ const ChangePassword = () => {
       </form>
       {incorrectPassword ? (
         <Alert severity="error">Incorrect password!</Alert>
+      ) : (
+        ""
+      )}
+      {samePassword ? (
+        <Alert severity="error">
+          New password cannot be the same as old password!
+        </Alert>
       ) : (
         ""
       )}
