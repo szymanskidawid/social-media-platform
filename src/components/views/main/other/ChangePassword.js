@@ -11,6 +11,8 @@ const ChangePassword = () => {
   const [incorrectPassword, setIncorrectPassword] = useState(false);
   const [samePassword, setSamePassword] = useState(false);
   const [newPasswordMismatch, setNewPasswordMismatch] = useState(false);
+  const [isPasswordChangeSuccessful, setIsPasswordChangeSuccessful] =
+    useState(false);
 
   const handleChangePassword = async (event) => {
     event.preventDefault();
@@ -23,6 +25,7 @@ const ChangePassword = () => {
     setIncorrectPassword(false);
     setSamePassword(false);
     setNewPasswordMismatch(false);
+    setIsPasswordChangeSuccessful(false);
 
     if (newPassword !== repeatNewPassword) {
       setNewPasswordMismatch(true);
@@ -54,7 +57,8 @@ const ChangePassword = () => {
       const data = await response.json();
 
       if (response.ok) {
-        console.log("Password change successful");
+        setIsPasswordChangeSuccessful(true);
+        console.log("Password change successful!");
       } else {
         setIncorrectPassword(true);
         console.log("Password change failed: ", data.error);
@@ -96,6 +100,11 @@ const ChangePassword = () => {
       )}
       {newPasswordMismatch ? (
         <Alert severity="error">New passwords do not match!</Alert>
+      ) : (
+        ""
+      )}
+      {isPasswordChangeSuccessful ? (
+        <Alert severity="success">Password Changed!</Alert>
       ) : (
         ""
       )}
