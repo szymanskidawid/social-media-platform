@@ -47,7 +47,7 @@ const FirstLogin = () => {
 
     try {
       const response = await fetch(
-        //"https://social-media-platform-backend-l5h4.onrender.com/logins/create",
+        //"https://social-media-platform-backend-l5h4.onrender.com/people/create",
         `http://localhost:4000/people/create`,
         {
           method: "POST",
