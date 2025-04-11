@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import InputField from "../../../small-components/InputField";
 import Photo from "../../../small-components/Photo";
 import MainButton from "../../../small-components/MainButton";
@@ -8,10 +8,51 @@ import { DataContext } from "../../../../contexts/DataContext";
 const EditProfile = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { user, loading } = useContext(DataContext);
+  const { isUserUpdateSuccessful, setIsUserUpdateSuccessful } = useState(false);
 
   const handleSaveChanges = async (event) => {
-    //TODO - Finish the function
     event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const surname = formData.get("surname");
+    const town = formData.get("town");
+    const school = formData.get("school");
+    const work = formData.get("work");
+
+    setIsUserUpdateSuccessful(false);
+
+    try {
+      const response = await fetch(
+        //`https://social-media-platform-backend-l5h4.onrender.com/people/update${user._id}`,
+        `http://localhost:4000/people/update/${user._id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            surname,
+            town,
+            school,
+            work,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsUserUpdateSuccessful(true);
+        setUser(data);
+        console.log("Profile update successful!");
+      } else {
+        console.log("Profile update failed: ", data.error);
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
+    }
   };
 
   if (loading) return <p>Loading...</p>;
@@ -25,7 +66,7 @@ const EditProfile = () => {
           <div className="edit-profile-top-section">Edit Profile</div>
           <form
             className="edit-profile-form"
-            onSubmit={() => handleSaveChanges}
+            onSubmit={handleSaveChanges}
             method="POST"
           >
             <div className="edit-profile-change-photo-container">
@@ -43,34 +84,36 @@ const EditProfile = () => {
             <InputField
               name="name"
               placeholder="Name"
-              value={user.name}
+              defaultValue={user.name}
               required
             />
             <InputField
               name="surname"
               placeholder="Surname"
-              value={user.surname}
+              defaultValue={user.surname}
               required
             />
             <InputField
               name="town"
               placeholder="Town"
-              value={user.town}
-              required
+              defaultValue={user.town}
             />
             <InputField
               name="school"
               placeholder="School"
-              value={user.school}
-              required
+              defaultValue={user.school}
             />
             <InputField
               name="work"
               placeholder="Work"
-              value={user.work}
-              required
+              defaultValue={user.work}
             />
             <MainButton type="submit" text={"Save changes"} />
+            {isUserUpdateSuccessful ? (
+              <Alert severity="success">User Updated!</Alert>
+            ) : (
+              ""
+            )}
           </form>
         </div>
       )}
