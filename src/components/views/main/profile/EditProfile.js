@@ -4,11 +4,12 @@ import Photo from "../../../small-components/Photo";
 import MainButton from "../../../small-components/MainButton";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../contexts/DataContext";
+import { Alert } from "@mui/material";
 
 const EditProfile = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { user, loading } = useContext(DataContext);
-  const { isUserUpdateSuccessful, setIsUserUpdateSuccessful } = useState(false);
+  const [isUserUpdateSuccessful, setIsUserUpdateSuccessful] = useState(false);
 
   const handleSaveChanges = async (event) => {
     event.preventDefault();
