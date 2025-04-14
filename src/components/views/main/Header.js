@@ -3,16 +3,20 @@ import Logo from "../../small-components/Logo";
 import { ContainerViewContext } from "../../../contexts/ContainerViewContext";
 import InputField from "../../small-components/InputField";
 import { LightModeContext } from "../../../contexts/LightModeContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { isLightMode } = useContext(LightModeContext);
   const { setContainerView } = useContext(ContainerViewContext);
+
+  const navigate = useNavigate();
+
   return (
     <header
       className={`header-container ${isLightMode ? "light-mode-2" : "dark-mode-4"}`}
     >
       <div className="header-logo-container">
-        <Logo />
+        <Logo onClick={() => navigate("/home")} />
       </div>
       <div className="header-search-container">
         <i
