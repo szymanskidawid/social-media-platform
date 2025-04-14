@@ -1,13 +1,13 @@
 import { TextField } from "@mui/material";
 
-const InputField = ({ name, placeholder, value, required }) => {
+const InputField = ({ name, placeholder, defaultValue, required }) => {
   return (
     <TextField
       name={name}
       placeholder={placeholder}
       variant="outlined"
       margin="normal"
-      value={value}
+      defaultValue={defaultValue}
       sx={{
         "& .MuiInputBase-root": {
           backgroundColor: "white",
