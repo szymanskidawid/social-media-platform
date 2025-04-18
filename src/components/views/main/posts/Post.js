@@ -19,7 +19,9 @@ const Post = ({
   const [showComments, setShowComments] = useState(false);
   const { people, comments, loading } = useContext(DataContext);
 
-  const person = people.find((person) => person.login_id === personId);
+  const person = people.find((person) => person._id === personId);
+
+  console.log({ personId });
 
   if (loading) return <p>Loading...</p>;
 
