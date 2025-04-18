@@ -21,8 +21,6 @@ const Post = ({
 
   const person = people.find((person) => person._id === personId);
 
-  console.log({ personId });
-
   if (loading) return <p>Loading...</p>;
 
   return (
