@@ -21,6 +21,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  background-color: white;
 }
 
 .profile-pic-container {
@@ -29,6 +30,7 @@
   border-radius: 200px;
   position: absolute;
   bottom: -100px;
+  background-color: red;
   z-index: 100;
 }
 
@@ -36,6 +38,14 @@
   margin-top: 100px;
   font-size: 40px;
   z-index: 1;
+  align-self: center;
+}
+
+.profile-add-friend-button-container {
+  margin: 0 20px 20px 0;
+  display: flex;
+  align-self: flex-end;
+  justify-self: flex-end;
 }
 
 .profile-info-container {
