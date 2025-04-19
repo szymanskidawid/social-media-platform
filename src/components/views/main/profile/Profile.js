@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import UserInfo from "../../../small-components/UserInfo";
 import Feed from "../posts/Feed";
 import Photo from "../../../small-components/Photo";
@@ -6,17 +6,62 @@ import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { IdTrackingContext } from "../../../../contexts/IdTrackingContext";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../../../contexts/DataContext";
+import MainButton from "../../../small-components/MainButton";
 
 const Profile = () => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people, loading } = useContext(DataContext);
+  const { user, people, notifications, setNotifications, loading } =
+    useContext(DataContext);
   const { selectedProfileId } = useContext(IdTrackingContext);
+  const [friendRequestSent, setFriendRequestSent] = useState(false);
 
   const navigate = useNavigate();
 
   const selectedPerson = people.find(
     (person) => person._id === selectedProfileId
   );
+
+  useEffect(() => {
+    const existingFriendRequest = notifications.find(
+      (notification) =>
+        notification.user_id === user._id &&
+        notification.notified_user_id === selectedProfileId &&
+        notification.type === "friend_request"
+    );
+
+    if (existingFriendRequest) {
+      setFriendRequestSent(true);
+    }
+  }, [notifications, user._id, selectedProfileId]);
+
+  const handleAddFriend = async () => {
+    try {
+      const response = await fetch(`http://localhost:4000/notifications/add`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: user._id,
+          notified_user_id: selectedProfileId,
+          type: "friend_request",
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setFriendRequestSent(true);
+        setNotifications((oldNotifications) => [...oldNotifications, data]);
+        console.log({ notifications });
+        console.log("Friend request sent:", data);
+      } else {
+        console.error("Error sending friend request:", data.message || data);
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
+    }
+  };
 
   if (loading) return <p>Loading...</p>;
 
@@ -40,6 +85,15 @@ const Profile = () => {
             </div>
           </div>
           <p className="profile-name">{selectedPerson.full_name}</p>
+          {user._id !== selectedProfileId && (
+            <div className="profile-add-friend-button-container">
+              <MainButton
+                onClick={handleAddFriend}
+                disabled={friendRequestSent}
+                text={friendRequestSent ? "Friend Request Sent" : "Add Friend"}
+              />
+            </div>
+          )}
           <div
             className={`profile-info-container ${isLightMode ? "light-mode-3" : "dark-mode-3"}`}
           >
