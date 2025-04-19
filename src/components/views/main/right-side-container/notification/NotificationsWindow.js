@@ -14,15 +14,13 @@ const NotificationsWindow = () => {
   return (
     <>
       {selectedNotifications && selectedNotifications.length > 0 ? (
-        selectedNotifications.map((notificationsGroup) =>
-          notificationsGroup.notifications.map((notification) => (
-            <Notification
-              key={notification.id}
-              personId={notification.from}
-              type={notification.type}
-            />
-          ))
-        )
+        selectedNotifications.map((notification) => (
+          <Notification
+            key={notification._id}
+            personId={notification.user_id}
+            type={notification.type}
+          />
+        ))
       ) : (
         <p>No new notifications</p>
       )}
