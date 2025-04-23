@@ -52,7 +52,8 @@ body {
 }
 
 .icon-light-mode,
-.icon-dark-mode {
+.icon-dark-mode,
+.x-button {
   cursor: pointer;
 }
 
