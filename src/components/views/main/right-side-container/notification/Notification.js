@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import UserInfo from "../../../../small-components/UserInfo";
 import MainButton from "../../../../small-components/MainButton";
+import XButton from "../../../../small-components/XButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../../contexts/DataContext";
 
@@ -21,6 +22,8 @@ const Notification = ({ personId, type }) => {
     }
   };
 
+  const handleRemoveNotification = () => {};
+
   if (loading) return <p>Loading...</p>;
 
   const notificationAction = (selection) => {
@@ -38,12 +41,17 @@ const Notification = ({ personId, type }) => {
     <div
       className={`notification-container ${isLightMode ? "light-mode-2" : "dark-mode-3"}`}
     >
-      <UserInfo
-        personId={selectedPerson._id}
-        type={"horizontal"}
-        src={selectedPerson.profile_photo}
-        name={selectedPerson.full_name}
-      />
+      <div className="notification-top">
+        <UserInfo
+          personId={selectedPerson._id}
+          type={"horizontal"}
+          src={selectedPerson.profile_photo}
+          name={selectedPerson.full_name}
+        />
+        <div>
+          <XButton onClick={handleRemoveNotification} />
+        </div>
+      </div>
       <div className="notification-text">{notificationText(type)}</div>
       {notificationAction(type)}
     </div>

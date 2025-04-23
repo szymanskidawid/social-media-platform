@@ -5,6 +5,12 @@
   flex-direction: column;
 }
 
+.notification-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .notification-text {
   padding-bottom: 5px;
 }

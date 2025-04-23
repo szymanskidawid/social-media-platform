@@ -20,6 +20,11 @@
   width: auto;
 }
 
+.post-top-right-container {
+  margin-right: 10px;
+  display: flex;
+}
+
 .post-top-time-posted {
   margin-right: 10px;
 }

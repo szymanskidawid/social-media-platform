@@ -5,6 +5,7 @@ import CommentsWindow from "./CommentsWindow";
 import LikesWindow from "./LikesWindow";
 import { LightModeContext } from "../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../contexts/DataContext";
+import XButton from "../../../small-components/XButton";
 
 const Post = ({
   personId,
@@ -17,9 +18,11 @@ const Post = ({
   const { isLightMode } = useContext(LightModeContext);
   const [showLikes, setShowLikes] = useState(false);
   const [showComments, setShowComments] = useState(false);
-  const { people, comments, loading } = useContext(DataContext);
+  const { user, people, comments, loading } = useContext(DataContext);
 
   const person = people.find((person) => person._id === personId);
+
+  const handleRemovePost = () => {};
 
   if (loading) return <p>Loading...</p>;
 
@@ -38,7 +41,16 @@ const Post = ({
             />
           )}
         </div>
-        <div className="post-top-time-posted">{`${timePosted} ago`}</div>
+        <div className="post-top-right-container">
+          <div className="post-top-time-posted">{`${timePosted} ago`}</div>
+          {personId === user._id ? (
+            <div>
+              <XButton onClick={handleRemovePost} />
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
       <div className="post-top-description">{postMessage}</div>
       {src !== "" ? (
