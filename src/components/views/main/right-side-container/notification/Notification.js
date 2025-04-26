@@ -5,9 +5,10 @@ import XButton from "../../../../small-components/XButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../../contexts/DataContext";
 
-const Notification = ({ personId, type }) => {
+const Notification = ({ id, personId, type }) => {
   const { isLightMode } = useContext(LightModeContext);
-  const { people, loading } = useContext(DataContext);
+  const { people, loading, notifications, setNotifications } =
+    useContext(DataContext);
 
   const selectedPerson = people.find((person) => person._id === personId);
 
@@ -22,20 +23,34 @@ const Notification = ({ personId, type }) => {
     }
   };
 
-  const handleRemoveNotification = () => {};
-
-  if (loading) return <p>Loading...</p>;
-
-  const notificationAction = (selection) => {
-    if (selection === "friend_request") {
-      return (
-        <div className="notification-actions">
-          <MainButton text={"Accept"} />
-          <MainButton className={"red"} text={"Decline"} />
-        </div>
+  const handleRemoveNotification = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/notifications/remove/${id}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setNotifications(
+          notifications.filter((notification) => notification._id !== id)
+        );
+        console.log("Notification removed");
+      } else {
+        console.error("Cannot remove notification:", data.message);
+      }
+    } catch (error) {
+      console.log("There was an error: ", error);
     }
   };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <div
@@ -48,12 +63,27 @@ const Notification = ({ personId, type }) => {
           src={selectedPerson.profile_photo}
           name={selectedPerson.full_name}
         />
-        <div>
-          <XButton onClick={handleRemoveNotification} />
-        </div>
+        {type !== "friend_request" ? (
+          <div>
+            <XButton onClick={handleRemoveNotification} />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       <div className="notification-text">{notificationText(type)}</div>
-      {notificationAction(type)}
+      {type === "friend_request" ? (
+        <div className="notification-actions">
+          <MainButton text={"Accept"} onClick={handleRemoveNotification} />
+          <MainButton
+            className={"red"}
+            text={"Decline"}
+            onClick={handleRemoveNotification}
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
