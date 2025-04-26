@@ -17,6 +17,7 @@ const NotificationsWindow = () => {
         selectedNotifications.map((notification) => (
           <Notification
             key={notification._id}
+            id={notification._id}
             personId={notification.user_id}
             type={notification.type}
           />
