@@ -1,12 +1,15 @@
 import { useContext } from "react";
 import Logo from "../../small-components/Logo";
-import { ContainerViewContext } from "../../../contexts/ContainerViewContext";
 import InputField from "../../small-components/InputField";
 import { LightModeContext } from "../../../contexts/LightModeContext";
+import { DataContext } from "../../../contexts/DataContext";
+import { ContainerViewContext } from "../../../contexts/ContainerViewContext";
 import { useNavigate } from "react-router-dom";
+import { Badge } from "@mui/material";
 
 const Header = () => {
   const { isLightMode } = useContext(LightModeContext);
+  const { user, notifications } = useContext(DataContext);
   const { setContainerView } = useContext(ContainerViewContext);
 
   const navigate = useNavigate();
@@ -29,10 +32,20 @@ const Header = () => {
           className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-comment-dots fa-2xl`}
           onClick={() => setContainerView("chats")}
         />
-        <i
-          className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-circle-exclamation fa-2xl`}
-          onClick={() => setContainerView("notifications")}
-        />
+        <Badge
+          badgeContent={
+            notifications.filter(
+              (notification) => notification.notified_user_id === user._id
+            ).length
+          }
+          color="error"
+          showZero={false}
+        >
+          <i
+            className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-circle-exclamation fa-2xl`}
+            onClick={() => setContainerView("notifications")}
+          />
+        </Badge>
         <i
           className={`icon-${isLightMode ? "light-mode" : "dark-mode"} fa-solid fa-gear fa-2xl`}
           onClick={() => setContainerView("options")}
