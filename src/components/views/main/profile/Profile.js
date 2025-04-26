@@ -53,7 +53,6 @@ const Profile = () => {
       if (response.ok) {
         setFriendRequestSent(true);
         setNotifications((oldNotifications) => [...oldNotifications, data]);
-        console.log({ notifications });
         console.log("Friend request sent:", data);
       } else {
         console.error("Error sending friend request:", data.message || data);
