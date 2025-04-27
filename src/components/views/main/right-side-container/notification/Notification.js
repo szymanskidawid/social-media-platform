@@ -5,7 +5,7 @@ import XButton from "../../../../small-components/XButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 import { DataContext } from "../../../../../contexts/DataContext";
 
-const Notification = ({ id, personId, type }) => {
+const Notification = ({ id, personId, type, timeSent }) => {
   const { isLightMode } = useContext(LightModeContext);
   const { people, loading, notifications, setNotifications } =
     useContext(DataContext);
@@ -84,6 +84,7 @@ const Notification = ({ id, personId, type }) => {
       ) : (
         ""
       )}
+      <div className="notification-date">{`${timeSent} ago`}</div>
     </div>
   );
 };

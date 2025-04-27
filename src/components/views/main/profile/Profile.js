@@ -7,6 +7,7 @@ import { IdTrackingContext } from "../../../../contexts/IdTrackingContext";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../../../contexts/DataContext";
 import MainButton from "../../../small-components/MainButton";
+import { getTimeAndDate } from "../../../helpers/getTimeAndDate";
 
 const Profile = () => {
   const { isLightMode } = useContext(LightModeContext);
@@ -35,6 +36,7 @@ const Profile = () => {
   }, [notifications, user._id, selectedProfileId]);
 
   const handleAddFriend = async () => {
+    const timeSent = getTimeAndDate();
     try {
       const response = await fetch(`http://localhost:4000/notifications/add`, {
         method: "POST",
@@ -45,6 +47,7 @@ const Profile = () => {
           user_id: user._id,
           notified_user_id: selectedProfileId,
           type: "friend_request",
+          time_sent: timeSent,
         }),
       });
 
