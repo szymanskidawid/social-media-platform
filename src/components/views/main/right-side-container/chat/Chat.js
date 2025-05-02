@@ -5,6 +5,7 @@ import MainButton from "../../../../small-components/MainButton";
 import { LightModeContext } from "../../../../../contexts/LightModeContext";
 import { IdTrackingContext } from "../../../../../contexts/IdTrackingContext";
 import { DataContext } from "../../../../../contexts/DataContext";
+import XButton from "../../../../small-components/XButton";
 
 const Chat = ({ userId, setOpenChatWindow }) => {
   const { isLightMode } = useContext(LightModeContext);
@@ -31,12 +32,13 @@ const Chat = ({ userId, setOpenChatWindow }) => {
           src={friend.profile_photo}
           name={friend.full_name}
         />
-        <div
+        <XButton onClick={() => setOpenChatWindow(false)} />
+        {/*<div
           className="chat-window-close-btn"
           onClick={() => setOpenChatWindow(false)}
         >
           <i className="icon-light-mode fa-solid fa-xmark fa-xl"></i>
-        </div>
+        </div>*/}
       </div>
       <div
         className={`chat-window-history ${isLightMode ? "light-mode-4" : "dark-mode-4"}`}
